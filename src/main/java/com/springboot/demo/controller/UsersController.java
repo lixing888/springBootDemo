@@ -30,7 +30,7 @@ public class UsersController {
     @ApiOperation(value = "根据ID查询")
     public Users getUserById(@PathVariable int id){
 
-      return userMapper.oneUser(id);
+        return userMapper.oneUser(id);
 
     }
 
