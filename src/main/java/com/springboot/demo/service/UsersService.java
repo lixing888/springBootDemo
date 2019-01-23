@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-
+@Service
 public interface UsersService {
     /**
      * 查询用户service

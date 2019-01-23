@@ -65,10 +65,37 @@
 		</dependency>
 
 		<!--<dependency>-->
-			<!--<groupId>com.baomidou</groupId>-->
-			<!--<artifactId>mybatis-plus-boot-starter</artifactId>-->
-			<!--<version>3.0-gamma</version>-->
+		<!--<groupId>com.baomidou</groupId>-->
+		<!--<artifactId>mybatis-plus-boot-starter</artifactId>-->
+		<!--<version>3.0-gamma</version>-->
 		<!--</dependency>-->
+		<dependency>
+		<groupId>com.baomidou</groupId>
+			<artifactId>mybatis-plus</artifactId>
+			<version>3.0.7.1</version>
+	    </dependency>
+
+		<!-- velocity 模板引擎, 默认 -->
+		<dependency>
+			<groupId>org.apache.velocity</groupId>
+			<artifactId>velocity-engine-core</artifactId>
+			<version>2.0</version>
+		</dependency>
+
+		<!-- freemarker 模板引擎 -->
+		<dependency>
+			<groupId>org.freemarker</groupId>
+			<artifactId>freemarker</artifactId>
+			<version>2.3.28</version>
+		</dependency>
+
+
+		<!-- beetl 模板引擎 -->
+		<dependency>
+			<groupId>com.ibeetl</groupId>
+			<artifactId>beetl</artifactId>
+			<version>2.9.8</version>
+		</dependency>
 
 
 		<dependency>
@@ -101,6 +128,7 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+
 		</plugins>
 
 
@@ -115,8 +143,9 @@
 			<resource>
 				<directory>src/main/java</directory>
 				<includes>
-					<include>**/*.xml</include>
+					<include>mapper/xml/*.xml</include>
 				</includes>
+				<filtering>true</filtering>
 			</resource>
 		</resources>
 

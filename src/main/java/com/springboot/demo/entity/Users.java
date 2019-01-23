@@ -1,5 +1,6 @@
 package com.springboot.demo.entity;
 
+import com.baomidou.mybatisplus.annotation.TableLogic;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -14,7 +15,7 @@ import java.io.Serializable;
 @ApiModel(value = "User", description = "用户对象")
 public class Users implements Serializable{
 
-    @ApiModelProperty(value = "ID",notes = "必须是int类型",example = "1")
+    @ApiModelProperty(value = "id",notes = "必须是int类型",example = "1")
     private Integer id;
     @ApiModelProperty(value = "姓名",example = "李兴")
     private String name;
@@ -22,6 +23,8 @@ public class Users implements Serializable{
     private String groupid;
     @ApiModelProperty(value = "等级",example = "12")
     private String rank;
+    @TableLogic
+    private String delete;//逻辑删除
 
 //    @ApiModelProperty(value = "登录名")
 //    private String username;
