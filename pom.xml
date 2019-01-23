@@ -89,14 +89,12 @@
 			<version>2.3.28</version>
 		</dependency>
 
-
 		<!-- beetl 模板引擎 -->
 		<dependency>
 			<groupId>com.ibeetl</groupId>
 			<artifactId>beetl</artifactId>
 			<version>2.9.8</version>
 		</dependency>
-
 
 		<dependency>
 			  <groupId>org.apache.activemq</groupId>
