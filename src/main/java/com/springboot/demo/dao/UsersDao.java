@@ -20,6 +20,4 @@ public interface UsersDao {
     @Insert({ "insert into jc_user(user_id,group_id,username) values(#{id},#{groupid},#{name})" })
     int insertUsers(Users users);
 
-
-
 }
