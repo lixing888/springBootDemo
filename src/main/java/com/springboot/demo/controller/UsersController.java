@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@Api(tags = "用户管理")
+@Api(tags = "/用户管理")
 public class UsersController {
 
     @Autowired
