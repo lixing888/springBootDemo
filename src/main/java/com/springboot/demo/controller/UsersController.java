@@ -6,6 +6,7 @@ import com.springboot.demo.service.UsersService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -28,9 +29,10 @@ public class UsersController {
     }
     @GetMapping(value = "/userIno/{id}/")
     @ApiOperation(value = "根据ID查询")
-    public Users getUserById(@PathVariable int id){
+    public Users getUserById(@RequestParam int id){
 
-        return userMapper.oneUser(id);
+        //return userMapper.oneUser(id);
+        return userMapper.findById(id);
 
     }
 

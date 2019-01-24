@@ -5,6 +5,7 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,6 +21,7 @@ import java.util.Arrays;
 @SpringBootApplication
 @MapperScan(basePackages = "com.springbooe.demo")
 @Api(tags = "swagger2")
+@EnableCaching
 public class DemoApplication {
 
 	public static void main(String[] args) {
