@@ -15,5 +15,7 @@ public interface UsersService {
 
     void insertUsers(Users users);
 
+    List<Users> oneUser(int id);
+
 
 }

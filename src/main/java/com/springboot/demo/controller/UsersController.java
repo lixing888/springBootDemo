@@ -17,8 +17,6 @@ public class UsersController {
 
     @Autowired
     private UsersService usersService;
-    @Autowired
-    private UserMapper userMapper;
 
     @RequestMapping(value = "users/list",method = RequestMethod.GET)
     public String UserInfo(){
@@ -27,12 +25,12 @@ public class UsersController {
         return result.toString();
 
     }
-    @GetMapping(value = "/userIno/{id}/")
+    @PostMapping(value = "/getUserById")
     @ApiOperation(value = "根据ID查询")
-    public Users getUserById(@RequestParam int id){
+    public List<Users> getUserById(@RequestParam("user_id") int id){
 
         //return userMapper.oneUser(id);
-        return userMapper.findById(id);
+        return usersService.oneUser(id);
 
     }
 

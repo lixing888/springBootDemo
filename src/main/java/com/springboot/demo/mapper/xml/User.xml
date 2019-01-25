@@ -2,8 +2,8 @@
 
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.springboot.demo.mapper.UserMapper"> <!--注意上面的namespace一定要修改--> <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.test.entity.WxUser">
+<mapper namespace="com.springboot.demo.dao.UsersDao"> <!--注意上面的namespace一定要修改--> <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.springboot.demo.entity.Users">
         <id column="user_id" property="id" />
         <result column="username" property="name" />
         <result column="email" property="email" />
@@ -13,7 +13,7 @@
       select * from jc_user
     </select>
     <select id="oneUser" parameterType="java.lang.Integer" resultType="com.springboot.demo.entity.Users">
-      select * from jc_user WHERE user_id = #{id}
+      select user_id as id,username as name,email as email from jc_user WHERE user_id = #{id}
     </select>
 </mapper>
 
