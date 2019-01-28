@@ -15,7 +15,6 @@ public interface UserMapper {
 
     Users oneUser(@Param("id") Integer id);
 
-
     @Insert("insert into user(name,age) values(#{name},#{age})")
     int addUser(@Param("name")String name,@Param("age")String age);
 

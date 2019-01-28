@@ -27,6 +27,7 @@ public interface UsersDao {
             @Result(column = "username",property = "name")
 
     })
+
     @Select("select user_id,username,email from jc_user where user_id =#{id}")
     List<Users> oneUser (int id);
 
