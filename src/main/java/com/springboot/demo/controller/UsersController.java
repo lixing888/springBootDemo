@@ -1,12 +1,10 @@
 package com.springboot.demo.controller;
 
 import com.springboot.demo.entity.Users;
-import com.springboot.demo.mapper.UserMapper;
 import com.springboot.demo.service.UsersService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cache.annotation.Cacheable;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
