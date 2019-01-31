@@ -14,4 +14,5 @@ public class UserRequest {
     private int rank;
 
 
+
 }

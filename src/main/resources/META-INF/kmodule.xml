@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kmodule xmlns="http://www.drools.org/xsd/kmodule">
+    <kbase name="car" packages="rules">
+        <ksession name="com.springboot.demo.entity.Car" />
+    </kbase>
+    <kbase name="person" packages="rules">
+        <ksession name="com.springboot.demo.entity.Person" />
+    </kbase>
+
+</kmodule>
