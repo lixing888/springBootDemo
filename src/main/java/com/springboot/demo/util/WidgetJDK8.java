@@ -1,7 +1,16 @@
 package com.springboot.demo.util;
 
+import com.springboot.demo.entity.Users;
+import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
+import org.apache.ibatis.javassist.compiler.ast.Symbol;
+import org.springframework.boot.json.JsonParser;
+
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 public class WidgetJDK8 {
 
@@ -30,6 +39,37 @@ public class WidgetJDK8 {
                 .mapToInt(w -> w.getWeight())
                 .sum();
         System.out.println(sum);// 13
+
+        Map<Integer, String> HOSTING = new HashMap<>();
+        HOSTING.put(1, "linode.com");
+        HOSTING.put(2, "www.baidu.com");
+        HOSTING.put(3, "digitalocean.com");
+        HOSTING.put(4, "aws.amazon.com");
+
+
+        //Map -> Stream -> Filter -> Map
+        Map<Integer, String> collect = HOSTING.entrySet().stream()
+                .filter(map -> map.getKey() == 2)
+                .collect(Collectors.toMap(p -> p.getKey(), p -> p.getValue()));
+        System.out.println(collect);
+
+
+        //String转JSON
+        JSONObject json = JSONObject.fromObject("{\"data\": {\"pages\": [ {\"name\": \"李兴\"},{\"name\": \"李明\"}],\"total_count\": 2 },\"errcode\": 0}");
+        System.out.println("String转JSON"+json);
+        System.out.println("解析:"+json.get("data"));
+        //JsonParser parse =new JsonParser();  //创建json解析器
+//        ArrayList<Users> users = new ArrayList<Users>();
+//        JSONArray jsonArray = JSONArray.fromObject(json);
+//        for (int i = 0; i < jsonArray.size(); i++) {
+//            Users user = new Users();
+//            user.setName(jsonArray.getJSONObject(i).getString("pages"));
+//
+//            users.add(user);
+//        }
+//        for (Users user : users) {
+//            System.out.println(user.toString());
+//        }
     }
 
 }
