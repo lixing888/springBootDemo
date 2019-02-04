@@ -1,11 +1,7 @@
 package com.springboot.demo.util;
 
-import com.springboot.demo.entity.Users;
-import net.sf.json.JSONArray;
-import net.sf.json.JSONObject;
-import org.apache.ibatis.javassist.compiler.ast.Symbol;
-import org.springframework.boot.json.JsonParser;
 
+import net.sf.json.JSONObject;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
