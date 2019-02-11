@@ -34,7 +34,7 @@ public class WidgetJDK8 {
                 .filter(w -> w.getColor() == Color.RED)
                 .mapToInt(w -> w.getWeight())
                 .sum();
-        System.out.println(sum);// 13
+        System.out.println("总数："+sum);// 13
 
         Map<Integer, String> HOSTING = new HashMap<>();
         HOSTING.put(1, "linode.com");
