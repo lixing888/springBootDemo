@@ -1,12 +1,12 @@
 package com.springboot.demo.controller;
 
 import cn.hutool.http.HttpUtil;
+import com.alibaba.fastjson.JSON;
 import com.springboot.demo.entity.Users;
 import com.springboot.demo.service.UsersService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import io.swagger.util.Json;
-import net.sf.json.JSON;
+
 import net.sf.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -46,7 +46,7 @@ public class UsersController {
     public Users  saveUserInfo(@RequestBody Users users){
         Map<String,Object> map=new HashMap<>();
         map.put("username","lixing");
-        String post= HttpUtil.post(url,map);
+        String post= HttpUtil.post(url, JSON.toJSONString(map));
         JSONObject resultJson= JSONObject.fromObject(post);
 
 
