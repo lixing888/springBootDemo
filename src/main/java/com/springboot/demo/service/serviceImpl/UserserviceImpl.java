@@ -5,6 +5,7 @@ import com.springboot.demo.entity.Users;
 import com.springboot.demo.mapper.UserMapper;
 import com.springboot.demo.service.UsersService;
 import io.swagger.annotations.ApiParam;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.util.List;
 
 @Service
+@Slf4j
 public class UserserviceImpl implements UsersService{
 
     @Autowired
@@ -28,8 +30,10 @@ public class UserserviceImpl implements UsersService{
     }
 
     @Override
-    public void insertUsers(@RequestBody @ApiParam(value = "json格式",required = true) Users users) {
+    public void insertUsers(@RequestBody @ApiParam(value = "json格式", required = true) Users users) {
         usersDao.insertUsers(users);
+        log.error("");
+
     }
 
     @Override

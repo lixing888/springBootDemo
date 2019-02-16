@@ -4,13 +4,18 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.springboot.demo.dao.UsersDao"> <!--注意上面的namespace一定要修改--> <!-- 通用查询映射结果 -->
     <resultMap id="BaseResultMap" type="com.springboot.demo.entity.Users">
-        <id column="user_id" property="id" />
-        <result column="username" property="name" />
-        <result column="email" property="email" />
+        <id column="user_id" property="id"/>
+        <result column="username" property="name"/>
+        <result column="email" property="email"/>
+        <collection property="cars" ofType="com.springboot.demo.vo.Car"><!--一对多-->
+            <id property="nbr" column="nbr"></id>
+            <result property="nbr" column="price"></result>
+        </collection>
+
     </resultMap>
     <!--以下是新增的方法-->
     <select id="selectMethod" resultType="com.springboot.demo.entity.Users">
-      select * from jc_user
+          select * from jc_user
     </select>
     <select id="oneUser" parameterType="java.lang.Integer" resultType="com.springboot.demo.entity.Users">
       select user_id as id,username as name,email as email from jc_user WHERE user_id = #{id}

@@ -8,6 +8,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.io.Serializable;
+import java.util.List;
 
 @Data
 @Setter
@@ -27,6 +28,8 @@ public class Users implements Serializable{
     private String rank;
     @TableLogic
     private String delete;//逻辑删除
+
+    private List<Car> cars;
 
 //    @ApiModelProperty(value = "登录名")
 //    private String username;
