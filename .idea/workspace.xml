@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="00918e2e-9ff0-463c-b8e7-5db57853bab9" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/springboot/demo/util/Base64JDK8.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/springboot/demo/util/ParallelArraysJDK8.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/springboot/demo/util/Streams.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/springboot/demo/util/Streamutil8.java" afterPath="$PROJECT_DIR$/src/main/java/com/springboot/demo/util/Streamutil8.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -54,10 +50,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Streams.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Streams.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/springboot/demo/util/Streams.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
+            <state relative-caret-position="93">
               <caret line="133" column="0" lean-forward="true" selection-start-line="133" selection-start-column="0" selection-end-line="133" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -96,6 +92,36 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="231">
+              <caret line="152" column="21" lean-forward="true" selection-start-line="152" selection-start-column="21" selection-end-line="152" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="drool7Api.drl" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/rules/drool7Api.drl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="152">
+              <caret line="8" column="4" lean-forward="true" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SwaggerConfiguration.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/springboot/demo/SwaggerConfiguration.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="WidgetJDK8.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/springboot/demo/util/WidgetJDK8.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -106,50 +132,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="User.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/springboot/demo/mapper/xml/User.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="12" column="21" lean-forward="false" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
-              <folding>
-                <marker date="1550291762000" expanded="true" signature="810:831" ph="select * fro... jc_user" />
-                <marker date="1550291762000" expanded="true" signature="958:1045" ph="select user_... jc_user" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Car.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/springboot/demo/vo/Car.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="95">
               <caret line="5" column="22" lean-forward="false" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="22" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Users.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/springboot/demo/entity/Users.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="38">
-              <caret line="10" column="22" lean-forward="false" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Car.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/springboot/demo/entity/Car.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="11" column="5" lean-forward="false" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
-              <folding>
-                <element signature="e#172#173#0" expanded="true" />
-                <element signature="e#203#204#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -191,6 +179,7 @@
       <find>fastjson.versionl</find>
       <find>public static void main\(String\[\] args\) \{\n        String json \= \&quot;\{\\\&quot;data\\\&quot;\:\{\\\&quot;items\\\&quot;\:\[\{\\\&quot;itemstring\\\&quot;\:\\\&quot;手机\\\&quot;\,\\\&quot;itemcoord\\\&quot;\:\{\\\&quot;x\\\&quot;\:0\,\\\&quot;y\\\&quot;\:100\,\\\&quot;width\\\&quot;\:40\,\\\&quot;height\\\&quot;\:20\}\,\}\]\,\\\&quot;session_id\\\&quot;\:\\\&quot;9012321\\\&quot;\,\}\,\\\&quot;code\\\&quot;\:0\,\\\&quot;message\\\&quot;\:\\\&quot;OK\\\&quot;\}\&quot;\;\n        JSONObject jsonObject \= JSONObject\.fromObject\(json\)\;\n        JSONObject data \= jsonObject\.getJSONObject\(\&quot;data\&quot;\)\;\n        JSONArray items \= jsonObject\.getJSONObject\(\&quot;data\&quot;\)\.getJSONArray\(\&quot;items\&quot;\)\;\n        JSONObject row \= null\;\n        for\(int i\=0\; i\&lt;items\.size\(\)\; i\+\+\)\{\n            row \= items\.getJSONObject\(i\)\;\n            System\.out\.println\(\&quot;itemstring \：\&quot; \+ row\.get\(\&quot;itemstring\&quot;\)\)\;\n              JSONObject itemcoord \= row\.getJSONObject\(\&quot;itemcoord\&quot;\)\;\n            System\.out\.println\(\&quot;x\：\&quot; \+ itemcoord\.get\(\&quot;x\&quot;\)\)\;\n            System\.out\.println\(\&quot;y\：\&quot; \+ itemcoord\.get\(\&quot;y\&quot;\)\)\;\n            System\.out\.println\(\&quot;width\：\&quot; \+ itemcoord\.get\(\&quot;width\&quot;\)\)\;\n            System\.out\.println\(\&quot;height\：\&quot; \+ itemcoord\.get\(\&quot;height\&quot;\)\)\;\n        \}\n        System\.out\.println\(\&quot;session_id\：\&quot; \+ data\.get\(\&quot;session_id\&quot;\)\)\;\n        System\.out\.println\(\&quot;code\：\&quot; \+ jsonObject\.get\(\&quot;code\&quot;\)\)\;\n        System\.out\.println\(\&quot;code\：\&quot; \+ jsonObject\.get\(\&quot;message\&quot;\)\)\;\n    \}</find>
       <find>xml</find>
+      <find>droo</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -361,7 +350,31 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="demo" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="springBoot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="springBootDemo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="demo" type="462c0819:PsiDirectoryNode" />
               <item name="util" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="springBoot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="springBootDemo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="springBoot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="springBootDemo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="rules" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -414,7 +427,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Streams">
+  <component name="RunManager" selected="Spring Boot.DemoApplication">
     <configuration name="Base64JDK8" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -673,7 +686,7 @@
       <workItem from="1550111113407" duration="10390000" />
       <workItem from="1550150259613" duration="5711000" />
       <workItem from="1550290622089" duration="3820000" />
-      <workItem from="1550370143099" duration="18570000" />
+      <workItem from="1550370143099" duration="23184000" />
     </task>
     <task id="LOCAL-00001" summary="springboot">
       <created>1547780273846</created>
@@ -757,7 +770,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="373137000" />
+    <option name="totallyTimeSpent" value="377751000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -770,7 +783,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.4939117" order="8" side_tool="false" content_ui="tabs" />
@@ -781,7 +793,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32534248" sideWeight="0.17275494" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32952815" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3270548" sideWeight="0.4939117" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3270548" sideWeight="0.8310502" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3270548" sideWeight="0.8310502" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.4939117" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26198632" sideWeight="0.82724506" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -845,21 +857,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/springboot/demo/entity/Person.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="4" column="5" lean-forward="false" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/generatorConfig.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="13" column="59" lean-forward="false" selection-start-line="13" selection-start-column="59" selection-end-line="13" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/kie/kie-api/7.7.0.Final/kie-api-7.7.0.Final.jar!/org/kie/api/runtime/rule/StatefulRuleSession.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="57">
@@ -966,16 +963,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
           <caret line="9" column="10" lean-forward="false" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/rules/drool7Api.drl">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="15" column="4" lean-forward="false" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
         </state>
       </provider>
     </entry>
@@ -1132,7 +1119,7 @@
         <state relative-caret-position="76">
           <caret line="15" column="8" lean-forward="false" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1142,16 +1129,8 @@
         <state relative-caret-position="95">
           <caret line="8" column="27" lean-forward="false" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3116">
-          <caret line="164" column="21" lean-forward="false" selection-start-line="164" selection-start-column="21" selection-end-line="164" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1245,7 +1224,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/springboot/demo/util/Streams.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
+        <state relative-caret-position="93">
           <caret line="133" column="0" lean-forward="true" selection-start-line="133" selection-start-column="0" selection-end-line="133" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1256,6 +1235,41 @@
             <element signature="e#871#872#0" expanded="true" />
             <element signature="e#945#946#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="152" column="21" lean-forward="true" selection-start-line="152" selection-start-column="21" selection-end-line="152" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/springboot/demo/entity/Person.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="5" lean-forward="true" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/rules/drool7Api.drl">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="4" lean-forward="true" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/springboot/demo/SwaggerConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
