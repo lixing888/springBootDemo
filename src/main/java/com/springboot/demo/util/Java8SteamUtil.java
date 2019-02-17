@@ -1,9 +1,8 @@
 package com.springboot.demo.util;
 
-import java.util.Arrays;
-import java.util.IntSummaryStatistics;
-import java.util.List;
-import java.util.Random;
+import com.springboot.demo.vo.Car;
+
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.LongStream;
 
@@ -65,5 +64,6 @@ public class Java8SteamUtil {
     public interface Converter<T1, T2> {
         void convert(int i);
     }
+
 
 }
