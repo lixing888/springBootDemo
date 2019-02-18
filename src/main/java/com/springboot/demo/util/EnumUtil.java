@@ -41,7 +41,7 @@ public class EnumUtil {
 //        return null;
 //    }
     public static void main(String[] args) {
-        StatusEnum statusEnum = EnumUtil.getEnumBycode(StatusEnum.class, "MDBS00000001");
+        StatusEnum statusEnum = EnumUtil.getEnumBycode(StatusEnum.class, "MDBS00000002");
         System.out.print(statusEnum.getName()+"  阀值："+statusEnum.getMaxNbr());
 
         //StatusEnum statusEnum1 = EnumUtil.getEnumByName(StatusEnum.class, "END");
