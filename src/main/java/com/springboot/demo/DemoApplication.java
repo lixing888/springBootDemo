@@ -19,7 +19,7 @@ import java.util.Arrays;
  */
 @RestController
 @SpringBootApplication
-@MapperScan(basePackages = "com.springbooe.demo")
+@MapperScan(basePackages = "com.springboot.demo")//扫描范围
 @Api(tags = "swagger2")
 @EnableCaching
 public class DemoApplication {
