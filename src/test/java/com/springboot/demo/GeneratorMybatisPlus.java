@@ -30,7 +30,7 @@ public class GeneratorMybatisPlus {
                 .setPassword("beiXINzhiKE")
                 .setDriverName("com.mysql.jdbc.Driver");
 
-        generateByTables("",serviceNameStartWithI,dataSourceConfig, packageName, "jc_user\\w+");
+        generateByTables("",serviceNameStartWithI,dataSourceConfig, packageName, "jc_use\\w+");
     }
 
     @Ignore
