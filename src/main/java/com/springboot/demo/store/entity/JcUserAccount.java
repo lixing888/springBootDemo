@@ -12,7 +12,7 @@ import lombok.experimental.Accessors;
  * 用户稿费收费配置
  * </p>
  *
- * @author zhaojingbo
+ * @author lixing
  * @since 2019-02-19
  */
 @Data

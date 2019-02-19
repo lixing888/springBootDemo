@@ -10,7 +10,7 @@ import lombok.experimental.Accessors;
  * 用户收藏关联表
  * </p>
  *
- * @author zhaojingbo
+ * @author lixing
  * @since 2019-02-19
  */
 @Data

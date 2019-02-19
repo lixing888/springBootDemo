@@ -8,7 +8,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * 用户稿费收费配置 服务类
  * </p>
  *
- * @author zhaojingbo
+ * @author lixing
  * @since 2019-02-19
  */
 public interface JcUserAccountManager extends IService<JcUserAccount> {

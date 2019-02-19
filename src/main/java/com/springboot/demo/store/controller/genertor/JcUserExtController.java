@@ -10,7 +10,7 @@ import org.springframework.stereotype.Controller;
  * CMS用户扩展信息表 前端控制器
  * </p>
  *
- * @author zhaojingbo
+ * @author lixing
  * @since 2019-02-19
  */
 @Controller

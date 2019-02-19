@@ -10,7 +10,7 @@ import org.springframework.stereotype.Controller;
  * 用户稿费收费配置 前端控制器
  * </p>
  *
- * @author zhaojingbo
+ * @author lixing
  * @since 2019-02-19
  */
 @Controller

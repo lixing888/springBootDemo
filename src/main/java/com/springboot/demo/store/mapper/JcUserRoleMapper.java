@@ -8,7 +8,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * CMS用户角色关联表 Mapper 接口
  * </p>
  *
- * @author zhaojingbo
+ * @author lixing
  * @since 2019-02-19
  */
 public interface JcUserRoleMapper extends BaseMapper<JcUserRole> {

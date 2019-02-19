@@ -8,7 +8,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * 用户常用菜单 Mapper 接口
  * </p>
  *
- * @author zhaojingbo
+ * @author lixing
  * @since 2019-02-19
  */
 public interface JcUserMenuMapper extends BaseMapper<JcUserMenu> {

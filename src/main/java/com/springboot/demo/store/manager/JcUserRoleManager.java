@@ -8,7 +8,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * CMS用户角色关联表 服务类
  * </p>
  *
- * @author zhaojingbo
+ * @author lixing
  * @since 2019-02-19
  */
 public interface JcUserRoleManager extends IService<JcUserRole> {

@@ -10,7 +10,7 @@ import lombok.experimental.Accessors;
  * CMS用户角色关联表
  * </p>
  *
- * @author zhaojingbo
+ * @author lixing
  * @since 2019-02-19
  */
 @Data

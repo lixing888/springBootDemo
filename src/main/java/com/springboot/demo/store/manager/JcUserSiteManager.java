@@ -8,7 +8,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * CMS管理员站点表 服务类
  * </p>
  *
- * @author zhaojingbo
+ * @author lixing
  * @since 2019-02-19
  */
 public interface JcUserSiteManager extends IService<JcUserSite> {

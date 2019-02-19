@@ -6,7 +6,7 @@ import com.baomidou.mybatisplus.generator.config.rules.DbColumnType;
 import com.baomidou.mybatisplus.generator.config.rules.IColumnType;
 
 /**
- * @Author zhaojingbo
+ * @Author lixing
  * @Date 2019/1/17 17:03
  */
 public class MySqlTypeConvert implements ITypeConvert {

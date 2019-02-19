@@ -66,7 +66,7 @@ public class GeneratorMybatisPlus {
         GlobalConfig config = new GlobalConfig();
         config.setActiveRecord(false)
                 .setDateType(DateType.ONLY_DATE)
-                .setAuthor("zhaojingbo")
+                .setAuthor("lixing")//注释作者
                 .setOutputDir(System.getProperty("user.dir")+File.separator+"src"+File.separator+"main"+File.separator+"java")
                 .setFileOverride(true)/*.setBaseColumnList(true).setBaseResultMap(true)*/
                 .setOpen(false)

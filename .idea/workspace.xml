@@ -2,10 +2,49 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="00918e2e-9ff0-463c-b8e7-5db57853bab9" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/springboot/demo/GeneratorMybatisPlus.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/springboot/demo/MySqlTypeConvert.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/springboot/demo/store/controller/genertor/JcUserAccountController.java" afterPath="$PROJECT_DIR$/src/main/java/com/springboot/demo/store/controller/genertor/JcUserAccountController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/springboot/demo/store/controller/genertor/JcUserAttrController.java" afterPath="$PROJECT_DIR$/src/main/java/com/springboot/demo/store/controller/genertor/JcUserAttrController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/springboot/demo/store/controller/genertor/JcUserCollectionController.java" afterPath="$PROJECT_DIR$/src/main/java/com/springboot/demo/store/controller/genertor/JcUserCollectionController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/springboot/demo/store/controller/genertor/JcUserExtController.java" afterPath="$PROJECT_DIR$/src/main/java/com/springboot/demo/store/controller/genertor/JcUserExtController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/springboot/demo/store/controller/genertor/JcUserMenuController.java" afterPath="$PROJECT_DIR$/src/main/java/com/springboot/demo/store/controller/genertor/JcUserMenuController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/springboot/demo/store/controller/genertor/JcUserResumeController.java" afterPath="$PROJECT_DIR$/src/main/java/com/springboot/demo/store/controller/genertor/JcUserResumeController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/springboot/demo/store/controller/genertor/JcUserRoleController.java" afterPath="$PROJECT_DIR$/src/main/java/com/springboot/demo/store/controller/genertor/JcUserRoleController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/springboot/demo/store/controller/genertor/JcUserSiteController.java" afterPath="$PROJECT_DIR$/src/main/java/com/springboot/demo/store/controller/genertor/JcUserSiteController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/springboot/demo/store/entity/JcUserAccount.java" afterPath="$PROJECT_DIR$/src/main/java/com/springboot/demo/store/entity/JcUserAccount.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/springboot/demo/store/entity/JcUserAttr.java" afterPath="$PROJECT_DIR$/src/main/java/com/springboot/demo/store/entity/JcUserAttr.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/springboot/demo/store/entity/JcUserCollection.java" afterPath="$PROJECT_DIR$/src/main/java/com/springboot/demo/store/entity/JcUserCollection.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/springboot/demo/store/entity/JcUserExt.java" afterPath="$PROJECT_DIR$/src/main/java/com/springboot/demo/store/entity/JcUserExt.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/springboot/demo/store/entity/JcUserMenu.java" afterPath="$PROJECT_DIR$/src/main/java/com/springboot/demo/store/entity/JcUserMenu.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/springboot/demo/store/entity/JcUserResume.java" afterPath="$PROJECT_DIR$/src/main/java/com/springboot/demo/store/entity/JcUserResume.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/springboot/demo/store/entity/JcUserRole.java" afterPath="$PROJECT_DIR$/src/main/java/com/springboot/demo/store/entity/JcUserRole.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/springboot/demo/store/entity/JcUserSite.java" afterPath="$PROJECT_DIR$/src/main/java/com/springboot/demo/store/entity/JcUserSite.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/springboot/demo/store/manager/JcUserAccountManager.java" afterPath="$PROJECT_DIR$/src/main/java/com/springboot/demo/store/manager/JcUserAccountManager.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/springboot/demo/store/manager/JcUserAttrManager.java" afterPath="$PROJECT_DIR$/src/main/java/com/springboot/demo/store/manager/JcUserAttrManager.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/springboot/demo/store/manager/JcUserCollectionManager.java" afterPath="$PROJECT_DIR$/src/main/java/com/springboot/demo/store/manager/JcUserCollectionManager.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/springboot/demo/store/manager/JcUserExtManager.java" afterPath="$PROJECT_DIR$/src/main/java/com/springboot/demo/store/manager/JcUserExtManager.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/springboot/demo/store/manager/JcUserMenuManager.java" afterPath="$PROJECT_DIR$/src/main/java/com/springboot/demo/store/manager/JcUserMenuManager.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/springboot/demo/store/manager/JcUserResumeManager.java" afterPath="$PROJECT_DIR$/src/main/java/com/springboot/demo/store/manager/JcUserResumeManager.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/springboot/demo/store/manager/JcUserRoleManager.java" afterPath="$PROJECT_DIR$/src/main/java/com/springboot/demo/store/manager/JcUserRoleManager.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/springboot/demo/store/manager/JcUserSiteManager.java" afterPath="$PROJECT_DIR$/src/main/java/com/springboot/demo/store/manager/JcUserSiteManager.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/springboot/demo/store/manager/impl/JcUserAccountManagerImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/springboot/demo/store/manager/impl/JcUserAccountManagerImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/springboot/demo/store/manager/impl/JcUserAttrManagerImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/springboot/demo/store/manager/impl/JcUserAttrManagerImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/springboot/demo/store/manager/impl/JcUserCollectionManagerImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/springboot/demo/store/manager/impl/JcUserCollectionManagerImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/springboot/demo/store/manager/impl/JcUserExtManagerImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/springboot/demo/store/manager/impl/JcUserExtManagerImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/springboot/demo/store/manager/impl/JcUserMenuManagerImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/springboot/demo/store/manager/impl/JcUserMenuManagerImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/springboot/demo/store/manager/impl/JcUserResumeManagerImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/springboot/demo/store/manager/impl/JcUserResumeManagerImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/springboot/demo/store/manager/impl/JcUserRoleManagerImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/springboot/demo/store/manager/impl/JcUserRoleManagerImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/springboot/demo/store/manager/impl/JcUserSiteManagerImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/springboot/demo/store/manager/impl/JcUserSiteManagerImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/springboot/demo/store/mapper/JcUserAccountMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/springboot/demo/store/mapper/JcUserAccountMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/springboot/demo/store/mapper/JcUserAttrMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/springboot/demo/store/mapper/JcUserAttrMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/springboot/demo/store/mapper/JcUserCollectionMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/springboot/demo/store/mapper/JcUserCollectionMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/springboot/demo/store/mapper/JcUserExtMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/springboot/demo/store/mapper/JcUserExtMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/springboot/demo/store/mapper/JcUserMenuMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/springboot/demo/store/mapper/JcUserMenuMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/springboot/demo/store/mapper/JcUserResumeMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/springboot/demo/store/mapper/JcUserResumeMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/springboot/demo/store/mapper/JcUserRoleMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/springboot/demo/store/mapper/JcUserRoleMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/springboot/demo/store/mapper/JcUserSiteMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/springboot/demo/store/mapper/JcUserSiteMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/springboot/demo/GeneratorMybatisPlus.java" afterPath="$PROJECT_DIR$/src/test/java/com/springboot/demo/GeneratorMybatisPlus.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/springboot/demo/MySqlTypeConvert.java" afterPath="$PROJECT_DIR$/src/test/java/com/springboot/demo/MySqlTypeConvert.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -31,61 +70,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="SteamUtil.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/springboot/demo/util/SteamUtil.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="54" column="1" lean-forward="false" selection-start-line="54" selection-start-column="1" selection-end-line="54" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StreamsDate.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/springboot/demo/util/StreamsDate.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="140" column="0" lean-forward="false" selection-start-line="140" selection-start-column="0" selection-end-line="140" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="application-pre.properties" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/application-pre.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="7" lean-forward="false" selection-start-line="0" selection-start-column="7" selection-end-line="0" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="application.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="218">
-              <caret line="97" column="28" lean-forward="true" selection-start-line="97" selection-start-column="28" selection-end-line="97" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DemoApplicationTests.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/springboot/demo/DemoApplicationTests.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+              <caret line="97" column="28" lean-forward="false" selection-start-line="97" selection-start-column="28" selection-end-line="97" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -94,13 +83,73 @@
       <file leaf-file-name="GeneratorMybatisPlus.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/springboot/demo/GeneratorMybatisPlus.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="26" column="30" lean-forward="true" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="30" />
+            <state relative-caret-position="131">
+              <caret line="55" column="0" lean-forward="true" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#4207#4208#0" expanded="true" />
-                <element signature="e#4273#4274#0" expanded="true" />
+                <element signature="e#4209#4210#0" expanded="true" />
+                <element signature="e#4275#4276#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JcUserAccount.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/springboot/demo/store/entity/JcUserAccount.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="171">
+              <caret line="14" column="15" lean-forward="true" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="15" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JcUserAccountMapper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/springboot/demo/store/mapper/JcUserAccountMapper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="155">
+              <caret line="11" column="20" lean-forward="true" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JcUserAccountManager.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/springboot/demo/store/manager/JcUserAccountManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="171">
+              <caret line="10" column="17" lean-forward="false" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JcUserAccountController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/springboot/demo/store/controller/genertor/JcUserAccountController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="112">
+              <caret line="12" column="11" lean-forward="false" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JcUserAttrController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/springboot/demo/store/controller/genertor/JcUserAttrController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="121">
+              <caret line="12" column="11" lean-forward="false" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JcUserCollectionController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/springboot/demo/store/controller/genertor/JcUserCollectionController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="266">
+              <caret line="16" column="36" lean-forward="true" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -109,7 +158,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/springboot/demo/service/serviceImpl/UserserviceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="209">
-              <caret line="25" column="33" lean-forward="true" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
+              <caret line="25" column="33" lean-forward="false" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -119,20 +168,10 @@
         <entry file="file://$PROJECT_DIR$/src/test/java/com/springboot/demo/MySqlTypeConvert.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="107">
-              <caret line="58" column="36" lean-forward="true" selection-start-line="58" selection-start-column="36" selection-end-line="58" selection-end-column="36" />
+              <caret line="58" column="36" lean-forward="false" selection-start-line="58" selection-start-column="36" selection-end-line="58" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WidgetJDK8.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/springboot/demo/util/WidgetJDK8.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-106">
-              <caret line="42" column="41" lean-forward="false" selection-start-line="42" selection-start-column="41" selection-end-line="42" selection-end-column="41" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -150,7 +189,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>sw</find>
       <find>myba</find>
       <find>redis</find>
       <find>log</find>
@@ -180,9 +218,11 @@
       <find>RedissonAutoConfiguration</find>
       <find>redisson</find>
       <find>baomidou</find>
+      <find>zhaojingbo</find>
     </findStrings>
     <replaceStrings>
       <replace />
+      <replace>lixing</replace>
     </replaceStrings>
     <dirStrings>
       <dir>G:\springBootDemo\src\main\resources</dir>
@@ -204,9 +244,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/springboot/demo/entity/ReadYml.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/springboot/demo/dao/UsersDao.java" />
-        <option value="$PROJECT_DIR$/generatorConfig.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/META-INF/kmodule.xml.fxml" />
         <option value="$PROJECT_DIR$/src/main/resources/com/rule/drool7Api.drl.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/com/springboot/demo/entity/Person.java" />
@@ -254,6 +291,9 @@
         <option value="$PROJECT_DIR$/src/test/java/GeneratorMybatisPlus.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/test/java/com/springboot/demo/MySqlTypeConvert.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/springboot/demo/store/controller/genertor/JcUserAccountController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/springboot/demo/store/controller/genertor/JcUserAttrController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/springboot/demo/store/controller/genertor/JcUserCollectionController.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/springboot/demo/GeneratorMybatisPlus.java" />
       </list>
     </option>
@@ -686,7 +726,7 @@
       <workItem from="1550290622089" duration="3820000" />
       <workItem from="1550370143099" duration="27890000" />
       <workItem from="1550455346581" duration="20707000" />
-      <workItem from="1550541875647" duration="14932000" />
+      <workItem from="1550541875647" duration="17510000" />
     </task>
     <task id="LOCAL-00001" summary="springboot">
       <created>1547780273846</created>
@@ -741,9 +781,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="DemoApplicationTests_testDrool7Api - 2019.01.30 at 15h 32m 45s.xml">
-      <configuration name="DemoApplicationTests.testDrool7Api" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="DemoApplicationTests_testDrool7Api - 2019.01.30 at 15h 37m 35s.xml">
       <configuration name="DemoApplicationTests.testDrool7Api" configurationId="JUnit" />
     </history-entry>
@@ -771,9 +808,12 @@
     <history-entry file="GeneratorMybatisPlus_generateActivityCode - 2019.02.19 at 19h 10m 33s.xml">
       <configuration name="GeneratorMybatisPlus.generateActivityCode" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="GeneratorMybatisPlus_generateActivityCode - 2019.02.19 at 19h 13m 07s.xml">
+      <configuration name="GeneratorMybatisPlus.generateActivityCode" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="418096000" />
+    <option name="totallyTimeSpent" value="420674000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -797,7 +837,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28767124" sideWeight="0.17656012" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32952815" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3270548" sideWeight="0.4939117" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28767124" sideWeight="0.8234399" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28767124" sideWeight="0.8234399" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.4939117" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23630136" sideWeight="0.82724506" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -805,7 +845,7 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32039574" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24961948" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -861,51 +901,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/springboot/demo/vo/UserRequest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/springboot/demo/vo/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/springboot/demo/util/CommonEnum" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/springboot/demo/util/ListSum.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="21" column="9" lean-forward="false" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/alibaba/fastjson/1.2.47/fastjson-1.2.47.jar!/com/alibaba/fastjson/JSON.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="48" column="22" lean-forward="false" selection-start-line="48" selection-start-column="22" selection-end-line="48" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/springboot/demo/mapper/UserMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="31" column="41" lean-forward="false" selection-start-line="31" selection-start-column="41" selection-end-line="31" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/springboot/demo/vo/Transaction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" column="27" lean-forward="true" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/springboot/demo/controller/UsersController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="206">
@@ -1108,7 +1103,7 @@
         <state relative-caret-position="359">
           <caret line="30" column="5" lean-forward="false" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
           <folding>
-            <element signature="e#288#294#0" expanded="true" />
+            <element signature="e#288#294#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1220,7 +1215,7 @@
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="218">
-          <caret line="97" column="28" lean-forward="true" selection-start-line="97" selection-start-column="28" selection-end-line="97" selection-end-column="28" />
+          <caret line="97" column="28" lean-forward="false" selection-start-line="97" selection-start-column="28" selection-end-line="97" selection-end-column="28" />
           <folding />
         </state>
       </provider>
@@ -1228,7 +1223,7 @@
     <entry file="file://$PROJECT_DIR$/src/test/java/com/springboot/demo/MySqlTypeConvert.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="107">
-          <caret line="58" column="36" lean-forward="true" selection-start-line="58" selection-start-column="36" selection-end-line="58" selection-end-column="36" />
+          <caret line="58" column="36" lean-forward="false" selection-start-line="58" selection-start-column="36" selection-end-line="58" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1238,19 +1233,75 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/springboot/demo/service/serviceImpl/UserserviceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
-          <caret line="25" column="33" lean-forward="true" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
+          <caret line="25" column="33" lean-forward="false" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/baomidou/mybatis-plus-extension/3.0.6/mybatis-plus-extension-3.0.6.jar!/com/baomidou/mybatisplus/extension/service/IService.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="25" column="61" lean-forward="false" selection-start-line="25" selection-start-column="61" selection-end-line="25" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/springboot/demo/store/manager/JcUserAccountManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="10" column="17" lean-forward="false" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/springboot/demo/store/controller/genertor/JcUserAccountController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="12" column="11" lean-forward="false" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/springboot/demo/store/controller/genertor/JcUserAttrController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="121">
+          <caret line="12" column="11" lean-forward="false" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/springboot/demo/store/controller/genertor/JcUserCollectionController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="16" column="36" lean-forward="true" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/springboot/demo/store/entity/JcUserAccount.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="14" column="15" lean-forward="true" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/springboot/demo/store/mapper/JcUserAccountMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="155">
+          <caret line="11" column="20" lean-forward="true" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/springboot/demo/GeneratorMybatisPlus.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="26" column="30" lean-forward="true" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="30" />
+        <state relative-caret-position="131">
+          <caret line="55" column="0" lean-forward="true" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#4207#4208#0" expanded="true" />
-            <element signature="e#4273#4274#0" expanded="true" />
+            <element signature="e#4209#4210#0" expanded="true" />
+            <element signature="e#4275#4276#0" expanded="true" />
           </folding>
         </state>
       </provider>

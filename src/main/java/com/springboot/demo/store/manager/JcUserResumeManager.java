@@ -8,7 +8,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * 用户简历 服务类
  * </p>
  *
- * @author zhaojingbo
+ * @author lixing
  * @since 2019-02-19
  */
 public interface JcUserResumeManager extends IService<JcUserResume> {

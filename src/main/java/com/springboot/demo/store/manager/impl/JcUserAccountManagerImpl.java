@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
  * 用户稿费收费配置 服务实现类
  * </p>
  *
- * @author zhaojingbo
+ * @author lixing
  * @since 2019-02-19
  */
 @Service
