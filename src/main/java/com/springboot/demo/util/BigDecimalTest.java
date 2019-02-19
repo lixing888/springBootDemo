@@ -27,7 +27,7 @@ public class BigDecimalTest {
                 .map(User::getMoney)
                 // 使用reduce聚合函数,实现累加器
                 .reduce(BigDecimal.ZERO,BigDecimal::add);
-        System.out.println("result2 = "+result2);
+        System.out.println("使用reduce聚合函数,实现累加器 = "+result2);
     }
 
 }

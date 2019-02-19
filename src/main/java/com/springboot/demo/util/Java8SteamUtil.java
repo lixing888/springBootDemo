@@ -58,6 +58,13 @@ public class Java8SteamUtil {
         System.out.println(reduce);
 
 
+        //Lambda 表达式 只需要给静态方法 Collections.sort 传入一个List对象以及一个比较器来按指定顺序排列。通常做法都是创建一个匿名的比较器对象然后将其传递给sort方法。
+        List<String> names = Arrays.asList("peter", "anna", "mike", "xenia");
+        Collections.sort(names, (String a, String b) -> b.compareTo(a));
+        //
+
+
+
     }
 
 

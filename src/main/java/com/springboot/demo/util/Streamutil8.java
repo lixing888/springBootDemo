@@ -60,6 +60,10 @@ public class Streamutil8 {
         //合并
         Stream.concat(integerList.stream(),list.stream())
                 .forEach(s-> System.out.println(s));
+        //parallelStream具有平行处理能力，处理的过程会分而治之，也就是将一个大任务切分成多个小任务，这表示每个任务都是一个操作，因此像以下的程式片段：
+        List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9);
+        numbers.parallelStream().sorted()
+                .forEach(System.out::println);
 
 
     }

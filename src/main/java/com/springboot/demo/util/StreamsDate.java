@@ -12,7 +12,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class Streams{
+public class StreamsDate {
     private enum Status {
         OPEN, CLOSED
     };
@@ -105,7 +105,7 @@ public class Streams{
         System.out.println( date );
         System.out.println( dateFromClock );
 
-// Get the local date and local time
+        // Get the local date and local time
         final LocalTime time = LocalTime.now();
         final LocalTime timeFromClock = LocalTime.now( clock );
 
