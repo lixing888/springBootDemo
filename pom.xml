@@ -84,16 +84,18 @@
 			<artifactId>druid</artifactId>
 			<version>1.1.0</version>
 		</dependency>
+
+		<dependency>
+			<groupId>com.baomidou</groupId>
+			<artifactId>mybatis-plus-boot-starter</artifactId>
+			<version>3.0.6</version>
+		</dependency>
+
 		<!--<dependency>-->
 		<!--<groupId>com.baomidou</groupId>-->
-		<!--<artifactId>mybatis-plus-boot-starter</artifactId>-->
-		<!--<version>3.0-gamma</version>-->
-		<!--</dependency>-->
-		<dependency>
-		<groupId>com.baomidou</groupId>
-			<artifactId>mybatis-plus</artifactId>
-			<version>3.0.7.1</version>
-	    </dependency>
+			<!--<artifactId>mybatis-plus</artifactId>-->
+			<!--<version>3.0.7.1</version>-->
+	    <!--</dependency>-->
 
 		<!-- velocity 模板引擎, 默认 -->
 		<dependency>
