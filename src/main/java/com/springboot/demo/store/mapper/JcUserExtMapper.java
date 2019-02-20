@@ -9,7 +9,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * </p>
  *
  * @author lixing
- * @since 2019-02-19
+ * @since 2019-02-20
  */
 public interface JcUserExtMapper extends BaseMapper<JcUserExt> {
 

@@ -8,6 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -19,6 +20,7 @@ import java.util.Arrays;
  */
 @RestController
 @SpringBootApplication
+//@ComponentScan("com.springboot.demo")
 @MapperScan(basePackages = "com.springboot.demo")//扫描范围
 @Api(tags = "swagger2")
 @EnableCaching

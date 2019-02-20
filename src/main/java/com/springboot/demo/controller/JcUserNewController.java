@@ -42,5 +42,13 @@ public class JcUserNewController {
         return  jcUserManager.list();
     }
 
+
+    @PostMapping("/delById")
+    @ApiOperation(value ="根据ID删除用户",notes = "根据ID删除用户")
+    public Boolean delById(@RequestParam("user_id") String userId){
+
+        return  jcUserManager.removeById(userId);
+
+    }
 }
 

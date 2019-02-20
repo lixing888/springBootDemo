@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
  * </p>
  *
  * @author lixing
- * @since 2019-02-19
+ * @since 2019-02-20
  */
 @Service
 public class JcUserExtManagerImpl extends ServiceImpl<JcUserExtMapper, JcUserExt> implements JcUserExtManager {

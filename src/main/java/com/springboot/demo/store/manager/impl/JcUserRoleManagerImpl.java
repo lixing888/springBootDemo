@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
  * </p>
  *
  * @author lixing
- * @since 2019-02-19
+ * @since 2019-02-20
  */
 @Service
 public class JcUserRoleManagerImpl extends ServiceImpl<JcUserRoleMapper, JcUserRole> implements JcUserRoleManager {
