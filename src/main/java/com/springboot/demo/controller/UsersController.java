@@ -20,7 +20,7 @@ import java.util.Map;
 public class UsersController {
 
     @Autowired
-    private UsersService usersService;
+    UsersService usersService;
     @Value("${url}")
     private String url;
 

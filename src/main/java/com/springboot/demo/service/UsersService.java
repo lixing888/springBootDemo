@@ -3,10 +3,12 @@ package com.springboot.demo.service;
 import com.springboot.demo.entity.Users;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 @Service
+@Transactional
 public interface UsersService {
     /**
      * 查询用户service
