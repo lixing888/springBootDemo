@@ -59,7 +59,8 @@ public class StringUtils {
         Matcher matcher = pattern.matcher(line);
         while (matcher.find()) {
             String word = matcher.group();
-            sb.append(word.toUpperCase());
+            //sb.append(word.toUpperCase());//大写
+            sb.append(word.toLowerCase());//小写
             sb.append(matcher.end() == line.length() ? "" : "_");
         }
         return sb.toString();

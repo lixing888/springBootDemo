@@ -1,6 +1,8 @@
 package com.springboot.demo.entity;
 
+import com.fasterxml.jackson.databind.*;
 import com.baomidou.mybatisplus.annotation.TableLogic;
+import com.fasterxml.jackson.databind.annotation.JsonNaming;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -14,6 +16,7 @@ import java.util.List;
 @Setter
 @Getter
 @ApiModel(value = "User", description = "用户对象")
+@JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)//驼峰转换
 public class Users implements Serializable{
 
     @ApiModelProperty(value = "id",notes = "必须是int类型",example = "1")
@@ -23,7 +26,7 @@ public class Users implements Serializable{
     @ApiModelProperty(value = "邮箱",example = "85210279@qq.com")
     private String email;
     @ApiModelProperty(value = "等级",example = "12")
-    private String groupid;
+    private String groupId;
     @ApiModelProperty(value = "等级",example = "12")
     private String rank;
     @TableLogic
