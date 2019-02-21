@@ -47,7 +47,6 @@ public class jsonStrToJava {
         System.out.println("stu:"+stu);
         System.out.println("stu2:"+stu2);
 
-
         //map--》》json字符串
         Student stu1=new Student();
         stu1.setName("JSON");

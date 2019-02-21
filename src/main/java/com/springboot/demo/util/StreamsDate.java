@@ -137,6 +137,8 @@ public class StreamsDate {
         System.out.println( zonedDatetime );
         System.out.println( zonedDatetimeFromClock );
         System.out.println( zonedDatetimeFromZone );
+        System.out.println("纳秒:"+System.nanoTime()+"==毫秒："+System.currentTimeMillis());
+
 
 
         //最后看下Duration类，它持有的时间精确到秒和纳秒。这使得我们可以很容易得计算两个日期之间的不同，例子代码如下
