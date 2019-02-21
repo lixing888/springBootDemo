@@ -25,7 +25,7 @@ public class Users implements Serializable{
     private String name;
     @ApiModelProperty(value = "邮箱",example = "85210279@qq.com")
     private String email;
-    @ApiModelProperty(value = "等级",example = "12")
+    @ApiModelProperty(value = "班组",example = "12")
     private String groupId;
     @ApiModelProperty(value = "等级",example = "12")
     private String rank;
