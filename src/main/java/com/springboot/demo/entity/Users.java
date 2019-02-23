@@ -27,7 +27,7 @@ public class Users implements Serializable{
     private String email;
     @ApiModelProperty(value = "班组",example = "12")
     private String groupId;
-    @ApiModelProperty(value = "等级",example = "12")
+    @ApiModelProperty(value = "等级",example = "1")
     private String rank;
     @TableLogic
     private String delete;//逻辑删除
