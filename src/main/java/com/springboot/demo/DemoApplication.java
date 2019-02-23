@@ -22,7 +22,7 @@ import java.util.Arrays;
 @SpringBootApplication
 //@ComponentScan("com.springboot.demo")
 @MapperScan(basePackages = "com.springboot.demo")//扫描范围
-@Api(tags = "swagger2")
+@Api(tags = "swagger2") //http://127.0.0.1:8080/swagger-ui.html
 @EnableCaching
 public class DemoApplication {
 
@@ -52,4 +52,3 @@ public class DemoApplication {
 		};
 	}
 }
-
