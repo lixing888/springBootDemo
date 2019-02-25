@@ -47,6 +47,7 @@ public class camelToUnderline {
         }
         return sb.toString();
     }
+    //下划线转驼峰(二)
     public static String underlineToCamel2(String param){
         if (param==null||"".equals(param.trim())){
             return "";
