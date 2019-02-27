@@ -2,7 +2,11 @@
 
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
 <mapper namespace="com.springboot.demo.dao.UsersDao"> <!--注意上面的namespace一定要修改--> <!-- 通用查询映射结果 -->
+    <!-- 开启二级缓存这个必须开启，全部使用默认的配置--><!-- 缓存10分钟 -->
+    <cache eviction="FIFO"  flushInterval="60000"  size="512" readOnly="true" />
+
     <resultMap id="BaseResultMap" type="com.springboot.demo.entity.Users">
         <id column="user_id" property="id"/>
         <result column="username" property="name"/>
@@ -11,13 +15,14 @@
             <id property="nbr" column="nbr"></id>
             <result property="nbr" column="price"></result>
         </collection>
-
+        <!--<association property=""></association>-->
     </resultMap>
+
     <!--以下是新增的方法-->
     <select id="selectMethod" resultType="com.springboot.demo.entity.Users">
           select * from jc_user
     </select>
-    <select id="oneUser" parameterType="java.lang.Integer" resultType="com.springboot.demo.entity.Users">
+    <select id="oneUser" flushCache="false" useCache="true" parameterType="java.lang.Integer" resultType="com.springboot.demo.entity.Users">
       select user_id as id,username as name,email as email from jc_user WHERE user_id = #{id}
     </select>
 </mapper>

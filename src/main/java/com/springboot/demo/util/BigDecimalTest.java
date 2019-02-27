@@ -11,7 +11,7 @@ public class BigDecimalTest {
     public static void main(String[] args) {
         // 准备数据
         List<User> userList = new ArrayList<User>();
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 20; i++) {
             User user = new User(i,new BigDecimal(i+"."+i));
             userList.add(user);
         }

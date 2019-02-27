@@ -1,5 +1,6 @@
 package com.springboot.demo;
 
+import cn.hutool.crypto.SecureUtil;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -51,6 +52,7 @@ public class TestFastJson {
         {"name":"张三","age":12}*/
         for (Object obj : jarr) {
             System.out.println(obj.toString());
+            System.out.println("md5加密："+SecureUtil.md5(obj.toString()));
         }
 
     }
