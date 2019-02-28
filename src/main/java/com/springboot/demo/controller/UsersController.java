@@ -25,7 +25,7 @@ public class UsersController {
     private String url;
 
     @RequestMapping(value = "users/list", method = RequestMethod.GET)
-    public String UserInfo() {
+    public String userInfo() {
 
         List<Users> result = usersService.findAll();
         return result.toString();
@@ -36,7 +36,6 @@ public class UsersController {
     @ApiOperation(value = "根据ID查询")
     public List<Users> getUserById(@RequestParam("user_id") int id) {
 
-        //return userMapper.oneUser(id);
         return usersService.oneUser(id);
 
     }
