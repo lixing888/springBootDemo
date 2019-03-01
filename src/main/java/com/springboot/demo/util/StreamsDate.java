@@ -126,6 +126,9 @@ public class StreamsDate {
         // Get the local date and local time
         final LocalTime time = LocalTime.now();
         final LocalTime timeFromClock = LocalTime.now( clock );
+        //文件转byte[]
+        System.out.println(ByteFileUtils.getBytes("文件转byte[] :"+"G:\\filePath\\test.txt"));
+
 
         System.out.println( time );
         System.out.println( timeFromClock );
@@ -246,6 +249,7 @@ public class StreamsDate {
         log.info(lineCaptcha.getCode());
         //验证图形验证码的有效性，返回boolean值
         lineCaptcha.verify("1234");
+
 
     }
 
