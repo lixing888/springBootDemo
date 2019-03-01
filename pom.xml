@@ -193,6 +193,13 @@
 			<artifactId>drools-templates</artifactId>
 			<version>${drools.version}</version>
 		</dependency>
+
+		<dependency>
+		    <groupId>org.kie</groupId>
+		    <artifactId>kie-spring</artifactId>
+		    <version>${drools.version}</version>
+		</dependency>
+
         <dependency>
             <groupId>com.vaadin.external.google</groupId>
             <artifactId>android-json</artifactId>

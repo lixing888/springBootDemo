@@ -9,9 +9,11 @@ import net.sf.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * @author lixing
+ */
 public class jsonStrToJava {
     public static void main(String[] args) {
-
 
         Student student=new Student();
         student.setName("JSON");

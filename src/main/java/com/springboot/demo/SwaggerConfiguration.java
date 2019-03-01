@@ -8,6 +8,9 @@ import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
+/**
+ * @author lixing
+ */
 @Configuration
 @EnableSwagger2
 public class SwaggerConfiguration {
@@ -17,8 +20,10 @@ public class SwaggerConfiguration {
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-                .apis(RequestHandlerSelectors.any())//api接口包扫描路径
-                .paths(PathSelectors.any())//可以根据url路径设置哪些请求加入文档，忽略哪些请求
+                //api接口包扫描路径
+                .apis(RequestHandlerSelectors.any())
+                //可以根据url路径设置哪些请求加入文档，忽略哪些请求
+                .paths(PathSelectors.any())
                 .build();
     }
 
