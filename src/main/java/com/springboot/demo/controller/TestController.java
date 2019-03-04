@@ -25,7 +25,6 @@ public class TestController {
     @ResponseBody
     @RequestMapping("/address")
     public void test(){
-
         KieServices ks = KieServices.Factory.get();
         KieContainer kc = ks.getKieClasspathContainer();
         // kmodule.xml配置中ksession元素的name属性
