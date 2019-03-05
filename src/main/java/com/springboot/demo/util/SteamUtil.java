@@ -8,6 +8,9 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * @author lixng
+ */
 public class SteamUtil {
 
     public static void main(String[] args) {
@@ -39,8 +42,8 @@ public class SteamUtil {
         for (Transaction t : groceryTransactions) {
             transactionIds.add(t.getId());
         }
-
-        System.out.println(transactionIds);//[6, 5, 3, 1]
+        //[6, 5, 3, 1]
+        System.out.println(transactionIds);
 
 
         //============Java 8的排序，取值实现=================
@@ -50,6 +53,7 @@ public class SteamUtil {
                         .sorted(Comparator.comparing(Transaction::getValue).reversed())
                         .map(Transaction::getId)
                         .collect(Collectors.toList());
-        System.out.println(transactionsIds);//[6, 5, 3, 1]
+        //[6, 5, 3, 1]
+        System.out.println(transactionsIds);
     }
 }

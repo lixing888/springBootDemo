@@ -30,7 +30,7 @@ public class Users implements Serializable{
     @ApiModelProperty(value = "等级",example = "1")
     private String rank;
     @TableLogic
-    private String delete;//逻辑删除
+    private String delete;
 
     private List<Car> cars;
 

@@ -31,6 +31,7 @@ import java.util.stream.Stream;
 
 @Slf4j
 public class StreamsDate {
+
     private enum Status {
         OPEN, CLOSED
     };
