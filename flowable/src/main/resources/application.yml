@@ -1,0 +1,9 @@
+spring:
+ datasource:
+   url: jdbc:mysql://139.129.45.208:3306/flowable-spring-boot?serverTimezone=UTC
+   username: root
+   password: beiXINzhiKE
+   driver-class-name: com.mysql.jdbc.Driver
+flowable:
+#关闭定时任务JOB
+async-executor-activate: false
