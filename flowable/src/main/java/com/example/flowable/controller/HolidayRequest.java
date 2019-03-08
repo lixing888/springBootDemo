@@ -9,12 +9,11 @@ public class HolidayRequest {
 
     public static void main(String[] args) {
         ProcessEngineConfiguration cfg = new StandaloneProcessEngineConfiguration()
-                .setJdbcUrl("jdbc:mysql://139.129.45.208:3306/flowable-spring-boot")
+                .setJdbcUrl("jdbc:mysql://139.129.45.208:3306/flowable-spring-boot?serverTimezone=UTC")
                 .setJdbcUsername("root")
                 .setJdbcPassword("beiXINzhiKE")
-                .setJdbcDriver("com.mysql.jdbc.Driverr")
+                .setJdbcDriver("com.mysql.jdbc.Driver")
                 .setDatabaseSchemaUpdate(ProcessEngineConfiguration.DB_SCHEMA_UPDATE_TRUE);
-
         ProcessEngine processEngine = cfg.buildProcessEngine();
     }
 
