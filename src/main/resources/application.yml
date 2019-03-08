@@ -12,3 +12,6 @@ mybatis-plus:
 
 mybatis:
  mapperLocations: classpath:mapper/*.xml
+
+#logging:
+#  config: classpath:log4j2.xml

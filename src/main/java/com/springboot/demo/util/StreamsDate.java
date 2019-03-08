@@ -75,7 +75,8 @@ public class StreamsDate {
         //但是在Java 8中可以利用steams解决：包括一系列元素的列表，并且支持顺序和并行处理。
         final long totalPointsOfOpenTasks = tasks
                 .stream()
-                .filter( task -> task.getStatus() == Status.OPEN )//过滤
+                //过滤
+                .filter( task -> task.getStatus() == Status.OPEN )
                 .mapToInt( Task::getPoints )
                 .sum();
 
@@ -84,8 +85,10 @@ public class StreamsDate {
         ////steam的另一个价值是创造性地支持并行处理（parallel processing）。对于上述的tasks集合，我们可以用下面的代码计算所有任务的点数之和：
         final double totalPoints = tasks
                 .stream()
-                .parallel()//这里我们使用parallel方法并行处理所有的task，并使用reduce方法计算最终的结果。控制台输出如下：
-                .map( task -> task.getPoints() ) // or map( Task::getPoints )
+                //这里我们使用parallel方法并行处理所有的task，并使用reduce方法计算最终的结果。控制台输出如下：
+                .parallel()
+                // or map( Task::getPoints )
+                .map( task -> task.getPoints() )
                 .reduce( 0, Integer::sum );
         System.out.println("Total points (all tasks):"+totalPoints);
 
@@ -106,7 +109,7 @@ public class StreamsDate {
                 .mapToObj( percentage -> percentage + "%" )      // Stream< String>
                 .collect( Collectors.toList() );                 // List< String >
 
-        System.out.println( result );//
+        System.out.println( result );
         //最后，正如之前所说，Steam API不仅可以作用于Java集合，传统的IO操作（从文件或者网络一行一行得读取数据）可以受益于steam处理，这里有一个小例子：
 //        final Path path = new File( filename ).toPath();
 //        try( Stream< String > lines = Files.lines( path, StandardCharsets.UTF_8 ) ) {
