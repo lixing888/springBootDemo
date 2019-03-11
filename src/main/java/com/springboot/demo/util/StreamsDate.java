@@ -116,6 +116,11 @@ public class StreamsDate {
 //            lines.onClose( () -> System.out.println("Done!") ).forEach( System.out::println );
 //        }
 
+
+        String str="100821李";
+        System.out.println("判断是否是纯数字："+str.matches("[0-9]+"));
+
+
         //JDK8里的时间
         final Clock clock = Clock.systemUTC();
         System.out.println(  Date.from(clock.instant()) );
@@ -253,7 +258,6 @@ public class StreamsDate {
         //log.info(lineCaptcha.getCode());
         //验证图形验证码的有效性，返回boolean值
         lineCaptcha.verify("1234");
-
 
     }
 
