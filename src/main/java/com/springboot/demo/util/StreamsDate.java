@@ -26,6 +26,8 @@ import java.nio.file.Path;
 import java.time.*;
 import java.util.*;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -36,6 +38,7 @@ public class StreamsDate {
         OPEN, CLOSED
     };
 
+    private static final Pattern NUM_PATTERN = Pattern.compile("[0-9]+");
     private static final class Task {
         private final Status status;
         private final Integer points;
@@ -59,7 +62,17 @@ public class StreamsDate {
         }
     }
 
-
+    /**
+     * 利用正则表达式判断字符串是否是数字
+     * @param str
+     * @return
+     **/
+    public static boolean isNumeric(String str){
+        Matcher isNum = NUM_PATTERN.matcher(str);
+        if( !isNum.matches() ){
+            return false;
+        } return true;
+    }
 
     public static void main(String[] args) {
 
@@ -82,7 +95,7 @@ public class StreamsDate {
 
         System.out.println( "流程开启总数:" + totalPointsOfOpenTasks );
 
-        ////steam的另一个价值是创造性地支持并行处理（parallel processing）。对于上述的tasks集合，我们可以用下面的代码计算所有任务的点数之和：
+        //steam的另一个价值是创造性地支持并行处理（parallel processing）。对于上述的tasks集合，我们可以用下面的代码计算所有任务的点数之和：
         final double totalPoints = tasks
                 .stream()
                 //这里我们使用parallel方法并行处理所有的task，并使用reduce方法计算最终的结果。控制台输出如下：
@@ -100,14 +113,22 @@ public class StreamsDate {
 
         //最后一个关于tasks集合的例子问题是：如何计算集合中每个任务的点数在集合中所占的比重，具体处理的代码如下：
         final Collection< String > result = tasks
-                .stream()                                        // Stream< String >
-                .mapToInt( Task::getPoints )                     // IntStream
-                .asLongStream()                                  // LongStream
-                .mapToDouble( points -> points / totalPoints )   // DoubleStream
-                .boxed()                                         // Stream< Double >
-                .mapToLong( weigth -> ( long )( weigth * 100 ) ) // LongStream
-                .mapToObj( percentage -> percentage + "%" )      // Stream< String>
-                .collect( Collectors.toList() );                 // List< String >
+                // Stream< String >
+                .stream()
+                // IntStream
+                .mapToInt( Task::getPoints )
+                // LongStream
+                .asLongStream()
+                // DoubleStream
+                .mapToDouble( points -> points / totalPoints )
+                // Stream< Double >
+                .boxed()
+                // LongStream
+                .mapToLong( weigth -> ( long )( weigth * 100 ) )
+                // Stream< String>
+                .mapToObj( percentage -> percentage + "%" )
+                // List< String >
+                .collect( Collectors.toList() );
 
         System.out.println( result );
         //最后，正如之前所说，Steam API不仅可以作用于Java集合，传统的IO操作（从文件或者网络一行一行得读取数据）可以受益于steam处理，这里有一个小例子：
@@ -116,15 +137,31 @@ public class StreamsDate {
 //            lines.onClose( () -> System.out.println("Done!") ).forEach( System.out::println );
 //        }
 
+        String lists=CollUtil.join(Arrays.asList(11,22,33,44),",");
 
         String str="100821李";
-        System.out.println("判断是否是纯数字："+str.matches("[0-9]+"));
+        System.out.println("判断是否是纯数字："+isNumeric(str));
+
+        //求平方
+        List<Integer> nums = Arrays.asList(1, 2, 3, 4);
+        List<Integer> squareNums = nums.stream().
+                map(n -> n * n).
+                collect(Collectors.toList());
+        System.out.println("平方:"+squareNums);
+//        List<User> lists = new ArrayList<>();
+//        lists.add(new User("张三",22));
+//        lists.add(new User("张三",21));
+//        lists.add(new User("李四",22));
+//        lists.add(new User("张三",21));
+//        List<User> collect = lists.stream().filter(user -> user.getAge() < 22).collect(Collectors.toList());
+//        List<User> collect1 = lists.stream().filter(user -> user.getAge() > 50).collect(Collectors.toList());
 
 
         //JDK8里的时间
         final Clock clock = Clock.systemUTC();
         System.out.println(  Date.from(clock.instant()) );
-        System.out.println( clock.millis() );//毫秒
+        //毫秒
+        System.out.println( clock.millis() );
 
         final LocalDate date = LocalDate.now();
         final LocalDate dateFromClock = LocalDate.now( clock );
