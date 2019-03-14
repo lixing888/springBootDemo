@@ -13,5 +13,10 @@ mybatis-plus:
 mybatis:
  mapperLocations: classpath:mapper/*.xml
 
+
+data:
+  solr:
+    host: http://127.0.0.1:8081/solr
+
 #logging:
 #  config: classpath:log4j2.xml
