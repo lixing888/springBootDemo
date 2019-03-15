@@ -62,6 +62,12 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-redis</artifactId>
 		</dependency>
+
+		<dependency>
+			<groupId>org.gjt.jclasslib</groupId>
+			<artifactId>jclasslib-browser</artifactId>
+			<version>5.3.1</version>
+		</dependency>
 		<!--redis操作，redssion
 		<dependency>
 			<groupId>org.redisson</groupId>
