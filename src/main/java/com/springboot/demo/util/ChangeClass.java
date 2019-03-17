@@ -5,6 +5,11 @@ import org.gjt.jclasslib.io.ClassFileWriter;
 import org.gjt.jclasslib.structures.CPInfo;
 import org.gjt.jclasslib.structures.ClassFile;
 import org.gjt.jclasslib.structures.constants.ConstantUtf8Info;
+
+/**
+ * @author lixing
+ * 修改class文件
+ */
 public class ChangeClass {
     public static void main(String[] args) throws Exception {
         String filePath = "G:\\BjjdUserInfoController.class";
