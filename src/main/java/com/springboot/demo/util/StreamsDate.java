@@ -261,6 +261,8 @@ public class StreamsDate {
 
 
         //请求列表页 爬虫
+        //百度百科999感冒灵连接
+        String url = "http://baike.baidu.com/link?url=c95Y4QJym_d_wFKGmcibRTI_KIyj-X_tOjnlOGJS9qekgO1tmWaWnrn7QyAjqvZX8At7LbI1XIa69IBZWejiCXDVM0jkSBMnVZKKu4jeg-ef4TJkKCXEXWcGJ8DRGTuHxW4qWB3pNNU7Y0KdrbNvGK";
         String listContent = HttpUtil.get("https://www.oschina.net/action/ajax/get_more_news_list?newsType=&p=2");
         //使用正则获取所有标题
         List<String> titles = ReUtil.findAll("<span class=\"text-ellipsis\">(.*?)</span>", listContent, 1);
