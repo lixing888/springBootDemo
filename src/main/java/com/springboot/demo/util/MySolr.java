@@ -19,7 +19,7 @@ public class MySolr {
     //solr url
     public static final String URL = "http://127.0.0.1:8080/solr";
     //solr应用
-    public static final String SERVER = "mysolr";
+    public static final String SERVER = "";
     //待索引、查询字段
     public static String[] docs = {"Solr是一个独立的企业级搜索应用服务器",
             "它对外提供类似于Web-service的API接口",
