@@ -19,7 +19,7 @@
 	<properties>
 		<java.version>1.8</java.version>
 		<fastjson.version>1.2.47</fastjson.version>
-		<drools.version>7.7.0.Final</drools.version>
+		<drools.version>7.18.0.Final</drools.version>
 		<poi.version>4.0.1</poi.version>
 		<spring.data.solr.version>2.1.1.RELEASE</spring.data.solr.version>
 	</properties>
@@ -63,11 +63,11 @@
 			<artifactId>spring-boot-starter-data-redis</artifactId>
 		</dependency>
 
-		<dependency>
-			<groupId>org.gjt.jclasslib</groupId>
-			<artifactId>jclasslib-browser</artifactId>
-			<version>5.3.1</version>
-		</dependency>
+		<!--<dependency>-->
+			<!--<groupId>org.gjt.jclasslib</groupId>-->
+			<!--<artifactId>jclasslib-browser</artifactId>-->
+			<!--<version>5.3.1</version>-->
+		<!--</dependency>-->
 		<!--redis操作，redssion
 		<dependency>
 			<groupId>org.redisson</groupId>
@@ -211,7 +211,11 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
 		</dependency>
-
+		<dependency>
+			<groupId>org.kie</groupId>
+			<artifactId>kie-spring</artifactId>
+			<version>${drools.version}</version>
+		</dependency>
 		<dependency>
 			<groupId>org.drools</groupId>
 			<artifactId>drools-core</artifactId>
@@ -324,6 +328,12 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.kie</groupId>
+				<artifactId>kie-maven-plugin</artifactId>
+				<version>${drools.version}</version>
+				<extensions>true</extensions>
 			</plugin>
 
 		</plugins>

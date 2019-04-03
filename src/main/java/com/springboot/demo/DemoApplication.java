@@ -9,6 +9,7 @@ import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Profile;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -31,6 +32,7 @@ import java.util.Arrays;
 @MapperScan(basePackages = "com.springboot.demo")//扫描范围
 @Api(tags = "swagger2") //http://127.0.0.1:8080/swagger-ui.html
 @EnableCaching
+//@Profile(value = "pre")
 public class DemoApplication {
 
 	public static void main(String[] args) {
