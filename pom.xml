@@ -212,10 +212,21 @@
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>org.kie</groupId>
-			<artifactId>kie-spring</artifactId>
+		<groupId>org.kie</groupId>
+		<artifactId>kie-spring</artifactId>
+		<version>${drools.version}</version>
+	</dependency>
+		<dependency>
+			<groupId>org.drools</groupId>
+			<artifactId>drools-core</artifactId>
 			<version>${drools.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>org.drools</groupId>
+			<artifactId>drools-compiler</artifactId>
+			<version>${drools.version}</version>
+		</dependency>
+		<!-- 决策表依赖-->
 		<dependency>
 			<groupId>org.drools</groupId>
 			<artifactId>drools-core</artifactId>
@@ -239,9 +250,9 @@
 		</dependency>
 
 		<dependency>
-		    <groupId>org.kie</groupId>
-		    <artifactId>kie-spring</artifactId>
-		    <version>${drools.version}</version>
+			<groupId>org.kie</groupId>
+			<artifactId>kie-spring</artifactId>
+			<version>${drools.version}</version>
 		</dependency>
 
         <dependency>

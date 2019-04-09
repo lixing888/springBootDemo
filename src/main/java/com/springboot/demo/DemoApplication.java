@@ -5,6 +5,7 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.freemarker.FreeMarkerAutoConfiguration;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
@@ -18,20 +19,18 @@ import java.util.Arrays;
 /**
  * 我的第一个springboot程序
  * 其中 @RestController 等同于 （@Controller 与 @ResponseBody）
- *
+ * @author lixing
  * 这里主要关注@SpringBootApplication注解，它包括三个注解：
  * @Configuration：表示将该类作用springboot配置文件类。
  * @EnableAutoConfiguration:表示程序启动时，自动加载springboot默认的配置。
  * @ComponentScan:表示程序启动是，自动扫描当前包及子包下所有类。
- *
  */
-@RestController
 @SpringBootApplication
-
 //@ComponentScan("com.springboot.demo")
-@MapperScan(basePackages = "com.springboot.demo")//扫描范围
+@ComponentScan(basePackages={"com.springboot"})
+//@MapperScan(basePackages = "com.springboot")//扫描范围
 @Api(tags = "swagger2") //http://127.0.0.1:8080/swagger-ui.html
-@EnableCaching
+//@EnableCaching
 //@Profile(value = "pre")
 public class DemoApplication {
 

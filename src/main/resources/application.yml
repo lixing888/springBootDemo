@@ -2,9 +2,12 @@ spring:
   datasource:
     name: druidDataSource
     type: com.alibaba.druid.pool.DruidDataSource
-    url: jdbc:mysql://139.129.45.208:3306/hboa?serverTimezone=UTC
+#    url: jdbc:mysql://139.129.45.208:3306/hboa?serverTimezone=UTC
+#    username: root
+#    password: beiXINzhiKE
+    url: jdbc:mysql://127.0.0.1:3306/hboa?serverTimezone=UTC
     username: root
-    password: beiXINzhiKE
+    password:
     driver-class-name: com.mysql.jdbc.Driver
 
 

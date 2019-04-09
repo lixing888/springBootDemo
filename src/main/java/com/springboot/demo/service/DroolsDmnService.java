@@ -6,6 +6,9 @@ import org.kie.dmn.api.core.DMNDecisionResult;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * @author lixing
+ */
 public interface DroolsDmnService {
 
     /**
