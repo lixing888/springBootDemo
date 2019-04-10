@@ -22,6 +22,8 @@
 		<drools.version>7.18.0.Final</drools.version>
 		<poi.version>4.0.1</poi.version>
 		<spring.data.solr.version>2.1.1.RELEASE</spring.data.solr.version>
+		<!--Springboot 打包跳过测试-->
+		<skipTests>true</skipTests>
 	</properties>
 
 	<dependencies>
