@@ -1,5 +1,8 @@
 package com.springboot.demo.service;
 
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Service;
+
 /**
  * 〈一句话功能简述〉<br>
  * 〈权限系统接口〉
@@ -8,6 +11,8 @@ package com.springboot.demo.service;
  * @create 2019/4/1
  * @since 1.0.0
  */
+@Service
+@Slf4j
 public interface AmsService {
 
     /**
@@ -16,4 +21,5 @@ public interface AmsService {
      * @return
      */
     String listDepartmentPath(String departmentId);
+
 }

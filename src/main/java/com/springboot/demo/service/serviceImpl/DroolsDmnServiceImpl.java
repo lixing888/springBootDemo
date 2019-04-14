@@ -7,6 +7,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.springboot.demo.service.AmsService;
 import com.springboot.demo.service.DroolsDmnService;
 import com.springboot.demo.vo.RuleRequest;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.kie.dmn.api.core.*;
 import org.kie.dmn.api.core.ast.InputDataNode;
@@ -17,6 +18,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 @Service
+@Slf4j
 public class DroolsDmnServiceImpl implements DroolsDmnService {
 
     @Autowired

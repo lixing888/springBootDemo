@@ -32,8 +32,6 @@ public class UserserviceImpl implements UsersService{
     @Override
     public void insertUsers(@RequestBody @ApiParam(value = "json格式", required = true) Users users) {
         usersDao.insertUsers(users);
-        log.error("");
-
     }
 
     @Override
