@@ -12,7 +12,6 @@ import org.springframework.stereotype.Service;
  * @since 1.0.0
  */
 @Service
-@Slf4j
 public interface AmsService {
 
     /**

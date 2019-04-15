@@ -1,5 +1,8 @@
 package com.springboot.demo.vo;
 
+import lombok.Data;
+
+@Data
 public class Student {
     //姓名
     private String name;
