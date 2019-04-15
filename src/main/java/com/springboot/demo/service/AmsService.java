@@ -1,6 +1,7 @@
 package com.springboot.demo.service;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 /**
@@ -12,6 +13,7 @@ import org.springframework.stereotype.Service;
  * @since 1.0.0
  */
 @Service
+@Component
 public interface AmsService {
 
     /**
