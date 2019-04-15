@@ -1,5 +1,10 @@
 package com.springboot.demo.entity;
 
+import lombok.Data;
+import org.springframework.stereotype.Component;
+
+@Data
+@Component
 public class TestPerson {
 
     private int age;

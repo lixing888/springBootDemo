@@ -1,11 +1,14 @@
 package com.springboot.demo.util;
 
+import org.springframework.stereotype.Component;
+
 import java.io.*;
 
 /**
  *byte数组和文件的相互转换
  * @author lixing
  */
+@Component
 public class ByteFileUtils {
 
     /**

@@ -6,6 +6,7 @@ import com.springboot.demo.mapper.UserMapper;
 import com.springboot.demo.service.UsersService;
 import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.util.List;
 
 @Service
+@Component
 public class UserserviceImpl implements UsersService{
 
     @Autowired

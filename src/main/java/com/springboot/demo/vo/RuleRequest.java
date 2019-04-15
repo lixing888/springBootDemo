@@ -5,6 +5,7 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.stereotype.Component;
 
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
@@ -20,6 +21,7 @@ import java.util.List;
  */
 @Data
 @ApiModel("根据规则查询员工")
+@Component
 public class RuleRequest {
     @ApiModelProperty("规则编码")
     @NotNull

@@ -2,6 +2,7 @@ package com.springboot.demo.service;
 
 import com.springboot.demo.vo.RuleRequest;
 import org.kie.dmn.api.core.DMNDecisionResult;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -11,6 +12,7 @@ import java.util.Map;
  * @author lixing
  */
 @Service
+@Component
 public interface DroolsDmnService {
 
     /**

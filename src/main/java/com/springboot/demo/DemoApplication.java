@@ -26,8 +26,7 @@ import java.util.Arrays;
  * @ComponentScan:表示程序启动是，自动扫描当前包及子包下所有类。
  */
 @SpringBootApplication
-//@ComponentScan("com.springboot.demo")
-@ComponentScan(basePackages={"com.springboot"})
+@ComponentScan("com.springboot")
 //@MapperScan(basePackages = "com.springboot")//扫描范围
 @Api(tags = "swagger2") //http://127.0.0.1:8080/swagger-ui.html
 //@EnableCaching

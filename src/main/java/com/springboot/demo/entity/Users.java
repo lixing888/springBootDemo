@@ -8,6 +8,7 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.stereotype.Component;
 
 import java.io.Serializable;
 import java.util.List;
@@ -17,6 +18,7 @@ import java.util.List;
 @Getter
 @ApiModel(value = "User", description = "用户对象")
 @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)//驼峰转换
+@Component
 public class Users implements Serializable{
 
     @ApiModelProperty(value = "id",notes = "必须是int类型",example = "1")

@@ -14,7 +14,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @Configuration
 @EnableSwagger2
 public class SwaggerConfiguration {
-    public static final String SWAGGER_SCAN_BASE_PACKAGE = "abc.boot.examples.web";
+    public static final String SWAGGER_SCAN_BASE_PACKAGE = "com.springboot";
     public static final String VERSION = "1.0.0";
     @Bean
     public Docket api() {

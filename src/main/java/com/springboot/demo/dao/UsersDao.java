@@ -2,10 +2,12 @@ package com.springboot.demo.dao;
 
 import com.springboot.demo.entity.Users;
 import org.apache.ibatis.annotations.*;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
 @Mapper
+@Component
 public interface UsersDao {
 
     @Results({
