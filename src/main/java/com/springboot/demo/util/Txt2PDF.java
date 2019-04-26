@@ -55,5 +55,6 @@ public class Txt2PDF {
         String text = path+"/mi.txt";
         String pdf = path+"/mi.txt.pdf";
         Txt2PDF p = Txt2PDF.getInstance();
-        p.text2pdf(text, pdf);}
+        p.text2pdf(text, pdf);
+    }
 }
