@@ -18,8 +18,16 @@ public class Transaction {
         A, B, C, D, GEOCERY
     }
 
-    public int getId() {return id;}
-    public Integer getValue() {return value;}
-    public Type getType() {return type;}
+    public int getId() {
+        return id;
+    }
+
+    public Integer getValue() {
+        return value;
+    }
+
+    public Type getType() {
+        return type;
+    }
 
 }

@@ -37,7 +37,7 @@ public class Java8SteamUtil {
         squaresList.forEach(System.out::println);
 
         IntSummaryStatistics stats = numbers.stream().mapToInt((x) -> x).summaryStatistics();
-        System.out.println("个数："+stats.getCount());
+        System.out.println("个数：" + stats.getCount());
 
         System.out.println("========================");
 
@@ -55,7 +55,7 @@ public class Java8SteamUtil {
         long reduce = LongStream.rangeClosed(0, 100L)
                 .parallel()
                 .reduce(0, Long::sum);//求和
-        System.out.println("stream 的并行流求和:"+reduce);
+        System.out.println("stream 的并行流求和:" + reduce);
 
 
         //Lambda 表达式 只需要给静态方法 Collections.sort 传入一个List对象以及一个比较器来按指定顺序排列。通常做法都是创建一个匿名的比较器对象然后将其传递给sort方法。

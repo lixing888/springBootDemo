@@ -32,7 +32,7 @@ public class RuleRequest {
     @Data
     @NoArgsConstructor
     @AllArgsConstructor
-    public static class RuleData{
+    public static class RuleData {
         @ApiModelProperty("规则编码")
         private Integer area;
         @ApiModelProperty("规则编码")

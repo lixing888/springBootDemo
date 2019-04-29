@@ -1,6 +1,7 @@
 package com.springboot.demo.util;
 
 import java.io.*;
+
 import org.gjt.jclasslib.io.ClassFileWriter;
 import org.gjt.jclasslib.structures.CPInfo;
 import org.gjt.jclasslib.structures.ClassFile;
@@ -26,10 +27,10 @@ public class ChangeClass {
                 System.out.print(infos[i].getVerbose());
                 System.out.print(" = ");
                 System.out.println(infos[i].getTagVerbose());
-                if(i == 40){
-                    ConstantUtf8Info uInfo = (ConstantUtf8Info)infos[i];
+                if (i == 40) {
+                    ConstantUtf8Info uInfo = (ConstantUtf8Info) infos[i];
                     uInfo.setBytes("http://127.0.0.1:8080/solr".getBytes());
-                    infos[i]=uInfo;
+                    infos[i] = uInfo;
                 }
             }
         }

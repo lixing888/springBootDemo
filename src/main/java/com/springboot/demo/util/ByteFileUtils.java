@@ -5,7 +5,8 @@ import org.springframework.stereotype.Component;
 import java.io.*;
 
 /**
- *byte数组和文件的相互转换
+ * byte数组和文件的相互转换
+ *
  * @author lixing
  */
 @Component
@@ -14,7 +15,7 @@ public class ByteFileUtils {
     /**
      * 获得指定文件的byte数组
      **/
-    public static byte[] getBytes(String filePath){
+    public static byte[] getBytes(String filePath) {
         byte[] buffer = null;
         try {
             File file = new File(filePath);
@@ -39,17 +40,17 @@ public class ByteFileUtils {
     /**
      * 根据byte数组，生成文件
      */
-    public static void getFile(byte[] bfile, String filePath,String fileName) {
+    public static void getFile(byte[] bfile, String filePath, String fileName) {
         BufferedOutputStream bos = null;
         FileOutputStream fos = null;
         File file = null;
         try {
             File dir = new File(filePath);
-            if(!dir.exists()&&dir.isDirectory()){
+            if (!dir.exists() && dir.isDirectory()) {
                 //判断文件目录是否存在
                 dir.mkdirs();
             }
-            file = new File(filePath+"\\"+fileName);
+            file = new File(filePath + "\\" + fileName);
             fos = new FileOutputStream(file);
             bos = new BufferedOutputStream(fos);
             bos.write(bfile);

@@ -11,8 +11,8 @@ public enum StatusEnum implements CommonEnum {
 //    STARTED(1, "STARTED", "开始"),
 //    END(2, "END", "结束");
 
-    MDBS00000002("MDBS00000002","用户获取成本",BigDecimal.valueOf(23232.00)),
-    MDBS00000001("MDBS00000001","分成返点",BigDecimal.valueOf(999999999999.00));
+    MDBS00000002("MDBS00000002", "用户获取成本", BigDecimal.valueOf(23232.00)),
+    MDBS00000001("MDBS00000001", "分成返点", BigDecimal.valueOf(999999999999.00));
 
 
     private String code;
@@ -34,6 +34,7 @@ public enum StatusEnum implements CommonEnum {
     public BigDecimal maxNbr() {
         return maxNbr;
     }
+
     public String getCode() {
         return code;
     }

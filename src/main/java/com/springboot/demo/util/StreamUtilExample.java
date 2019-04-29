@@ -14,7 +14,7 @@ import java.util.UUID;
  * Stream是在一个源的基础上创建出来的，例如java.util.Collection中的list或者set（map不能作为Stream的源）。
  * Stream操作往往可以通过顺序或者并行两种方式来执行。
  * </pre>
- *
+ * <p>
  * public interface Stream<T> extends BaseStream<T, Stream<T>> {
  * <p>
  * 可以看到Stream是一个接口,其是1.8引入

@@ -8,18 +8,18 @@ import java.util.concurrent.ThreadLocalRandom;
  */
 public class ParallelArraysJDK8 {
 
-    public static void main( String[] args ) {
-        long[] arrayOfLong = new long [ 2000 ];
+    public static void main(String[] args) {
+        long[] arrayOfLong = new long[2000];
 
-        Arrays.parallelSetAll( arrayOfLong,
-                index -> ThreadLocalRandom.current().nextInt( 1000000 ) );
-        Arrays.stream( arrayOfLong ).limit( 10 ).forEach(
-                i -> System.out.print( i + " " ) );
+        Arrays.parallelSetAll(arrayOfLong,
+                index -> ThreadLocalRandom.current().nextInt(1000000));
+        Arrays.stream(arrayOfLong).limit(10).forEach(
+                i -> System.out.print(i + " "));
         System.out.println();
 
-        Arrays.parallelSort( arrayOfLong );
-        Arrays.stream( arrayOfLong ).limit( 10 ).forEach(
-                i -> System.out.print( i + " " ) );
+        Arrays.parallelSort(arrayOfLong);
+        Arrays.stream(arrayOfLong).limit(10).forEach(
+                i -> System.out.print(i + " "));
         System.out.println();
     }
 

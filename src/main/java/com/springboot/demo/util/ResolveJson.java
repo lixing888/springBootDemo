@@ -11,14 +11,14 @@ public class ResolveJson {
         JSONObject data = jsonObject.getJSONObject("data");
         JSONArray items = jsonObject.getJSONObject("data").getJSONArray("items");
         JSONObject row = null;
-        for(int i=0; i<items.size(); i++){
+        for (int i = 0; i < items.size(); i++) {
             row = items.getJSONObject(i);
             System.out.println("itemstring ：" + row.get("itemstring"));
             JSONObject itemcoord = row.getJSONObject("itemcoord");
             System.out.println("x：" + itemcoord.get("x"));
-              System.out.println("y：" + itemcoord.get("y"));
+            System.out.println("y：" + itemcoord.get("y"));
             System.out.println("width：" + itemcoord.get("width"));
-             System.out.println("height：" + itemcoord.get("height"));
+            System.out.println("height：" + itemcoord.get("height"));
         }
         System.out.println("session_id：" + data.get("session_id"));
         System.out.println("code：" + jsonObject.get("code"));

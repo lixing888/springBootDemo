@@ -19,7 +19,7 @@ import java.util.List;
  * @since <pre>���� 1, 2019</pre>
  */
 
-public class DroolsDmnServiceImplTest  {
+public class DroolsDmnServiceImplTest {
 
     @Autowired
     private static DroolsDmnServiceImpl droolsDmnServiceImpl;
@@ -41,14 +41,13 @@ public class DroolsDmnServiceImplTest  {
     //288980000013704315	三级部门	姚晶	7789632,6755211
     //288980000061468303	三级部门	姚晶	7789632,6755211
     //288980000064975724	三级部门	郭芳芳	7789632,6755211
-
     public static void main(String[] args) {
         RuleRequest request = new RuleRequest();
         request.setRuleCode("AP1Rule");
-        RuleRequest.RuleData request0 = new RuleRequest.RuleData(1,"288980000064975333","");
-        RuleRequest.RuleData request1 = new RuleRequest.RuleData(1,"288980000000098145","");
+        RuleRequest.RuleData request0 = new RuleRequest.RuleData(1, "288980000064975333", "");
+        RuleRequest.RuleData request1 = new RuleRequest.RuleData(1, "288980000000098145", "");
         //RuleRequest.RuleData request2 = new RuleRequest.RuleData(1,"288980000064975724","");
-        request.setRuleData(Arrays.asList(request0,request1));
+        request.setRuleData(Arrays.asList(request0, request1));
         List<String> apRule = droolsDmnServiceImpl.executeApDecision(request);
         for (Object dmnDecisionResult : apRule) {
             System.out.println(dmnDecisionResult);

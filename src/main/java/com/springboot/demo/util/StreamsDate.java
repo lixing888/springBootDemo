@@ -25,14 +25,17 @@ public class StreamsDate {
 
     private enum Status {
         OPEN, CLOSED
-    };
+    }
+
+    ;
 
     private static final Pattern NUM_PATTERN = Pattern.compile("[0-9]+");
+
     private static final class Task {
         private final Status status;
         private final Integer points;
 
-        Task( final Status status, final Integer points ) {
+        Task(final Status status, final Integer points) {
             this.status = status;
             this.points = points;
         }
@@ -47,20 +50,22 @@ public class StreamsDate {
 
         @Override
         public String toString() {
-            return String.format( "[%s, %d]", status, points );
+            return String.format("[%s, %d]", status, points);
         }
     }
 
     /**
      * 利用正则表达式判断字符串是否是数字
+     *
      * @param str
      * @return
      **/
-    public static boolean isNumeric(String str){
+    public static boolean isNumeric(String str) {
         Matcher isNum = NUM_PATTERN.matcher(str);
-        if( !isNum.matches() ){
+        if (!isNum.matches()) {
             return false;
-        } return true;
+        }
+        return true;
     }
 
     private static JSONObject createJSONObject() {
@@ -124,23 +129,23 @@ public class StreamsDate {
         System.out.println("qq=" + object.get("QQ"));
 
         final Collection<Task> tasks = Arrays.asList(
-                new Task(Status.OPEN,6 ),
-                new Task(Status.OPEN,13 ),
-                new Task(Status.CLOSED,18 ),
-                new Task(Status.OPEN,12 ),
-                new Task(Status.CLOSED,16 ),
-                new Task(Status.OPEN,11 )
+                new Task(Status.OPEN, 6),
+                new Task(Status.OPEN, 13),
+                new Task(Status.CLOSED, 18),
+                new Task(Status.OPEN, 12),
+                new Task(Status.CLOSED, 16),
+                new Task(Status.OPEN, 11)
         );
         //首先看一个问题：在这个task集合中一共有多少个OPEN状态的点？在Java 8之前，要解决这个问题，则需要使用foreach循环遍历task集合；
         //但是在Java 8中可以利用steams解决：包括一系列元素的列表，并且支持顺序和并行处理。
         final long totalPointsOfOpenTasks = tasks
                 .stream()
                 //过滤
-                .filter( task -> task.getStatus() == Status.OPEN )
-                .mapToInt( Task::getPoints )
+                .filter(task -> task.getStatus() == Status.OPEN)
+                .mapToInt(Task::getPoints)
                 .sum();
 
-        System.out.println( "流程开启总数:" + totalPointsOfOpenTasks );
+        System.out.println("流程开启总数:" + totalPointsOfOpenTasks);
 
         //steam的另一个价值是创造性地支持并行处理（parallel processing）。对于上述的tasks集合，我们可以用下面的代码计算所有任务的点数之和：
         final double totalPoints = tasks
@@ -148,53 +153,53 @@ public class StreamsDate {
                 //这里我们使用parallel方法并行处理所有的task，并使用reduce方法计算最终的结果。控制台输出如下：
                 .parallel()
                 // or map( Task::getPoints )
-                .map( task -> task.getPoints() )
-                .reduce( 0, Integer::sum );
-        System.out.println("Total points (all tasks):"+totalPoints);
+                .map(task -> task.getPoints())
+                .reduce(0, Integer::sum);
+        System.out.println("Total points (all tasks):" + totalPoints);
 
         //对于一个集合，经常需要根据某些条件对其中的元素分组。利用steam提供的API可以很快完成这类任务，代码如下：
-        final Map< Status, List< Task >> map = tasks
+        final Map<Status, List<Task>> map = tasks
                 .stream()
-                .collect( Collectors.groupingBy( Task::getStatus ) );
-        System.out.println( map );
+                .collect(Collectors.groupingBy(Task::getStatus));
+        System.out.println(map);
 
         //最后一个关于tasks集合的例子问题是：如何计算集合中每个任务的点数在集合中所占的比重，具体处理的代码如下：
-        final Collection< String > result = tasks
+        final Collection<String> result = tasks
                 // Stream< String >
                 .stream()
                 // IntStream
-                .mapToInt( Task::getPoints )
+                .mapToInt(Task::getPoints)
                 // LongStream
                 .asLongStream()
                 // DoubleStream
-                .mapToDouble( points -> points / totalPoints )
+                .mapToDouble(points -> points / totalPoints)
                 // Stream< Double >
                 .boxed()
                 // LongStream
-                .mapToLong( weigth -> ( long )( weigth * 100 ) )
+                .mapToLong(weigth -> (long) (weigth * 100))
                 // Stream< String>
-                .mapToObj( percentage -> percentage + "%" )
+                .mapToObj(percentage -> percentage + "%")
                 // List< String >
-                .collect( Collectors.toList() );
+                .collect(Collectors.toList());
 
-        System.out.println( result );
+        System.out.println(result);
         //最后，正如之前所说，Steam API不仅可以作用于Java集合，传统的IO操作（从文件或者网络一行一行得读取数据）可以受益于steam处理，这里有一个小例子：
 //        final Path path = new File( filename ).toPath();
 //        try( Stream< String > lines = Files.lines( path, StandardCharsets.UTF_8 ) ) {
 //            lines.onClose( () -> System.out.println("Done!") ).forEach( System.out::println );
 //        }
 
-        String lists=CollUtil.join(Arrays.asList(11,22,33,44),",");
+        String lists = CollUtil.join(Arrays.asList(11, 22, 33, 44), ",");
 
-        String str="100821李";
-        System.out.println("判断是否是纯数字："+isNumeric(str));
+        String str = "100821李";
+        System.out.println("判断是否是纯数字：" + isNumeric(str));
 
         //求平方
         List<Integer> nums = Arrays.asList(1, 2, 3, 4);
         List<Integer> squareNums = nums.stream().
                 map(n -> n * n).
                 collect(Collectors.toList());
-        System.out.println("平方:"+squareNums);
+        System.out.println("平方:" + squareNums);
 //        List<User> lists = new ArrayList<>();
 //        lists.add(new User("张三",22));
 //        lists.add(new User("张三",21));
@@ -206,45 +211,44 @@ public class StreamsDate {
 
         //JDK8里的时间
         final Clock clock = Clock.systemUTC();
-        System.out.println(  Date.from(clock.instant()) );
+        System.out.println(Date.from(clock.instant()));
         //毫秒
-        System.out.println( clock.millis() );
+        System.out.println(clock.millis());
 
         final LocalDate date = LocalDate.now();
-        final LocalDate dateFromClock = LocalDate.now( clock );
+        final LocalDate dateFromClock = LocalDate.now(clock);
 
-        System.out.println( date );
-        System.out.println( dateFromClock );
+        System.out.println(date);
+        System.out.println(dateFromClock);
 
         // Get the local date and local time
         final LocalTime time = LocalTime.now();
-        final LocalTime timeFromClock = LocalTime.now( clock );
+        final LocalTime timeFromClock = LocalTime.now(clock);
         //文件转byte[]
-        System.out.println(ByteFileUtils.getBytes("文件转byte[] :"+"G:\\filePath\\test.txt"));
+        System.out.println(ByteFileUtils.getBytes("文件转byte[] :" + "G:\\filePath\\test.txt"));
 
 
-        System.out.println( time );
-        System.out.println( timeFromClock );
+        System.out.println(time);
+        System.out.println(timeFromClock);
         //带时区的
         final ZonedDateTime zonedDatetime = ZonedDateTime.now();
-        final ZonedDateTime zonedDatetimeFromClock = ZonedDateTime.now( clock );
-        final ZonedDateTime zonedDatetimeFromZone = ZonedDateTime.now( ZoneId.of( "America/Los_Angeles" ) );
+        final ZonedDateTime zonedDatetimeFromClock = ZonedDateTime.now(clock);
+        final ZonedDateTime zonedDatetimeFromZone = ZonedDateTime.now(ZoneId.of("America/Los_Angeles"));
 
-        System.out.println( zonedDatetime );
-        System.out.println( zonedDatetimeFromClock );
-        System.out.println( zonedDatetimeFromZone );
-        System.out.println("纳秒:"+System.nanoTime()+"==毫秒："+System.currentTimeMillis());
-
+        System.out.println(zonedDatetime);
+        System.out.println(zonedDatetimeFromClock);
+        System.out.println(zonedDatetimeFromZone);
+        System.out.println("纳秒:" + System.nanoTime() + "==毫秒：" + System.currentTimeMillis());
 
 
         //最后看下Duration类，它持有的时间精确到秒和纳秒。这使得我们可以很容易得计算两个日期之间的不同，例子代码如下
         // Get duration between two dates
-        final LocalDateTime from = LocalDateTime.of( 2014, Month.APRIL, 16, 0, 0, 0 );
-        final LocalDateTime to = LocalDateTime.of( 2015, Month.APRIL, 16, 23, 59, 59 );
+        final LocalDateTime from = LocalDateTime.of(2014, Month.APRIL, 16, 0, 0, 0);
+        final LocalDateTime to = LocalDateTime.of(2015, Month.APRIL, 16, 23, 59, 59);
 
-        final Duration duration = Duration.between( from, to );
-        System.out.println( "Duration in days: " + duration.toDays() );
-        System.out.println( "Duration in hours: " + duration.toHours() );
+        final Duration duration = Duration.between(from, to);
+        System.out.println("Duration in days: " + duration.toDays());
+        System.out.println("Duration in hours: " + duration.toHours());
 
 
         //请求列表页 爬虫
@@ -256,7 +260,7 @@ public class StreamsDate {
         for (String title : titles) {
             //打印标题
             System.out.println(title);
-           // log.info(title);
+            // log.info(title);
         }
 
         //定时器

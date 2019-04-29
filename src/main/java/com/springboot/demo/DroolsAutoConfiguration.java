@@ -22,7 +22,9 @@ import java.io.IOException;
 @Configuration
 public class DroolsAutoConfiguration {
 
-    /** 特别要注意 rule的存放位置  */
+    /**
+     * 特别要注意 rule的存放位置
+     */
     private static final String RULES_PATH = "rules/dmn/";
 
     @Bean

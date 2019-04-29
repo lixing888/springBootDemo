@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
+
 @RestController
 @RequestMapping("solr")
 public class SolrController {
@@ -24,6 +25,7 @@ public class SolrController {
     /**
      * 新增/修改 索引
      * 当 id 存在的时候, 此方法是修改(当然, 我这里用的 uuid, 不会存在的), 如果 id 不存在, 则是新增
+     *
      * @return
      */
     @RequestMapping("add")
@@ -51,13 +53,14 @@ public class SolrController {
 
     /**
      * 根据id删除索引
+     *
      * @param id
      * @return
      */
     @RequestMapping("delete")
-    public String delete(String id)  {
+    public String delete(String id) {
         try {
-            client.deleteById("collection1",id);
+            client.deleteById("collection1", id);
             client.commit("collection1");
 
             return id;
@@ -71,13 +74,14 @@ public class SolrController {
 
     /**
      * 删除所有的索引
+     *
      * @return
      */
     @RequestMapping("deleteAll")
-    public String deleteAll(){
+    public String deleteAll() {
         try {
 
-            client.deleteByQuery("collection1","*:*");
+            client.deleteByQuery("collection1", "*:*");
             client.commit("collection1");
 
             return "success";
@@ -89,6 +93,7 @@ public class SolrController {
 
     /**
      * 根据id查询索引
+     *
      * @return
      * @throws Exception
      */
@@ -101,10 +106,11 @@ public class SolrController {
 
     /**
      * 综合查询: 在综合查询中, 有按条件查询, 条件过滤, 排序, 分页, 高亮显示, 获取部分域信息
+     *
      * @return
      */
     @RequestMapping("search")
-    public Map<String, Map<String, List<String>>> search(){
+    public Map<String, Map<String, List<String>>> search() {
 
         try {
             SolrQuery params = new SolrQuery();

@@ -4,6 +4,7 @@ import lombok.Data;
 import lombok.NonNull;
 
 import java.math.BigDecimal;
+
 @Data
 public class Car {
 

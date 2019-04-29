@@ -15,7 +15,7 @@ import java.util.List;
 
 @Service
 @Component
-public class UserserviceImpl implements UsersService{
+public class UserserviceImpl implements UsersService {
 
     @Autowired
     private UsersDao usersDao;
@@ -23,9 +23,9 @@ public class UserserviceImpl implements UsersService{
     private UserMapper userMapper;
 
     @Override
-    public List<Users> findAll(){
+    public List<Users> findAll() {
 
-       return usersDao.findAll();
+        return usersDao.findAll();
 
     }
 
@@ -35,7 +35,7 @@ public class UserserviceImpl implements UsersService{
     }
 
     @Override
-    public List<Users> oneUser(@RequestParam("user_id")  int id) {
+    public List<Users> oneUser(@RequestParam("user_id") int id) {
         return usersDao.oneUser(id);
     }
 

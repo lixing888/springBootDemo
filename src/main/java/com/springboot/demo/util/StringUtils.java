@@ -4,19 +4,18 @@ import org.springframework.stereotype.Component;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
 @Component
 public class StringUtils {
 
     /**
      * 下划线转驼峰法(默认小驼峰)
      *
-     * @param line
-     *            源字符串
-     * @param smallCamel
-     *            大小驼峰,是否为小驼峰(驼峰，第一个字符是大写还是小写)
+     * @param line       源字符串
+     * @param smallCamel 大小驼峰,是否为小驼峰(驼峰，第一个字符是大写还是小写)
      * @return 转换后的字符串
      */
-    public static String underline2Camel(String line, boolean ... smallCamel) {
+    public static String underline2Camel(String line, boolean... smallCamel) {
         if (line == null || "".equals(line)) {
             return "";
         }
@@ -27,9 +26,9 @@ public class StringUtils {
         while (matcher.find()) {
             String word = matcher.group();
             //当是true 或则是空的情况
-            if((smallCamel.length ==0 || smallCamel[0] ) && matcher.start()==0){
+            if ((smallCamel.length == 0 || smallCamel[0]) && matcher.start() == 0) {
                 sb.append(Character.toLowerCase(word.charAt(0)));
-            }else{
+            } else {
                 sb.append(Character.toUpperCase(word.charAt(0)));
             }
 
@@ -46,8 +45,7 @@ public class StringUtils {
     /**
      * 驼峰法转下划线
      *
-     * @param line
-     *            源字符串
+     * @param line 源字符串
      * @return 转换后的字符串
      */
     public static String camel2Underline(String line) {

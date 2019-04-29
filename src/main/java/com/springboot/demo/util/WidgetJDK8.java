@@ -2,6 +2,7 @@ package com.springboot.demo.util;
 
 
 import net.sf.json.JSONObject;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -12,6 +13,7 @@ public class WidgetJDK8 {
 
     private final Color color;
     private final int weight;
+
     enum Color {RED, BLACK, BLUE}
 
     public WidgetJDK8(Color color, int weight) {
@@ -19,8 +21,13 @@ public class WidgetJDK8 {
         this.weight = weight;
     }
 
-    public Color getColor() {return color;}
-    public int getWeight() {return weight;}
+    public Color getColor() {
+        return color;
+    }
+
+    public int getWeight() {
+        return weight;
+    }
 
     public static void main(String[] args) {
         List<WidgetJDK8> widgets = new ArrayList<>();
@@ -34,7 +41,7 @@ public class WidgetJDK8 {
                 .filter(w -> w.getColor() == Color.RED)
                 .mapToInt(w -> w.getWeight())
                 .sum();
-        System.out.println("总数："+sum);// 13
+        System.out.println("总数：" + sum);// 13
 
         Map<Integer, String> HOSTING = new HashMap<>();
         HOSTING.put(1, "linode.com");
@@ -52,8 +59,8 @@ public class WidgetJDK8 {
 
         //String转JSON
         JSONObject json = JSONObject.fromObject("{\"data\": {\"pages\": [ {\"name\": \"李兴\"},{\"name\": \"李明\"}],\"total_count\": 2 },\"errcode\": 0}");
-        System.out.println("String转JSON"+json);
-        System.out.println("解析:"+json.get("data"));
+        System.out.println("String转JSON" + json);
+        System.out.println("解析:" + json.get("data"));
         //JsonParser parse =new JsonParser();  //创建json解析器
 //        ArrayList<Users> users = new ArrayList<Users>();
 //        JSONArray jsonArray = JSONArray.fromObject(json);

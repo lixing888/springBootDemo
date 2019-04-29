@@ -17,14 +17,16 @@ public interface DroolsDmnService {
 
     /**
      * 执行DMN规则
+     *
      * @param ruleName
      * @param decisionParams
      * @return
      */
-    List<DMNDecisionResult> executeDmnDecision(String ruleName, Map<String,Object> decisionParams);
+    List<DMNDecisionResult> executeDmnDecision(String ruleName, Map<String, Object> decisionParams);
 
     /**
      * ap1 & ap2 规则
+     *
      * @param ruleRequest
      * @return 不确定规则的返回结果，返回object
      */

@@ -54,19 +54,19 @@ public class DroolsDmnServiceImpl implements DroolsDmnService {
         }
 
         if (ruleData.size() == 1) {
-            return singleApRule(ruleCode,ruleData.get(0));
+            return singleApRule(ruleCode, ruleData.get(0));
         }
-        return muliApRule(ruleCode,ruleData);
+        return muliApRule(ruleCode, ruleData);
     }
 
-    private List<String> muliApRule(String ruleCode,List<RuleRequest.RuleData> ruleData) {
+    private List<String> muliApRule(String ruleCode, List<RuleRequest.RuleData> ruleData) {
         List<List<String>> preResult = new ArrayList<>(ruleData.size());
         //分别求结果
         for (RuleRequest.RuleData request : ruleData) {
-            List<String> objects = singleApRule(ruleCode,request);
+            List<String> objects = singleApRule(ruleCode, request);
             //如果一个为空，没必要取交集，直接执行other规则
             if (CollUtil.isEmpty(objects)) {
-                return executeOtherRule(ruleCode,ruleData);
+                return executeOtherRule(ruleCode, ruleData);
             }
             preResult.add(objects);
         }
@@ -75,12 +75,12 @@ public class DroolsDmnServiceImpl implements DroolsDmnService {
             Collection<String> intersection = CollUtil.intersection(preResult.get(0), preResult.get(1));
             //交集为空，执行other
             if (CollUtil.isEmpty(intersection)) {
-                return executeOtherRule(ruleCode,ruleData);
+                return executeOtherRule(ruleCode, ruleData);
             }
             //遍历求交集
             for (int i = 2; i < preResult.size(); i++) {
                 if (CollUtil.isEmpty(intersection)) {
-                    return executeOtherRule(ruleCode,ruleData);
+                    return executeOtherRule(ruleCode, ruleData);
                 }
                 intersection = CollUtil.intersection(intersection, preResult.get(i));
             }
@@ -89,31 +89,32 @@ public class DroolsDmnServiceImpl implements DroolsDmnService {
                 return new ArrayList<>(intersection);
             }
         }
-        return executeOtherRule(ruleCode,ruleData);
+        return executeOtherRule(ruleCode, ruleData);
     }
 
     /**
      * 获得other规则执行结果
+     *
      * @param ruleData
      * @return
      */
-    private List<String> executeOtherRule(String ruleCode,List<RuleRequest.RuleData> ruleData) {
+    private List<String> executeOtherRule(String ruleCode, List<RuleRequest.RuleData> ruleData) {
         Map<Integer, List<RuleRequest.RuleData>> collect = ruleData.stream().collect(Collectors.groupingBy(req -> req.getArea()));
         //如果area是一个，则返回当前area的other规则结果
         if (collect.size() == 1) {
-            return singleApRule(ruleCode,new RuleRequest.RuleData(collect.keySet().toArray(new Integer[]{})[0]));
-        }else{
+            return singleApRule(ruleCode, new RuleRequest.RuleData(collect.keySet().toArray(new Integer[]{})[0]));
+        } else {
             //如果area是多，则返回所有area的合集
             List<String> result = new ArrayList<>();
             for (Integer area : collect.keySet()) {
-                List<String> list = singleApRule(ruleCode,new RuleRequest.RuleData(area));
+                List<String> list = singleApRule(ruleCode, new RuleRequest.RuleData(area));
                 result.addAll(list);
             }
             return result;
         }
     }
 
-    private List<String> singleApRule(String ruleCode,RuleRequest.RuleData ruleData) {
+    private List<String> singleApRule(String ruleCode, RuleRequest.RuleData ruleData) {
 
         JSONObject jsonObject = JSON.parseObject(JSON.toJSONString(ruleData));
         List<DMNDecisionResult> dmnDecisionResults = executeDmnDecision(ruleCode, jsonObject);

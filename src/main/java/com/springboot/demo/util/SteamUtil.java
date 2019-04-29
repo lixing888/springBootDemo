@@ -43,10 +43,10 @@ public class SteamUtil {
         //[6, 5, 3, 1]
         System.out.println(transactionIds);
         //List转Map
-        Map<Integer,Transaction> transactionMap = transactions.stream().collect(Collectors.toMap(Transaction::getId, Function.identity()));
-        for(int i=1;i<transactionIds.size();i++){
-            int id=i;
-            System.out.println(id+"map根据Key取value:"+transactionMap.get(id).getValue());
+        Map<Integer, Transaction> transactionMap = transactions.stream().collect(Collectors.toMap(Transaction::getId, Function.identity()));
+        for (int i = 1; i < transactionIds.size(); i++) {
+            int id = i;
+            System.out.println(id + "map根据Key取value:" + transactionMap.get(id).getValue());
         }
         //============Java 8的排序，取值实现=================
         // JDK 8 如果发现type为grocery的所有交易, 然后返回以交易值降序排序的交易ID集合

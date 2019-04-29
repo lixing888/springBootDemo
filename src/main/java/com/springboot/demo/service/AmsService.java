@@ -18,6 +18,7 @@ public interface AmsService {
 
     /**
      * 根据部门ID查询 所有上级部门，以 '@' 号分隔
+     *
      * @param departmentId
      * @return
      */

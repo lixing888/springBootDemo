@@ -22,15 +22,15 @@ public class ProfileUtil implements ApplicationContextAware {
     @Override
     public void setApplicationContext(ApplicationContext applicationContext)
             throws BeansException {
-       context = SpringApplication.run(Application.class);
+        context = SpringApplication.run(Application.class);
     }
 
     /**
      * 获取当前环境参数  exp: dev,prd,test
      */
     public static String getActiveProfile() {
-        String []profiles = context.getEnvironment().getActiveProfiles();
-        if( ! ArrayUtils.isEmpty(profiles)){
+        String[] profiles = context.getEnvironment().getActiveProfiles();
+        if (!ArrayUtils.isEmpty(profiles)) {
             return profiles[0];
         }
         return "";
@@ -38,7 +38,7 @@ public class ProfileUtil implements ApplicationContextAware {
 
     public static void main(String[] args) {
 
-        System.out.println("获取环境："+getActiveProfile());
+        System.out.println("获取环境：" + getActiveProfile());
 
     }
 }

@@ -6,6 +6,7 @@ import org.apache.solr.client.solrj.response.QueryResponse;
 import org.apache.solr.common.SolrDocument;
 import org.apache.solr.common.SolrDocumentList;
 import org.apache.solr.common.SolrInputDocument;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -28,20 +29,20 @@ public class MySolr {
             "也可以通过Http Get操作提出查找请求",
             "并得到XML格式的返回结果"};
 
-    public static SolrClient getSolrClient(){
-        return new HttpSolrClient(URL+"/"+SERVER);
+    public static SolrClient getSolrClient() {
+        return new HttpSolrClient(URL + "/" + SERVER);
     }
 
     /**
      * 新建索引
      */
-    public static void createIndex(){
+    public static void createIndex() {
         SolrClient client = getSolrClient();
         int i = 0;
         List<SolrInputDocument> docList = new ArrayList<SolrInputDocument>();
-        for(String str : docs){
+        for (String str : docs) {
             SolrInputDocument doc = new SolrInputDocument();
-            doc.addField("id",i++);
+            doc.addField("id", i++);
             doc.addField("content_test", str);
             docList.add(doc);
         }
@@ -53,12 +54,14 @@ public class MySolr {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    };
+    }
+
+    ;
 
     /**
      * 搜索
      */
-    public static void search(){
+    public static void search() {
         SolrClient client = getSolrClient();
         SolrQuery query = new SolrQuery();
         query.setQuery("content_test:搜索");

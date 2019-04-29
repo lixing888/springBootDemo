@@ -5,7 +5,9 @@ import java.math.BigDecimal;
 public interface CommonEnum {
 
     String code();
+
     String name();
+
     BigDecimal maxNbr();
 
 }

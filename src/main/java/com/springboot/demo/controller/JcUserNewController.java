@@ -1,6 +1,7 @@
 package com.springboot.demo.controller;
 
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.springboot.demo.store.entity.JcUser;
 import com.springboot.demo.store.manager.JcUserManager;
 import io.swagger.annotations.Api;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
 import java.util.List;
 
 /**
@@ -29,27 +31,29 @@ public class JcUserNewController {
     private JcUserManager jcUserManager;
 
     @PostMapping("/selectById")
-    @ApiOperation(value ="根据ID获取用户信息",notes = "根据ID获取用户信息")
-    public JcUser selectById(@RequestParam("user_id") String userId){
+    @ApiOperation(value = "根据ID获取用户信息", notes = "根据ID获取用户信息")
+    public JcUser selectById(@RequestParam("user_id") String userId) {
+        QueryWrapper<JcUser> getById = new QueryWrapper<JcUser>();
+        JcUser jcUser = jcUserManager.getOne(getById.lambda().eq(JcUser::getUserId, userId));
 
-        return  jcUserManager.getById(userId);
+        return jcUserManager.getById(userId);
 
     }
 
     @PostMapping("/userList")
-    @ApiOperation(value ="获取用户信息",notes = "获取用户信息")
-    public List<JcUser> userList(){
+    @ApiOperation(value = "获取用户信息", notes = "获取用户信息")
+    public List<JcUser> userList() {
 
-        return  jcUserManager.list();
+        return jcUserManager.list();
 
     }
 
 
     @PostMapping("/delById")
-    @ApiOperation(value ="根据ID删除用户",notes = "根据ID删除用户")
-    public Boolean delById(@RequestParam("user_id") String userId){
+    @ApiOperation(value = "根据ID删除用户", notes = "根据ID删除用户")
+    public Boolean delById(@RequestParam("user_id") String userId) {
 
-        return  jcUserManager.removeById(userId);
+        return jcUserManager.removeById(userId);
 
     }
 }
