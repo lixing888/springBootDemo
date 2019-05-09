@@ -1,5 +1,6 @@
 package com.springboot.demo.controller;
 
+import cn.hutool.core.util.NumberUtil;
 import cn.hutool.http.HttpUtil;
 import com.alibaba.fastjson.JSON;
 import com.springboot.demo.entity.Users;
@@ -12,6 +13,7 @@ import org.jsoup.select.Collector;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
+import org.thymeleaf.util.NumberUtils;
 
 import java.util.HashMap;
 import java.util.List;
@@ -29,7 +31,8 @@ public class UsersController {
 
     @RequestMapping(value = "users/list", method = RequestMethod.GET)
     public List<Student> studentList() {
-
+        //判断字符串是否纯数字
+        org.apache.commons.lang.math.NumberUtils.isDigits("9023112");
         List<Users> result = usersService.findAll();
         List<Student> students=result.stream()
                 .map(record -> new Student().setName(record.getName())
