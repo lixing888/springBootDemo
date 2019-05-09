@@ -4,6 +4,9 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Profile;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
+/**
+ * @author lixing
+ */
 @Profile({"pre", "test"})
 public class MySpringMvcConfig implements WebMvcConfigurer {
 

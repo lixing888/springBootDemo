@@ -1,9 +1,12 @@
 package com.springboot.demo.store.entity;
 
+import java.lang.reflect.Field;
 import java.math.BigDecimal;
 import java.util.Date;
 import java.io.Serializable;
 
+import com.baomidou.mybatisplus.annotation.FieldFill;
+import com.baomidou.mybatisplus.annotation.TableField;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
@@ -80,6 +83,7 @@ public class JcUser implements Serializable {
     /**
      * 上传日期
      */
+    @TableField(fill=FieldFill.INSERT_UPDATE)
     private Date uploadDate;
 
     /**
@@ -95,6 +99,7 @@ public class JcUser implements Serializable {
     /**
      * 是否禁用
      */
+    @TableField(fill=FieldFill.INSERT)
     private Integer isDisabled;
 
     private String sessionId;

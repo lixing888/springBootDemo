@@ -4,9 +4,11 @@ import cn.hutool.http.HttpUtil;
 import com.alibaba.fastjson.JSON;
 import com.springboot.demo.entity.Users;
 import com.springboot.demo.service.UsersService;
+import com.springboot.demo.vo.Student;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import net.sf.json.JSONObject;
+import org.jsoup.select.Collector;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
@@ -14,6 +16,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 @RestController
 @Api(tags = "/用户管理")
@@ -25,10 +28,14 @@ public class UsersController {
     private String url;
 
     @RequestMapping(value = "users/list", method = RequestMethod.GET)
-    public String userInfo() {
+    public List<Student> studentList() {
 
         List<Users> result = usersService.findAll();
-        return result.toString();
+        List<Student> students=result.stream()
+                .map(record -> new Student().setName(record.getName())
+                        .setAddress(record.getGroupId()).setAge(record.getRank())
+                ).collect(Collectors.toList());
+        return students;
 
     }
 

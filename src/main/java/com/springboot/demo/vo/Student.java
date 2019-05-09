@@ -1,8 +1,12 @@
 package com.springboot.demo.vo;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.experimental.Accessors;
 
 @Data
+@EqualsAndHashCode(callSuper = false)
+@Accessors(chain = true)
 public class Student {
     //姓名
     private String name;
@@ -10,30 +14,6 @@ public class Student {
     private String age;
     //住址
     private String address;
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getAge() {
-        return age;
-    }
-
-    public void setAge(String age) {
-        this.age = age;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
 
     @Override
     public String toString() {

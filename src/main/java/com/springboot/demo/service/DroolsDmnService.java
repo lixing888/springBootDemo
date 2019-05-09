@@ -11,7 +11,6 @@ import java.util.Map;
 /**
  * @author lixing
  */
-@Service
 @Component
 public interface DroolsDmnService {
 
