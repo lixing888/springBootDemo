@@ -4,6 +4,7 @@ import cn.hutool.core.util.NumberUtil;
 import cn.hutool.http.HttpUtil;
 import com.alibaba.fastjson.JSON;
 import com.springboot.demo.entity.Users;
+import com.springboot.demo.enumbean.DraftAuditStatus;
 import com.springboot.demo.service.UsersService;
 import com.springboot.demo.vo.Student;
 import io.swagger.annotations.Api;
@@ -40,6 +41,8 @@ public class UsersController {
                         .setAddress(record.getGroupId()).setAge(record.getRank())
                 ).collect(Collectors.toList());
         Objects.requireNonNull(result,"不能为空");
+
+        int status=DraftAuditStatus.draft.getStatus();
         //iter点击回车
         for (Student student : students) {
             
