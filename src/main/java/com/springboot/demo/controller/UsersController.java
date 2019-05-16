@@ -18,6 +18,7 @@ import org.thymeleaf.util.NumberUtils;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 @RestController
@@ -38,6 +39,11 @@ public class UsersController {
                 .map(record -> new Student().setName(record.getName())
                         .setAddress(record.getGroupId()).setAge(record.getRank())
                 ).collect(Collectors.toList());
+        Objects.requireNonNull(result,"不能为空");
+        //iter点击回车
+        for (Student student : students) {
+            
+        }
         return students;
 
     }
