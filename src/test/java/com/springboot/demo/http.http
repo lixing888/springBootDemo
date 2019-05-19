@@ -1,2 +1,96 @@
-POST http://127.0.0.1
+###新增规则数据
+POST http://127.0.0.1:8080/wfc_rule/applicantRecord/add
+Content-Type: application/json
+
+{
+  "code": "test",
+  "id": 4,
+  "rule_data":{
+    "data": [
+      {
+        "attr_id": 253,
+        "value": {
+          "attr_data_id": "253",
+          "attr_data_name": "253name"
+        }
+      },{
+        "attr_id": 254,
+        "value": {
+          "attr_data_id": "254",
+          "attr_data_name": "254name"
+        }
+      },{
+        "attr_id": 257,
+        "value": {
+          "attr_data_id": "257",
+          "attr_data_name": "257name"
+        }
+      },{
+        "attr_id": 258,
+        "value": {
+          "attr_data_id": "258",
+          "attr_data_name": "258name"
+        }
+      }
+    ],
+    "order": 1
+  }
+}
+
+
+###修改规则数据
+POST http://127.0.0.1:8080/wfc_rule/applicantRecord/update
+Content-Type: application/json
+
+{
+  "code": "test",
+  "id": 7,
+  "rule_data":{
+    "data": [
+      {
+        "attr_id": 240,
+        "value": {
+          "attr_data_id": "240",
+          "attr_data_name": "240newname"
+        }
+      },{
+        "attr_id": 239,
+        "value": {
+          "attr_data_id": "239",
+          "attr_data_name": "239newname"
+        }
+      }
+    ],
+    "order":11
+  }
+}
+
+###删除规则数据
+POST http://127.0.0.1:8080/wfc_rule/applicantRecord/delete
+Content-Type: application/json
+
+
+{
+  "code": "test",
+  "id": 4,
+  "order": [1]
+}
+
+####查询规则数据
+POST http://127.0.0.1:8080/wfc_rule/applicantRecord/submitAndPublish
+Content-Type: application/json
+
+{
+  "page": {
+    "page_index": 1,
+    "page_size": 10
+  },
+  "query": {
+
+    "rule_code": "test"
+  }
+}
+
+
+
 

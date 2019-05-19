@@ -32,22 +32,22 @@ public class UsersController {
     private String url;
 
     @RequestMapping(value = "users/list", method = RequestMethod.GET)
-    public List<Student> studentList() {
+    public List<Users> studentList() {
         //判断字符串是否纯数字
         org.apache.commons.lang.math.NumberUtils.isDigits("9023112");
         List<Users> result = usersService.findAll();
-        List<Student> students=result.stream()
-                .map(record -> new Student().setName(record.getName())
-                        .setAddress(record.getGroupId()).setAge(record.getRank())
-                ).collect(Collectors.toList());
+//        List<Student> students=result.stream()
+//                .map(record -> new Student().setName(record.getName())
+//                        .setAddress(record.getGroupId()).setAge(record.getRank())
+//                ).collect(Collectors.toList());
         Objects.requireNonNull(result,"不能为空");
 
-        int status=DraftAuditStatus.draft.getStatus();
+        //int status=DraftAuditStatus.draft.getStatus();
         //iter点击回车
-        for (Student student : students) {
-            
-        }
-        return students;
+//        for (Student student : students) {
+//
+//        }
+        return result;
 
     }
 
