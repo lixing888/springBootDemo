@@ -1,6 +1,5 @@
 package com.springboot.demo.controller;
 
-import cn.hutool.core.util.NumberUtil;
 import cn.hutool.http.HttpUtil;
 import com.alibaba.fastjson.JSON;
 import com.springboot.demo.entity.Users;
@@ -10,11 +9,9 @@ import com.springboot.demo.vo.Student;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import net.sf.json.JSONObject;
-import org.jsoup.select.Collector;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
-import org.thymeleaf.util.NumberUtils;
 
 import java.util.HashMap;
 import java.util.List;
