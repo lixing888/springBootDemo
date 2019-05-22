@@ -230,10 +230,10 @@ public class MapUtilExample {
         //将Map转换成List
         Map<Integer, String> map = new HashMap<>();
         map.put(10, "apple");
-        map.put(20, "orange");
-        map.put(30, "banana");
-        map.put(40, "watermelon");
-        map.put(50, "dragonfruit");
+        map.put(30, "orange");
+        map.put(20, "banana");
+        map.put(50, "watermelon");
+        map.put(40, "dragonfruit");
         // split a map into 2 List
         List<Integer> resultSortedKey = new ArrayList<>();
         List<String> resultValues = map.entrySet().stream()

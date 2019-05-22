@@ -8,12 +8,14 @@ import com.baomidou.mybatisplus.generator.config.rules.DateType;
 import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
 import org.junit.Ignore;
 import org.junit.Test;
+import org.springframework.test.context.ActiveProfiles;
 
 import java.io.File;
 
 /**
  * mybatis-plus 自动生成类
  */
+//@ActiveProfiles("test")
 public class GeneratorMybatisPlus {
 
     @Test
