@@ -4,11 +4,11 @@
   <dmn:inputData id="_988e0cfa-100e-4d0a-985a-97b9ab0aad1d" name="area"> 
     <dmn:variable id="_b6209995-b4da-423e-b76c-0419093f559d" name="area"/> 
   </dmn:inputData>  
-  <dmn:inputData id="_82fdc387-4bc5-49e1-8ee4-c024fa6641ea" name="paymentCode"> 
-    <dmn:variable id="_2bf1c531-3ade-44fd-a234-9d433d898b56" name="paymentCode"/> 
+  <dmn:inputData id="_82fdc387-4bc5-49e1-8ee4-c024fa6641ea" name="payment_code">
+    <dmn:variable id="_2bf1c531-3ade-44fd-a234-9d433d898b56" name="payment_code"/>
   </dmn:inputData>  
-  <dmn:inputData id="_bbc7d0c6-f7b8-4e09-b451-4a58abb4dbee" name="departmentId"> 
-    <dmn:variable id="_657d6d79-712e-4871-b99e-2a8cec614213" name="departmentId"/> 
+  <dmn:inputData id="_bbc7d0c6-f7b8-4e09-b451-4a58abb4dbee" name="department_id">
+    <dmn:variable id="_657d6d79-712e-4871-b99e-2a8cec614213" name="department_id"/>
   </dmn:inputData>  
   <dmn:decision id="_9ABDE8F0-71E5-4025-84A5-D4A0E6BD1904" name="AP1Rule"> 
     <dmn:variable id="_057834EF-A643-48E5-BF24-DD5CA3BDAF12" name="AP1RuleResult" typeRef="string"/>  
