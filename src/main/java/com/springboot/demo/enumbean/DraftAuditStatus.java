@@ -31,7 +31,7 @@ public enum  DraftAuditStatus {
         map = builder.build();
     }
 
-    public static DraftAuditStatus getDataSourceEnum(Integer id) {
+    public static DraftAuditStatus getDraftAuditEnum(Integer id) {
         DraftAuditStatus versionEnum = map.get(id);
         return versionEnum;
     }
@@ -43,7 +43,7 @@ public enum  DraftAuditStatus {
 
 
     public static void main(String[] args) {
-        DraftAuditStatus versionEnum = getDataSourceEnum(1);
+        DraftAuditStatus versionEnum = getDraftAuditEnum(1);
         System.out.println(versionEnum.getMessage());
     }
 
