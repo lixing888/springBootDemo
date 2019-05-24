@@ -4,11 +4,14 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
+import javax.validation.constraints.NotBlank;
+
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
 public class Student {
     //姓名
+    @NotBlank
     private String name;
     //年龄
     private String age;
