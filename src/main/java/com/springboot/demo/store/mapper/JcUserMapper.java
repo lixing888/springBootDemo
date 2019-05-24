@@ -1,7 +1,7 @@
 package com.springboot.demo.store.mapper;
 
-import com.springboot.demo.store.entity.JcUser;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.springboot.demo.store.entity.JcUser;
 
 /**
  * <p>
@@ -12,5 +12,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @since 2019-02-20
  */
 public interface JcUserMapper extends BaseMapper<JcUser> {
+
+    int getMax(Integer userId);
 
 }

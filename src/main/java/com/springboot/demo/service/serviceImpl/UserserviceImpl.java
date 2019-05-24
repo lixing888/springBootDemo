@@ -4,6 +4,7 @@ import com.springboot.demo.dao.UsersDao;
 import com.springboot.demo.entity.Users;
 import com.springboot.demo.mapper.UserMapper;
 import com.springboot.demo.service.UsersService;
+import com.springboot.demo.store.mapper.JcUserMapper;
 import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -21,6 +22,8 @@ public class UserserviceImpl implements UsersService {
     private UsersDao usersDao;
     @Autowired
     private UserMapper userMapper;
+    @Autowired
+    private JcUserMapper jcUserMapper;
 
     @Override
     public List<Users> findAll() {
@@ -40,4 +43,7 @@ public class UserserviceImpl implements UsersService {
     }
 
 
+    public Integer getMax(@RequestParam("user_id") Integer id) {
+        return jcUserMapper.getMax(id);
+    }
 }
