@@ -12,7 +12,7 @@ import org.apache.commons.lang3.StringUtils;
 public class DesEdeUtil {
 
     public static void main(String[] args) {
-        String content = "test中文";
+        String content = "李兴";
         byte[] key = SecureUtil.generateKey(SymmetricAlgorithm.DESede.getValue()).getEncoded();
         SymmetricCrypto des = new SymmetricCrypto(SymmetricAlgorithm.DESede, key);
         /**

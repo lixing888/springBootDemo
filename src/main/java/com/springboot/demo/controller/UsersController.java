@@ -20,6 +20,7 @@ import java.util.Objects;
 import java.util.stream.Collectors;
 
 @RestController
+@RequestMapping("/user")
 @Api(tags = "/用户管理")
 public class UsersController {
 

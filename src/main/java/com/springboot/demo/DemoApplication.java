@@ -1,6 +1,7 @@
 package com.springboot.demo;
 
 import io.swagger.annotations.*;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -23,7 +24,7 @@ import java.util.Arrays;
  */
 @SpringBootApplication
 @ComponentScan("com.springboot")
-//@MapperScan(basePackages = "com.springboot")//扫描范围
+@MapperScan(basePackages = "com.springboot")//扫描范围
 @Api(tags = "swagger2") //http://127.0.0.1:8080/swagger-ui.html
 //@EnableCaching
 //@Profile(value = "pre")
