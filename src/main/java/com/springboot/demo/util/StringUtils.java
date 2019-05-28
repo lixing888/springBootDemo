@@ -8,6 +8,9 @@ import java.util.regex.Pattern;
 @Component
 public class StringUtils {
 
+    private static Pattern pattern1 = Pattern.compile("([A-Za-z\\d]+)(_)?");
+
+    private static Pattern pattern2 = Pattern.compile("[A-Z]([a-z\\d]+)?");
     /**
      * 下划线转驼峰法(默认小驼峰)
      *
@@ -20,8 +23,8 @@ public class StringUtils {
             return "";
         }
         StringBuffer sb = new StringBuffer();
-        Pattern pattern = Pattern.compile("([A-Za-z\\d]+)(_)?");
-        Matcher matcher = pattern.matcher(line);
+
+        Matcher matcher = pattern1.matcher(line);
         //匹配正则表达式
         while (matcher.find()) {
             String word = matcher.group();
@@ -55,8 +58,8 @@ public class StringUtils {
         line = String.valueOf(line.charAt(0)).toUpperCase()
                 .concat(line.substring(1));
         StringBuffer sb = new StringBuffer();
-        Pattern pattern = Pattern.compile("[A-Z]([a-z\\d]+)?");
-        Matcher matcher = pattern.matcher(line);
+
+        Matcher matcher = pattern2.matcher(line);
         while (matcher.find()) {
             String word = matcher.group();
             //sb.append(word.toUpperCase());//大写
