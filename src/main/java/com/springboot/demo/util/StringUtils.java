@@ -1,5 +1,6 @@
 package com.springboot.demo.util;
 
+import com.google.common.base.CaseFormat;
 import org.springframework.stereotype.Component;
 
 import java.util.regex.Matcher;
@@ -84,6 +85,25 @@ public class StringUtils {
         //驼峰转下划线
         //ARE_YOU_DOU_BI_YELLOWCONG
         System.out.println(camel2Underline(camel));
+
+        //下划线转驼峰
+        System.out.println(CaseFormat.LOWER_UNDERSCORE.to(CaseFormat.LOWER_CAMEL, "department_id"));
+
+
+        String orderColumn = "orderColumn";
+        //输入是LOWER_CAMEL，输出是LOWER_UNDERSCORE
+        orderColumn = CaseFormat.LOWER_CAMEL.to(CaseFormat.LOWER_UNDERSCORE, orderColumn);
+        //order_column
+        System.out.println(orderColumn);
+        orderColumn = "orderColumn";
+        //输入是LOWER_CAMEL，输出是UPPER_CAMEL
+        orderColumn = CaseFormat.LOWER_CAMEL.to(CaseFormat.UPPER_CAMEL, orderColumn);
+        System.out.println(orderColumn);//OrderColumn
+        orderColumn = "order_column";//输入是LOWER_UNDERSCORE，输出是LOWER_CAMEL
+        orderColumn = CaseFormat.LOWER_UNDERSCORE.to(CaseFormat.LOWER_CAMEL, orderColumn);
+        System.out.println(orderColumn);//orderColumn
+
+
     }
 }
 
