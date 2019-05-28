@@ -15,6 +15,8 @@ public class Student {
     private String name;
     //年龄
     private String age;
+    //性别
+    private Integer sex;
     //住址
     private String address;
 
