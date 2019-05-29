@@ -2,7 +2,9 @@ package com.springboot.demo.util;
 
 import com.google.common.base.CaseFormat;
 import org.springframework.stereotype.Component;
+import org.springframework.util.ResourceUtils;
 
+import java.io.FileNotFoundException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -103,6 +105,9 @@ public class StringUtils {
         orderColumn = "order_column";//输入是LOWER_UNDERSCORE，输出是LOWER_CAMEL
         orderColumn = CaseFormat.LOWER_UNDERSCORE.to(CaseFormat.LOWER_CAMEL, orderColumn);
         System.out.println(orderColumn);//orderColumn
+
+
+        System.out.println("与jar包同级："+GetServerRealPathUnit.getPath(""));
 
 
     }
