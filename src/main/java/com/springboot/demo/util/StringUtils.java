@@ -12,6 +12,7 @@ public class StringUtils {
     private static Pattern pattern1 = Pattern.compile("([A-Za-z\\d]+)(_)?");
 
     private static Pattern pattern2 = Pattern.compile("[A-Z]([a-z\\d]+)?");
+
     /**
      * 下划线转驼峰法(默认小驼峰)
      *
