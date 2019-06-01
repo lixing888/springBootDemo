@@ -7,7 +7,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 
 /**
- * *author:lixing
+ * @author:lixing
  * 获取目录工具类
  */
 @Slf4j

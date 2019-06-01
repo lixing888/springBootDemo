@@ -2,9 +2,7 @@ package com.springboot.demo.util;
 
 import com.google.common.base.CaseFormat;
 import org.springframework.stereotype.Component;
-import org.springframework.util.ResourceUtils;
 
-import java.io.FileNotFoundException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -72,7 +70,6 @@ public class StringUtils {
         }
         return sb.toString();
     }
-
     public static void main(String[] args) {
         String line = "are_you_dou_bi_yellowcong";
         //下划线转驼峰（大驼峰）
