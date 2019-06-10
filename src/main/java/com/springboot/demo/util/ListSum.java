@@ -15,6 +15,18 @@ import static java.util.stream.Collectors.toList;
  */
 public class ListSum {
     public static void main(String[] args) {
+
+        Integer[] myArray = { 1, 2, 3 };
+        List integerList = Arrays.asList(myArray);
+        System.out.println(integerList.size());
+
+        int[] intArray = { 5, 10, 21 };
+        List intList = Arrays.asList(myArray);
+        System.out.println(intList.size());
+        //Java 8 新引入的 Stream 操作
+        List myList = Arrays.stream(intArray).boxed().collect(Collectors.toList());
+        System.out.println(myList.size());
+
         List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
         list.add(createMap("小溪塔", "A", 9.0, 5.0));
         list.add(createMap("小溪塔", "B", 7.0, 4.0));
@@ -136,7 +148,20 @@ public class ListSum {
         Map<String, List<Demo>> demoOder = demos.stream().collect(Collectors.groupingBy(Demo::getAge));
         System.out.println(demoOder);
 
+        String[] myArrays = { "Apple", "Banana", "Orange" };
+        List<String> myLists = new ArrayList<>();
+        for (String str : myArrays) {
+            myLists.add(str);
+            //比如说需要把数组的每个元素向 List 中添加两次
+            // myLists.add(str);
+        }
+        System.out.println(myLists.size());
+
     }
+
+
+
+
 
     //================================
     public static List<Map<String, Object>> groupCount(List<Map<String, Object>> list) {
@@ -159,6 +184,9 @@ public class ListSum {
                     double gdzj1 = object2Double(map1.get("耕地"));
                     double zhj = add(zj, zj1);
                     double gdzhj = add(gdzj, gdzj1);
+                    if(!Objects.isNull(gdzhj)){
+                        System.out.println("非空判断");
+                    }
                     Map<String, Object> map2 = new HashMap<String, Object>();
                     map2.put("乡镇总合计", xz + "总合计");
                     map2.put("村", null);

@@ -77,6 +77,18 @@
 			<version>5.2.0</version>
 		</dependency>
 
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>${spring.version}</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>commons-logging</artifactId>
+					<groupId>commons-logging</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
 		<!--<dependency>-->
 			<!--<groupId>org.gjt.jclasslib</groupId>-->
 			<!--<artifactId>jclasslib-browser</artifactId>-->

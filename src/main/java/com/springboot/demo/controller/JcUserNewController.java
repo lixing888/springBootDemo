@@ -33,9 +33,8 @@ public class JcUserNewController {
     @PostMapping("/selectById")
     @ApiOperation(value = "根据ID获取用户信息", notes = "根据ID获取用户信息")
     public JcUser selectById(@RequestParam("user_id") String userId) {
-        QueryWrapper<JcUser> getById = new QueryWrapper<JcUser>();
+        QueryWrapper<JcUser> getById = new QueryWrapper<>();
         JcUser jcUser = jcUserManager.getOne(getById.lambda().eq(JcUser::getUserId, userId));
-
         return jcUserManager.getById(userId);
 
     }

@@ -5,6 +5,7 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.freemarker.FreeMarkerAutoConfiguration;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -22,7 +23,7 @@ import java.util.Arrays;
  * @EnableAutoConfiguration:表示程序启动时，自动加载springboot默认的配置。
  * @ComponentScan:表示程序启动是，自动扫描当前包及子包下所有类。
  */
-@SpringBootApplication
+@SpringBootApplication(exclude = {FreeMarkerAutoConfiguration.class},scanBasePackages = "com.springboot")
 @ComponentScan("com.springboot")
 @MapperScan(basePackages = "com.springboot")//扫描范围
 @Api(tags = "swagger2") //http://127.0.0.1:8080/swagger-ui.html

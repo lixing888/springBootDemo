@@ -7,6 +7,9 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
+import java.util.Arrays;
+import java.util.List;
+
 /**
  * @author lixing
  */
@@ -26,7 +29,8 @@ public class MySpringMvcConfig implements WebMvcConfigurer {
      */
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(new UserSecurityInterceptor()).addPathPatterns("/user/getUserById","/jcUserNewController/**","/test/**");
+        List<String> interceptors= Arrays.asList("/user/getUserById","/jcUserNewController/**","/test/**");
+        registry.addInterceptor(new UserSecurityInterceptor()).addPathPatterns(interceptors);
     }
    }
 
