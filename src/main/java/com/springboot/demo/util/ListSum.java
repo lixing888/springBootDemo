@@ -1,7 +1,10 @@
 package com.springboot.demo.util;
 
+import cn.hutool.poi.excel.ExcelReader;
+import cn.hutool.poi.excel.ExcelUtil;
 import com.springboot.demo.vo.Demo;
 import com.springboot.demo.vo.Student;
+import lombok.extern.slf4j.Slf4j;
 
 import java.math.BigDecimal;
 import java.util.*;
@@ -13,8 +16,45 @@ import static java.util.stream.Collectors.toList;
  * @author lixing
  * jdk8 List
  */
+@Slf4j
 public class ListSum {
     public static void main(String[] args) {
+        /**
+         * 读取execl文件
+         */
+        ExcelReader reader = ExcelUtil.getReader("D://excel/商业化文件盖章申请.xlsx");
+        List<Map<String, Object>> maps = reader.readAll();
+        List<Student> ruleRoleUsers=new ArrayList<>();
+        /*List<RuleRoleUser> ruleRoleUsers = reader.readAll(RuleRoleUser.class);*/
+        maps.forEach(map->{
+            Date date = new Date();
+            Student ruleRoleUser = new Student();
+            map.forEach((k,v)->{
+                //读取标签
+                if(k.equals("userId")){
+                    Integer employeeId = Integer.valueOf(v.toString());
+                    ruleRoleUser.setUserId(employeeId);
+                    //并查询出用户邮箱
+
+                }else if(k.equals("userName")){
+                    ruleRoleUser.setUserName(v.toString());
+                }else if(k.equals("roleCode")){
+                    ruleRoleUser.setRoleCode(v.toString());
+                    //并把roleId查询出来
+
+                    ruleRoleUser.setRoleId(9001);
+                }else if(k.equals("roleName")){
+                    ruleRoleUser.setRoleName(v.toString());
+                }
+                ruleRoleUser.setUpdateTime(date);
+                ruleRoleUser.setCreateTime(date);
+                ruleRoleUser.setDeleted(0);
+            });
+            ruleRoleUsers.add(ruleRoleUser);
+        });
+        log.info("批量插入数据{}",ruleRoleUsers);
+        //boolean boo = ruleRoleUserManager.saveOrUpdateBatch(ruleRoleUsers);
+        log.info("执行状态{}",true);
 
         Integer[] myArray = { 1, 2, 3 };
         List integerList = Arrays.asList(myArray);
