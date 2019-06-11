@@ -1,5 +1,7 @@
 package com.springboot.demo.vo;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableLogic;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -26,7 +28,7 @@ public class Student {
     private Integer id;
 
     /**
-     * 角色id
+     * &#x89d2;&#x8272;id
      */
     private Integer roleId;
 
