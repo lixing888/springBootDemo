@@ -1,8 +1,13 @@
 package com.springboot.demo;
 
+import cn.hutool.core.date.DateUtil;
+import cn.hutool.crypto.SecureUtil;
+import cn.hutool.http.HttpUtil;
+import com.alibaba.fastjson.JSON;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -91,6 +96,29 @@ public class LambdaMap {
     public void testErgodicWayFive() {
         System.out.println("---------------------Only JAVA8 ------------------------------");
         map.forEach((k, v) -> System.out.println("key:value = " + k + ":" + v));
+    }
+
+    @Test
+    public void getAP12() {
+
+        String url = "https://oa.bytedance.net/wfc_rule/rule/listEmployeesByRule";
+        Map<String, Object> map = new HashMap<>();
+        String appid = "wfc-rule";
+        map.put("app_id", appid);
+        String tims = DateUtil.format(new Date(), "yyyyMMddHHmmss");
+        map.put("timestamp", tims);
+        String ruleCode = "AP1Rule";
+        String area = "0";
+        String depId = "288980000064975800";
+        String patCode = "MDAP00000021";
+
+        String param = "{\"rule_code\":\"" + ruleCode + "\",\"rule_data\":[{\"area\":\"" + area + "\",\"department_id\":\"" + depId + "\",\"payment_code\":\"" + patCode + "\"}]}";
+        map.put("biz_params", param);
+        String sign = SecureUtil.md5("12345678" + tims + param);
+        map.put("sign", sign);
+        System.out.println("入参："+ JSON.toJSONString(map));
+        String post = HttpUtil.post(url, JSON.toJSONString(map));
+        System.out.println("结果:"+JSON.toJSONString(JSON.parseObject(post), true));
     }
 
 }
