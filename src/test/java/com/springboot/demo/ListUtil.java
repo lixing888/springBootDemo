@@ -16,9 +16,8 @@ public class ListUtil {
         list1.add("2222");
         list1.add("3333");
         List<String> list2 = new ArrayList();
-        list2.add("3333");
-        list2.add("4444");
-        list2.add("5555");
+        list2.add("1111");
+        list2.add("2222");
         // 交集
         List<String> intersection = list1.stream().filter(item -> list2.contains(item)).collect(toList());
         System.out.println("---得到交集 intersection---");

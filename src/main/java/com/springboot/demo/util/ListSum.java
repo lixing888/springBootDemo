@@ -197,6 +197,13 @@ public class ListSum {
         }
         System.out.println(myLists.size());
 
+        List<Integer> ruleData = new ArrayList<Integer>();
+        ruleData.add(1);
+        ruleData.add(1);
+        ruleData.add(0);
+        ruleData.add(0);
+        List<Integer> areas=ruleData.stream().distinct().map(record -> record.intValue()).collect(Collectors.toList());
+
     }
 
 
