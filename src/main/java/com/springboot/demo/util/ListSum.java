@@ -204,7 +204,18 @@ public class ListSum {
         ruleData.add(0);
         List<Integer> areas=ruleData.stream().distinct().map(record -> record.intValue()).collect(Collectors.toList());
 
+        List<String> list11=new ArrayList<>();
+        list11.add("zzz");
+        list11.add("aaa");
+        list11.add("bbb");
+        list11.add("bbb");
+        list11.add("zzz");
+        Set<String> set=new HashSet<>(list11);
+        boolean  result= list11.size() == set.size() ? true : false;
+        System.out.println( "List中是否存在重复数据:"+result);
+
     }
+
 
 
 

@@ -82,6 +82,37 @@ public class ListUtil {
 
         }
 
+        String deptId="11";
+        List<String> grdDeptNo=new ArrayList<>();
+        List<String> deptLevelNoList = Arrays.asList("0@11", "0@11@2@3@4@5", "0@11@2@3@7@8", "0@11@2@3@7@8@10@13", "0@11@2@3@8@9");
+        List<String> childIds=Arrays.asList("2","3","7");
+        for (String deptLevelNo : deptLevelNoList) {
+            String deptLevel=deptLevelNo.substring(deptLevelNo.lastIndexOf(deptId)+deptId.length());
+            System.out.println("下属部门编码:"+deptLevel);
+
+            if(!deptLevel.isEmpty()){
+                String[] split = deptLevel.split("@");
+                for(int i=0;i<split.length;i++){
+                    String deptNo=split[i];
+                    if(!deptNo.isEmpty()){
+                        grdDeptNo.add(split[i]);
+                    }
+                }
+            }
+
+        }
+
+        Set<String> grpIds=new HashSet<>(grdDeptNo);
+        System.out.println("子部门个数："+grpIds.size());
+        for (String grpId : grpIds) {
+            System.out.println("子部门:"+grpId);
+        }
+        grpIds.removeAll(childIds);
+        //孙子辈的部门id
+        System.out.println("孙子辈的部门个数："+grpIds.size());
+        for (String grpId : grpIds) {
+            System.out.println("管辖部门："+grpId);
+        }
         //System.out.println("-----------------------------------\n");
         //printStr(list1);
 
@@ -91,5 +122,6 @@ public class ListUtil {
         for (int i = 0; i < list1.size(); i++) {
             System.out.println(list1.get(i));
         }
+
     }
 }

@@ -12,6 +12,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Objects;
 
+/**
+ * @author lixing
+ */
 @Slf4j
 public class DownLoadUtils {
 
