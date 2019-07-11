@@ -17,6 +17,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -79,6 +80,7 @@ public class UserserviceImpl implements UsersService {
             //时间加4小时
             current.setTime(current.getTime() + (14400000));
             rList.expireAt(current);
+            //return Collections.emptyList();
             return billTypes;
         } else {
             return rList;
