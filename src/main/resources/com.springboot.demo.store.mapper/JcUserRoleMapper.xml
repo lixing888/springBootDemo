@@ -1,5 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.springboot.demo.store.mapper.JcUserRoleMapper">
-
+    <insert id="saveBatch">
+        INSERT INTO `rule_cost_file_amount_cache`
+        (`deparment_id`, `deparment_name`, `department_id_name`, `amount`, `currency`,
+        `cost_file_id`, `cost_file_name`, `create_time`, `update_time`, `deleted`, `bill_type`,
+        `department_parent_id`, `department_chilld_id`, `department_parent_name`, `department_chilld_name`,
+        `cost_type_id`, `cost_type_name`, `leader_id`, `leader_name`, `department_level`, `dept_level_no`)
+        VALUES
+        <foreach collection="lists" item="li" separator=",">
+            (#{li.deparmentId}, #{li.deparmentName}, #{li.departmentIdName},
+            #{li.amount}, #{li.currency}, #{li.costFileId}, #{li.costFileName}, #{li.createTime}, #{li.updateTime}, #{li.deleted},
+            #{li.billType}, #{li.departmentParentId}, #{li.departmentChilldId}, #{li.departmentParentName}, #{li.departmentChilldName},
+            #{li.costTypeId}, #{li.costTypeName}, #{li.leaderId}, #{li.leaderName},
+            #{li.departmentLevel}, #{li.deptLevelNo})
+        </foreach>
+    </insert>
 </mapper>

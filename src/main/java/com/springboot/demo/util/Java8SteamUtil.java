@@ -4,6 +4,7 @@ import com.springboot.demo.vo.Car;
 
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.LongStream;
@@ -11,6 +12,15 @@ import java.util.stream.LongStream;
 public class Java8SteamUtil {
 
     public static void main(String[] args) throws URISyntaxException {
+
+
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
+        //设置为东八区
+        sdf.setTimeZone(TimeZone.getTimeZone("Asia/Shanghai"));
+        Date newDate = new Date();
+        String dateStr = sdf.format(newDate);
+        System.out.println(dateStr);
 
         List<String> strings = Arrays.asList("abc", "", "bc", "efg", "abcd", "", "jkl");
         // 获取空字符串的数量
