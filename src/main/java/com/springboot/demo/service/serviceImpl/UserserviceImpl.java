@@ -29,7 +29,7 @@ public class UserserviceImpl implements UsersService {
     private UsersDao usersDao;
     @Autowired
     private UserMapper userMapper;
-    public static final String BILL_TYPES = "billtypes";
+
     @Autowired
     private JcUserMapper jcUserMapper;
     @Autowired
@@ -37,6 +37,7 @@ public class UserserviceImpl implements UsersService {
     @Autowired
     private RedissonClient redissonClient;
 
+    public static final String BILL_TYPES = "billtypes";
 
     @Override
     public List<Users> findAll() {
