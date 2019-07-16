@@ -4,6 +4,10 @@ package com.springboot.demo;
  * @author lixing
  * java list 交集 并集 差集 去重复并集
  */
+
+import java.math.BigDecimal;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.*;
 
 import static java.util.stream.Collectors.toList;
@@ -59,13 +63,14 @@ public class ListUtil {
         set1.add("a");
         set1.add("b");
         boolean c = set1.add("c");
+        set1.add("d");
 
         set2.add("c");
         set2.add("d");
         set2.add("e");
 
         //交集
-        set1.retainAll(set2);
+        boolean result = set1.retainAll(set2);
 
         System.out.println("交集是 "+set1);
     
@@ -115,6 +120,23 @@ public class ListUtil {
         }
         //System.out.println("-----------------------------------\n");
         //printStr(list1);
+
+        if (Objects.equals("2", "2")) {
+            System.out.println("Objects判断两个对象是否相等。");
+        }
+
+        String str = DecimalFormat.getNumberInstance().format(1245600000);
+        String currecy = NumberFormat.getCurrencyInstance().format(1245600000);
+        System.out.println("转换成Currency格式：" + currecy);
+        System.out.println("转换成带千分位的格式：" + str);
+
+        BigDecimal a = new BigDecimal("233333333333333333333333333");
+        //DecimalFormat df = new DecimalFormat(",###,##0");
+        //没有小数
+        DecimalFormat df = new DecimalFormat(",###,##0.00"); //保留2位小数
+        String format = df.format(a);
+        System.out.println(format);
+
 
     }
 
