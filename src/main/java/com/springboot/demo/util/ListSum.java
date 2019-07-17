@@ -22,37 +22,37 @@ public class ListSum {
         /**
          * 读取execl文件
          */
-        ExcelReader reader = ExcelUtil.getReader("D://excel/商业化文件盖章申请.xlsx");
-        List<Map<String, Object>> maps = reader.readAll();
-        List<Student> ruleRoleUsers=new ArrayList<>();
-        /*List<RuleRoleUser> ruleRoleUsers = reader.readAll(RuleRoleUser.class);*/
-        maps.forEach(map->{
-            Date date = new Date();
-            Student ruleRoleUser = new Student();
-            map.forEach((k,v)->{
-                //读取标签
-                if(k.equals("userId")){
-                    Integer employeeId = Integer.valueOf(v.toString());
-                    ruleRoleUser.setUserId(employeeId);
-                    //并查询出用户邮箱
-
-                }else if(k.equals("userName")){
-                    ruleRoleUser.setUserName(v.toString());
-                }else if(k.equals("roleCode")){
-                    ruleRoleUser.setRoleCode(v.toString());
-                    //并把roleId查询出来
-
-                    ruleRoleUser.setRoleId(9001);
-                }else if(k.equals("roleName")){
-                    ruleRoleUser.setRoleName(v.toString());
-                }
-                ruleRoleUser.setUpdateTime(date);
-                ruleRoleUser.setCreateTime(date);
-                ruleRoleUser.setDeleted(0);
-            });
-            ruleRoleUsers.add(ruleRoleUser);
-        });
-        log.info("批量插入数据{}",ruleRoleUsers);
+//        ExcelReader reader = ExcelUtil.getReader("D://excel/商业化文件盖章申请.xlsx");
+//        List<Map<String, Object>> maps = reader.readAll();
+//        List<Student> ruleRoleUsers=new ArrayList<>();
+//        /*List<RuleRoleUser> ruleRoleUsers = reader.readAll(RuleRoleUser.class);*/
+//        maps.forEach(map->{
+//            Date date = new Date();
+//            Student ruleRoleUser = new Student();
+//            map.forEach((k,v)->{
+//                //读取标签
+//                if(k.equals("userId")){
+//                    Integer employeeId = Integer.valueOf(v.toString());
+//                    ruleRoleUser.setUserId(employeeId);
+//                    //并查询出用户邮箱
+//
+//                }else if(k.equals("userName")){
+//                    ruleRoleUser.setUserName(v.toString());
+//                }else if(k.equals("roleCode")){
+//                    ruleRoleUser.setRoleCode(v.toString());
+//                    //并把roleId查询出来
+//
+//                    ruleRoleUser.setRoleId(9001);
+//                }else if(k.equals("roleName")){
+//                    ruleRoleUser.setRoleName(v.toString());
+//                }
+//                ruleRoleUser.setUpdateTime(date);
+//                ruleRoleUser.setCreateTime(date);
+//                ruleRoleUser.setDeleted(0);
+//            });
+//            ruleRoleUsers.add(ruleRoleUser);
+//        });
+        //log.info("批量插入数据{}",ruleRoleUsers);
         //boolean boo = ruleRoleUserManager.saveOrUpdateBatch(ruleRoleUsers);
         log.info("执行状态{}",true);
 
@@ -213,8 +213,18 @@ public class ListSum {
         Set<String> set=new HashSet<>(list11);
         boolean  result= list11.size() == set.size() ? true : false;
         System.out.println( "List中是否存在重复数据:"+result);
+        Map<String, String> map = new HashMap<>();
+        map.put("name", "lixing");
+        map.put("age", "24");
+        map.put("sex", "男");
+        String name = map.getOrDefault("name", "test");
+        System.out.println(name);// lxj，map中存在name,获得name对应的value
+        String address = map.getOrDefault("address", "北京");
+        System.out.println(address);// 北京，map中不存在address,使用默认值“北京”
+
         //按照人员工号排序
         //return employeeInfos.stream().sorted(Comparator.comparing(DeptmentInfoVo.EmployeeInfo::getLeaderId)).collect(Collectors.toList());
+        //RuleCostInfo costInfo = costInfoMap.getOrDefault(record.getCostTypeId(), new RuleCostInfo());
 
     }
 

@@ -17,6 +17,91 @@ public class MapUtilExample {
         initPut();
     }
 
+    public static void main(String[] args) {
+        MapUtilExample example = new MapUtilExample();
+
+        example.forEach();
+        example.compute();
+        example.remove();
+        example.getOrDefault();
+        example.merge();
+
+        //将Map转换成List
+        Map<Integer, String> mapObject = new HashMap<>();
+        mapObject.put(10, "apple");
+        mapObject.put(30, "orange");
+        mapObject.put(20, "banana");
+        mapObject.put(50, "watermelon");
+        mapObject.put(40, "dragonfruit");
+        // split a map into 2 List
+        List<Integer> resultSortedKey = new ArrayList<>();
+        List<String> resultValues = mapObject.entrySet().stream()
+                //sort a Map by key and stored in resultSortedKey
+                .sorted(Map.Entry.<Integer, String>comparingByKey().reversed())
+                .peek(e -> resultSortedKey.add(e.getKey()))
+                .map(x -> x.getValue())
+                // filter banana and return it to resultValues
+                .filter(x -> !"banana".equalsIgnoreCase(x))
+                .collect(Collectors.toList());
+        resultSortedKey.forEach(System.out::println);
+        resultValues.forEach(System.out::println);
+
+
+        Map<String, Object> map = new LinkedHashMap<String,
+                Object>();
+        map.put("username", "wangking");
+        map.put("password", "12345");
+        map.put("email", "12345@qq.com");
+        map.put("sex", "男");
+        //第一种 用for循环的方式
+        for (Map.Entry<String, Object> m : map.entrySet()) {
+            System.out.println(m.getKey() + "\t" + m.getValue());
+        }
+        //利用迭代 （Iterator）
+        Set set = map.entrySet();
+        Iterator iterator = set.iterator();
+        while (iterator.hasNext()) {
+            Map.Entry<String, Object> enter = (Map.Entry<String, Object>)
+                    iterator.next();
+            System.out.println(enter.getKey() + "\t" + enter.getValue());
+        }
+        //利用KeySet 迭代
+        Iterator it = map.keySet().iterator();
+        while (it.hasNext()) {
+            String key;
+            String value;
+            key = it.next().toString();
+            value = (String) map.get(key);
+            System.out.println(key + "--" + value);
+        }
+        //利用EnterySet迭代
+        Iterator i = map.entrySet().iterator();
+        System.out.println(map.entrySet().size());
+        String key;
+        String value;
+        while (i.hasNext()) {
+            Map.Entry entry = (Map.Entry) i.next();
+            key = entry.getKey().toString();
+            value = entry.getValue().toString();
+            System.out.println(key + "====" + value);
+        }
+        System.out.println(getKeyByValue(map, "zhaokuo"));
+    }
+
+    public static String getKeyByValue(Map map, Object value) {
+        String keys = "";
+        Iterator it = map.entrySet().iterator();
+        while (it.hasNext()) {
+            Map.Entry entry = (Map.Entry) it.next();
+            Object obj = entry.getValue();
+            if (obj != null && obj.equals(value)) {
+                keys = (String) entry.getKey();
+            }
+
+        }
+        return keys;
+    }
+
     /**
      * 使用更新后的map进行putIfAbsent
      */
@@ -213,91 +298,6 @@ public class MapUtilExample {
         // 执行put->所以这里输出"NewMerge8"
         map.merge(8, "merge", (value, newValue) -> "NewMerge8");
         System.out.println(map.get(8));
-    }
-
-    public static void main(String[] args) {
-        MapUtilExample example = new MapUtilExample();
-
-        example.forEach();
-        example.compute();
-        example.remove();
-        example.getOrDefault();
-        example.merge();
-
-        //将Map转换成List
-        Map<Integer, String> mapObject = new HashMap<>();
-        mapObject.put(10, "apple");
-        mapObject.put(30, "orange");
-        mapObject.put(20, "banana");
-        mapObject.put(50, "watermelon");
-        mapObject.put(40, "dragonfruit");
-        // split a map into 2 List
-        List<Integer> resultSortedKey = new ArrayList<>();
-        List<String> resultValues = mapObject.entrySet().stream()
-                //sort a Map by key and stored in resultSortedKey
-                .sorted(Map.Entry.<Integer, String>comparingByKey().reversed())
-                .peek(e -> resultSortedKey.add(e.getKey()))
-                .map(x -> x.getValue())
-                // filter banana and return it to resultValues
-                .filter(x -> !"banana".equalsIgnoreCase(x))
-                .collect(Collectors.toList());
-        resultSortedKey.forEach(System.out::println);
-        resultValues.forEach(System.out::println);
-
-
-        Map<String, Object> map = new LinkedHashMap<String,
-                Object>();
-        map.put("username", "wangking");
-        map.put("password", "12345");
-        map.put("email", "12345@qq.com");
-        map.put("sex", "男");
-        //第一种 用for循环的方式
-        for (Map.Entry<String, Object> m : map.entrySet()) {
-            System.out.println(m.getKey() + "\t" + m.getValue());
-        }
-        //利用迭代 （Iterator）
-        Set set = map.entrySet();
-        Iterator iterator = set.iterator();
-        while (iterator.hasNext()) {
-            Map.Entry<String, Object> enter = (Map.Entry<String, Object>)
-                    iterator.next();
-            System.out.println(enter.getKey() + "\t" + enter.getValue());
-        }
-        //利用KeySet 迭代
-        Iterator it = map.keySet().iterator();
-        while (it.hasNext()) {
-            String key;
-            String value;
-            key = it.next().toString();
-            value = (String) map.get(key);
-            System.out.println(key + "--" + value);
-        }
-        //利用EnterySet迭代
-        Iterator i = map.entrySet().iterator();
-        System.out.println(map.entrySet().size());
-        String key;
-        String value;
-        while (i.hasNext()) {
-            Map.Entry entry = (Map.Entry) i.next();
-            key = entry.getKey().toString();
-            value = entry.getValue().toString();
-            System.out.println(key + "====" + value);
-        }
-        System.out.println(getKeyByValue(map, "zhaokuo"));
-    }
-
-    public static String getKeyByValue(Map map, Object value) {
-        String keys = "";
-        Iterator it = map.entrySet().iterator();
-        while (it.hasNext()) {
-            Map.Entry entry = (Map.Entry) it.next();
-            Object obj = entry.getValue();
-            if (obj != null && obj.equals(value)) {
-                keys = (String) entry.getKey();
-            }
-
-        }
-        return keys;
     }
 
 }
