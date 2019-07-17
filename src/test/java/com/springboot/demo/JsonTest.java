@@ -11,6 +11,7 @@ public class JsonTest {
     //通过实体类转换成json
     public static void BeanToJson(){
 
+
         RootEntity rootEntity = new RootEntity();
         rootEntity.setErrorCode("0");
         rootEntity.setErrorMsg("调用接口成功");

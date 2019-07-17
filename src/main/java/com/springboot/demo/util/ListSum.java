@@ -213,6 +213,8 @@ public class ListSum {
         Set<String> set=new HashSet<>(list11);
         boolean  result= list11.size() == set.size() ? true : false;
         System.out.println( "List中是否存在重复数据:"+result);
+        //按照人员工号排序
+        //return employeeInfos.stream().sorted(Comparator.comparing(DeptmentInfoVo.EmployeeInfo::getLeaderId)).collect(Collectors.toList());
 
     }
 
