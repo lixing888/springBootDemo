@@ -222,6 +222,9 @@ public class ListSum {
         String address = map.getOrDefault("address", "北京");
         System.out.println(address);// 北京，map中不存在address,使用默认值“北京”
 
+        Map<String, List<String>> maps = new HashMap<>();
+        maps.getOrDefault("list1", new ArrayList<>()).add("A");
+
         //按照人员工号排序
         //return employeeInfos.stream().sorted(Comparator.comparing(DeptmentInfoVo.EmployeeInfo::getLeaderId)).collect(Collectors.toList());
         //RuleCostInfo costInfo = costInfoMap.getOrDefault(record.getCostTypeId(), new RuleCostInfo());
