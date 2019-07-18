@@ -1,5 +1,8 @@
 package com.springboot.demo.util;
 
+import java.util.EnumMap;
+import java.util.EnumSet;
+
 public class EnumUtil {
 
     /**
@@ -46,6 +49,15 @@ public class EnumUtil {
     public static void main(String[] args) {
         StatusEnum statusEnum = EnumUtil.getEnumBycode(StatusEnum.class, "MDBS00000002");
         System.out.print(statusEnum.getName() + "  阀值：" + statusEnum.getMaxNbr());
+
+
+        // EnumSet的使用
+        EnumSet<StatusEnum> weekSet = EnumSet.allOf(StatusEnum.class);
+        for (StatusEnum day : weekSet) {
+            System.out.println(day.getName());
+        }
+
+
 
         //StatusEnum statusEnum1 = EnumUtil.getEnumByName(StatusEnum.class, "END");
 

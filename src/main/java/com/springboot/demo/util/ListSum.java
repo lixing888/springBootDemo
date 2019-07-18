@@ -139,6 +139,11 @@ public class ListSum {
         studentList.add(student1);studentList.add(student2);studentList.add(student3);studentList.add(student4);
         studentList.add(student5);studentList.add(student6);studentList.add(student7);
         List<Demo> demos = new ArrayList<Demo>();
+
+        studentList.stream().sorted(Comparator.comparing(Student::getAge));
+        //倒序
+        studentList.stream().sorted(Comparator.comparing(Student::getAge).reversed());
+
         //原始数据
         System.out.println("原始数据 组装list<demo>*******************");
         demos = studentList.stream().map(student-> new Demo(student.getAge(),student.getSex())).collect(Collectors.toList());
@@ -228,6 +233,28 @@ public class ListSum {
         //按照人员工号排序
         //return employeeInfos.stream().sorted(Comparator.comparing(DeptmentInfoVo.EmployeeInfo::getLeaderId)).collect(Collectors.toList());
         //RuleCostInfo costInfo = costInfoMap.getOrDefault(record.getCostTypeId(), new RuleCostInfo());
+        //JAVA list按照另外一个给定list排序 多余的自动排在后面
+        String[] regulation = {"诸葛亮","鲁班","xzcx","貂蝉","吕布"};
+        final List<String> regulationOrder = Arrays.asList(regulation);
+        String[] ordered = {"nice","貂蝉","诸葛亮","xzcx","吕布","貂蝉","鲁班","诸葛亮","貂蝉","鲁班","诸葛亮","hahahahah","adsad"};
+        List<String> orderedList = Arrays.asList(ordered);
+        Collections.sort(orderedList, new Comparator<String>(){
+            @Override
+            public int compare(String o1, String o2){
+                int io1 = regulationOrder.indexOf(o1);
+                int io2 = regulationOrder.indexOf(o2);
+                if(io1 == -1){
+                    return 1;
+                }
+                if(io2 == -1){
+                    return -1;
+                }
+                return io1 - io2;
+            }
+        });
+
+        System.out.println(orderedList.stream().distinct().collect(Collectors.toList()));
+
 
     }
 
