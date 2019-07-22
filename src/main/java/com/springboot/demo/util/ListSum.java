@@ -1,7 +1,5 @@
 package com.springboot.demo.util;
 
-import cn.hutool.poi.excel.ExcelReader;
-import cn.hutool.poi.excel.ExcelUtil;
 import com.springboot.demo.vo.Demo;
 import com.springboot.demo.vo.Student;
 import lombok.extern.slf4j.Slf4j;
@@ -216,7 +214,7 @@ public class ListSum {
         list11.add("bbb");
         list11.add("zzz");
         Set<String> set=new HashSet<>(list11);
-        boolean  result= list11.size() == set.size() ? true : false;
+        boolean result= list11.size() != set.size() ? true : false;
         System.out.println( "List中是否存在重复数据:"+result);
         Map<String, String> map = new HashMap<>();
         map.put("name", "lixing");
@@ -236,13 +234,16 @@ public class ListSum {
         //JAVA list按照另外一个给定list排序 多余的自动排在后面
         String[] regulation = {"诸葛亮","鲁班","xzcx","貂蝉","吕布"};
         final List<String> regulationOrder = Arrays.asList(regulation);
-        String[] ordered = {"nice","貂蝉","诸葛亮","xzcx","吕布","貂蝉","鲁班","诸葛亮","貂蝉","鲁班","诸葛亮","hahahahah","adsad"};
+        String[] ordered = {"诸葛亮", "nice", "貂蝉", "诸葛亮", "xzcx", "吕布", "貂蝉", "鲁班", "诸葛亮", "貂蝉", "鲁班", "诸葛亮", "hahahahah", "adsad"};
         List<String> orderedList = Arrays.asList(ordered);
         Collections.sort(orderedList, new Comparator<String>(){
             @Override
             public int compare(String o1, String o2){
                 int io1 = regulationOrder.indexOf(o1);
                 int io2 = regulationOrder.indexOf(o2);
+                if (io1 == io2) {
+                    return 0;
+                }
                 if(io1 == -1){
                     return 1;
                 }
