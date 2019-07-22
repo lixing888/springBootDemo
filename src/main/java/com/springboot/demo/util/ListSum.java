@@ -239,10 +239,12 @@ public class ListSum {
         map.put("name", "lixing");
         map.put("age", "24");
         map.put("sex", "男");
+        // lxj，map中存在name,获得name对应的value
         String name = map.getOrDefault("name", "test");
-        System.out.println(name);// lxj，map中存在name,获得name对应的value
+        System.out.println(name);
+        // 北京，map中不存在address,使用默认值“北京”
         String address = map.getOrDefault("address", "北京");
-        System.out.println(address);// 北京，map中不存在address,使用默认值“北京”
+        System.out.println(address);
 
         Map<String, List<String>> maps = new HashMap<>();
         maps.getOrDefault("list1", new ArrayList<>()).add("A");

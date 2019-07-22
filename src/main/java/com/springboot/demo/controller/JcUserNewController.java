@@ -6,6 +6,7 @@ import com.springboot.demo.store.entity.JcUser;
 import com.springboot.demo.store.manager.JcUserManager;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.transaction.annotation.Transactional;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -27,6 +29,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/jcUserNewController")
 @Api(tags = "获取用户信息")
+@Slf4j
 public class JcUserNewController {
 
     @Autowired
@@ -39,8 +42,9 @@ public class JcUserNewController {
     public JcUser selectById(@RequestParam("user_id") String userId) {
         QueryWrapper<JcUser> getById = new QueryWrapper<>();
         JcUser jcUser = jcUserManager.getOne(getById.lambda().eq(JcUser::getUserId, userId));
+        log.info("【导出数据】操作人：{}，操作时间：{}，规则文件名称：{}",
+                jcUser.getName(), new Date(), jcUser.getEmail());
         return jcUserManager.getById(userId);
-
     }
 
     @PostMapping("/userList")
