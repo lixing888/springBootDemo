@@ -1,6 +1,9 @@
 package com.springboot.demo.util;
 
+import cn.hutool.core.collection.CollUtil;
 import com.springboot.demo.vo.Transaction;
+import jodd.util.CollectionUtil;
+import org.apache.commons.collections4.CollectionUtils;
 
 import java.util.*;
 import java.util.function.Function;
@@ -52,10 +55,13 @@ public class SteamUtil {
         // JDK 8 如果发现type为grocery的所有交易, 然后返回以交易值降序排序的交易ID集合
         List<Integer> transactionsIds =
                 transactions.parallelStream().filter(t -> t.getType() == Transaction.Type.GEOCERY)
-                        .sorted(Comparator.comparing(Transaction::getValue).reversed())
+                        .sorted(Comparator.comparing(Transaction::getValue).reversed().thenComparing(Transaction::getId))
                         .map(Transaction::getId)
                         .collect(Collectors.toList());
         //[6, 5, 3, 1]
         System.out.println(transactionsIds);
+
+        List<String> Names= new ArrayList<>();
+        CollectionUtils.isNotEmpty(Names);
     }
 }

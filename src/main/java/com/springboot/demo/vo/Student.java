@@ -1,6 +1,7 @@
 package com.springboot.demo.vo;
 
 import com.baomidou.mybatisplus.annotation.*;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
@@ -53,6 +54,7 @@ public class Student {
     /**
      * 用户邮箱
      */
+    @JsonIgnore
     private String userEmail;
 
     /**

@@ -48,6 +48,7 @@ public class JcUserNewController {
     }
 
     @PostMapping("/userList")
+
     @ApiOperation(value = "获取用户信息", notes = "获取用户信息")
     public List<JcUser> userList() {
 
