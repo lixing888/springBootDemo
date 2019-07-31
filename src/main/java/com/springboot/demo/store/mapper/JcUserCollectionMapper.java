@@ -1,7 +1,7 @@
 package com.springboot.demo.store.mapper;
 
-import com.springboot.demo.store.entity.JcUserCollection;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.springboot.demo.store.entity.JcUserCollection;
 
 /**
  * <p>

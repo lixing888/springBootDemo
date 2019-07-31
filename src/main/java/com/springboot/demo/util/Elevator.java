@@ -34,10 +34,6 @@ public class Elevator {
         }
     });
 
-    static final class Instance {
-        static Elevator elevator = new Elevator();
-    }
-
     private Elevator() {
     }
 
@@ -123,7 +119,6 @@ public class Elevator {
         add(queue, order);
     }
 
-
     /**
      * 往队列中添加指令
      */
@@ -147,6 +142,10 @@ public class Elevator {
         } else { //往上的队列中添加
             add(up, new Order(height, isUp));
         }
+    }
+
+    static final class Instance {
+        static Elevator elevator = new Elevator();
     }
 
 //=================神奇分割线：指令类================

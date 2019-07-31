@@ -13,17 +13,17 @@
     <appenders>
 
         <Console name="CONSOLE" target="system_out">
-            <PatternLayout pattern="${PATTERN}" />
+            <PatternLayout pattern="${PATTERN}"/>
         </Console>
 
         <RollingRandomAccessFile name="RollingFileInfo"
                                  fileName="${INFO_FILE_NAME}" filePattern="${INFO_FILE_PATTERN}">
             <!--控制台只输出level及以上级别的信息（onMatch），其他的直接拒绝（onMismatch） -->
             <ThresholdFilter level="info" onMatch="ACCEPT"
-                             onMismatch="DENY" />
-            <PatternLayout pattern="${PATTERN}" charset="UTF-8" />
+                             onMismatch="DENY"/>
+            <PatternLayout pattern="${PATTERN}" charset="UTF-8"/>
             <Policies>
-                <TimeBasedTriggeringPolicy />
+                <TimeBasedTriggeringPolicy/>
             </Policies>
         </RollingRandomAccessFile>
         <RollingRandomAccessFile name="RollingFileError"
@@ -31,16 +31,16 @@
                                  filePattern="${ERROR_FILE_PATTERN}">
             <!--控制台只输出level及以上级别的信息（onMatch），其他的直接拒绝（onMismatch） -->
             <ThresholdFilter level="error" onMatch="ACCEPT"
-                             onMismatch="DENY" />
-            <PatternLayout pattern="${PATTERN}" />
+                             onMismatch="DENY"/>
+            <PatternLayout pattern="${PATTERN}"/>
             <Policies>
-                <TimeBasedTriggeringPolicy />
+                <TimeBasedTriggeringPolicy/>
             </Policies>
         </RollingRandomAccessFile>
 
         <!-- 异步输出 -->
         <Async name="AsyncRollingFileInfo" includeLocation="true">
-            <AppenderRef ref="RollingFileInfo" />
+            <AppenderRef ref="RollingFileInfo"/>
             <!-- How many milliseconds the Appender should wait to flush outstanding log events in the queue on shutdown. The default is zero which means to wait forever. -->
             <shutdownTimeout>0</shutdownTimeout>
             <!-- If true, the appender will wait until there are free slots in the queue -->
@@ -49,22 +49,22 @@
             <bufferSize>1024</bufferSize>
         </Async>
 
-        <Async name="AsyncRollingFileError" includeLocation="true" >
+        <Async name="AsyncRollingFileError" includeLocation="true">
             <!-- How many milliseconds the Appender should wait to flush outstanding log events in the queue on shutdown. The default is zero which means to wait forever. -->
-            <AppenderRef ref="RollingFileError" />
+            <AppenderRef ref="RollingFileError"/>
             <shutdownTimeout>0</shutdownTimeout>
             <!-- If true, the appender will wait until there are free slots in the queue -->
             <blocking>true</blocking>
             <!-- 修改队列大小，默认值为1024，这里默认不做处理 -->
-            <bufferSize ref="1024" />
+            <bufferSize ref="1024"/>
         </Async>
     </appenders>
 
     <loggers>
         <root level="info">
             <appenderref ref="CONSOLE"></appenderref>
-            <appenderref ref="AsyncRollingFileInfo" />
-            <appenderref ref="AsyncRollingFileError" />
+            <appenderref ref="AsyncRollingFileInfo"/>
+            <appenderref ref="AsyncRollingFileError"/>
         </root>
     </loggers>
 

@@ -1,9 +1,9 @@
 package com.springboot.demo.store.manager.impl;
 
-import com.springboot.demo.store.entity.JcUserRole;
-import com.springboot.demo.store.mapper.JcUserRoleMapper;
-import com.springboot.demo.store.manager.JcUserRoleManager;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.springboot.demo.store.entity.JcUserRole;
+import com.springboot.demo.store.manager.JcUserRoleManager;
+import com.springboot.demo.store.mapper.JcUserRoleMapper;
 import org.springframework.stereotype.Service;
 
 /**

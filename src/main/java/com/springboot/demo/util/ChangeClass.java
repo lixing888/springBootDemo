@@ -1,11 +1,14 @@
 package com.springboot.demo.util;
 
-import java.io.*;
-
 import org.gjt.jclasslib.io.ClassFileWriter;
 import org.gjt.jclasslib.structures.CPInfo;
 import org.gjt.jclasslib.structures.ClassFile;
 import org.gjt.jclasslib.structures.constants.ConstantUtf8Info;
+
+import java.io.DataInput;
+import java.io.DataInputStream;
+import java.io.File;
+import java.io.FileInputStream;
 
 /**
  * @author lixing

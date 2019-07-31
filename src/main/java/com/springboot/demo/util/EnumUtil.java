@@ -1,6 +1,5 @@
 package com.springboot.demo.util;
 
-import java.util.EnumMap;
 import java.util.EnumSet;
 
 public class EnumUtil {
@@ -56,7 +55,6 @@ public class EnumUtil {
         for (StatusEnum day : weekSet) {
             System.out.println(day.getName());
         }
-
 
 
         //StatusEnum statusEnum1 = EnumUtil.getEnumByName(StatusEnum.class, "END");

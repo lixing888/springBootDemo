@@ -8,8 +8,6 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Component;
 
-import javax.xml.bind.Binder;
-
 /**
  * @author lixing
  * 获取当前环境参数  exp: dev,prd,test
@@ -18,12 +16,6 @@ import javax.xml.bind.Binder;
 public class ProfileUtil implements ApplicationContextAware {
 
     private static ApplicationContext context;
-
-    @Override
-    public void setApplicationContext(ApplicationContext applicationContext)
-            throws BeansException {
-        context = SpringApplication.run(Application.class);
-    }
 
     /**
      * 获取当前环境参数  exp: dev,prd,test
@@ -40,5 +32,11 @@ public class ProfileUtil implements ApplicationContextAware {
 
         System.out.println("获取环境：" + getActiveProfile());
 
+    }
+
+    @Override
+    public void setApplicationContext(ApplicationContext applicationContext)
+            throws BeansException {
+        context = SpringApplication.run(Application.class);
     }
 }

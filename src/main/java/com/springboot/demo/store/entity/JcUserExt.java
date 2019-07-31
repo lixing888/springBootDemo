@@ -1,11 +1,11 @@
 package com.springboot.demo.store.entity;
 
-import java.util.Date;
-import java.io.Serializable;
-
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
+
+import java.io.Serializable;
+import java.util.Date;
 
 /**
  * <p>

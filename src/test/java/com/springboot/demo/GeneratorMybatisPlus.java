@@ -1,4 +1,5 @@
 package com.springboot.demo;
+
 import com.baomidou.mybatisplus.generator.AutoGenerator;
 import com.baomidou.mybatisplus.generator.config.DataSourceConfig;
 import com.baomidou.mybatisplus.generator.config.GlobalConfig;
@@ -8,7 +9,6 @@ import com.baomidou.mybatisplus.generator.config.rules.DateType;
 import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
 import org.junit.Ignore;
 import org.junit.Test;
-import org.springframework.test.context.ActiveProfiles;
 
 import java.io.File;
 
@@ -17,6 +17,10 @@ import java.io.File;
  */
 //@ActiveProfiles("test")
 public class GeneratorMybatisPlus {
+
+    public static void main(String[] args) {
+        System.out.println(System.getProperty("user.dir"));
+    }
 
     @Test
     public void generateActivityCode() {
@@ -32,7 +36,7 @@ public class GeneratorMybatisPlus {
                 .setPassword("beiXINzhiKE")
                 .setDriverName("com.mysql.jdbc.Driver");
 
-        generateByTables("",serviceNameStartWithI,dataSourceConfig, packageName, "jc_use\\w+");
+        generateByTables("", serviceNameStartWithI, dataSourceConfig, packageName, "jc_use\\w+");
     }
 
     @Ignore
@@ -50,11 +54,10 @@ public class GeneratorMybatisPlus {
                 .setTypeConvert(new MySqlTypeConvert())
                 .setDriverName("com.mysql.jdbc.Driver");
 
-        generateByTables("stat",serviceNameStartWithI,dataSourceConfig, packageName, "stat2_robot_room_group_day", "stat2_robot_room_detail", "stat2_robot_player_winner_day", "stat2_player_game_detail");
+        generateByTables("stat", serviceNameStartWithI, dataSourceConfig, packageName, "stat2_robot_room_group_day", "stat2_robot_room_detail", "stat2_robot_player_winner_day", "stat2_player_game_detail");
     }
 
-
-    private void generateByTables(String subPackage,boolean serviceNameStartWithI, DataSourceConfig dataSourceConfig, String packageName, String... tableNames) {
+    private void generateByTables(String subPackage, boolean serviceNameStartWithI, DataSourceConfig dataSourceConfig, String packageName, String... tableNames) {
 
 
         StrategyConfig strategyConfig = new StrategyConfig();
@@ -70,7 +73,7 @@ public class GeneratorMybatisPlus {
                 .setDateType(DateType.ONLY_DATE)
                 //注释作者
                 .setAuthor("lixing")
-                .setOutputDir(System.getProperty("user.dir")+File.separator+"src"+File.separator+"main"+File.separator+"java")
+                .setOutputDir(System.getProperty("user.dir") + File.separator + "src" + File.separator + "main" + File.separator + "java")
                 .setFileOverride(true)/*.setBaseColumnList(true).setBaseResultMap(true)*/
                 .setOpen(false)
         ;
@@ -97,10 +100,5 @@ public class GeneratorMybatisPlus {
                         // .setEntity("entity.domain.activity")
                 ).execute();
 
-    }
-
-
-    public static void main(String[] args) {
-        System.out.println(System.getProperty("user.dir"));
     }
 }

@@ -1,18 +1,13 @@
 package com.springboot.demo.util;
 
+import com.itextpdf.text.*;
+import com.itextpdf.text.pdf.BaseFont;
+import com.itextpdf.text.pdf.PdfWriter;
+
 import java.io.BufferedReader;
 import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
-
-import com.itextpdf.text.Document;
-import com.itextpdf.text.DocumentException;
-import com.itextpdf.text.Font;
-import com.itextpdf.text.PageSize;
-import com.itextpdf.text.Paragraph;
-import com.itextpdf.text.Rectangle;
-import com.itextpdf.text.pdf.BaseFont;
-import com.itextpdf.text.pdf.PdfWriter;
 
 /**
  * txt转pdf文件
@@ -28,6 +23,17 @@ public class Txt2PDF {
             parser = new Txt2PDF();
         }
         return parser;
+    }
+
+    public static void main(String[] args) throws Exception {
+        java.io.File file = new java.io.File(Txt2PDF.class.getResource("/").getPath());
+        String path = file.getParentFile().getPath();
+        System.out.println("路径：" + path);
+        path = java.net.URLDecoder.decode(path, "UTF-8");
+        String text = path + "/mi.txt";
+        String pdf = path + "/mi.txt.pdf";
+        Txt2PDF p = Txt2PDF.getInstance();
+        p.text2pdf(text, pdf);
     }
 
     public void text2pdf(String text, String pdf) throws DocumentException, IOException {
@@ -50,16 +56,5 @@ public class Txt2PDF {
         read.close();
         doc.add(p);
         doc.close();
-    }
-
-    public static void main(String[] args) throws Exception {
-        java.io.File file = new java.io.File(Txt2PDF.class.getResource("/").getPath());
-        String path = file.getParentFile().getPath();
-        System.out.println("路径：" + path);
-        path = java.net.URLDecoder.decode(path, "UTF-8");
-        String text = path + "/mi.txt";
-        String pdf = path + "/mi.txt.pdf";
-        Txt2PDF p = Txt2PDF.getInstance();
-        p.text2pdf(text, pdf);
     }
 }

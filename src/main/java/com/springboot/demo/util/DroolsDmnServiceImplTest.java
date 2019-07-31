@@ -3,12 +3,9 @@ package com.springboot.demo.util;
 
 import com.springboot.demo.service.serviceImpl.DroolsDmnServiceImpl;
 import com.springboot.demo.vo.RuleRequest;
-
-import org.kie.dmn.api.core.DMNDecisionResult;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
 
 /**

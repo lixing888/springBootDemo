@@ -116,9 +116,9 @@ public class LambdaMap {
         map.put("biz_params", param);
         String sign = SecureUtil.md5("12345678" + tims + param);
         map.put("sign", sign);
-        System.out.println("入参："+ JSON.toJSONString(map));
+        System.out.println("入参：" + JSON.toJSONString(map));
         String post = HttpUtil.post(url, JSON.toJSONString(map));
-        System.out.println("结果:"+JSON.toJSONString(JSON.parseObject(post), true));
+        System.out.println("结果:" + JSON.toJSONString(JSON.parseObject(post), true));
     }
 
 }

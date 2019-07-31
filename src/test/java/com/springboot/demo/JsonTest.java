@@ -9,7 +9,7 @@ import java.util.List;
 
 public class JsonTest {
     //通过实体类转换成json
-    public static void BeanToJson(){
+    public static void BeanToJson() {
 
 
         RootEntity rootEntity = new RootEntity();
@@ -29,6 +29,7 @@ public class JsonTest {
         //通过toJSONString( )将实体类转化成json对象
         System.out.println(jsonObject.toJSONString(rootEntity));
     }
+
     public static void main(String[] args) {
         BeanToJson();
     }

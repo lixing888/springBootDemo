@@ -25,30 +25,36 @@ public class ListUtil {
         // 交集
         List<String> intersection = list1.stream().filter(item -> list2.contains(item)).collect(toList());
         System.out.println("---得到交集 intersection---");
-        intersection.parallelStream().forEach(System.out :: println);
+        intersection.parallelStream().forEach(System.out::println);
         // 差集 (list1 - list2)
         List<String> reduce1 = list1.stream().filter(item -> !list2.contains(item)).collect(toList());
         System.out.println("---得到差集 reduce1 (list1 - list2)---");
-        reduce1.parallelStream().forEach(System.out :: println);
+        reduce1.parallelStream().forEach(System.out::println);
         // 差集 (list2 - list1)
         List<String> reduce2 = list2.stream().filter(item -> !list1.contains(item)).collect(toList());
         System.out.println("---得到差集 reduce2 (list2 - list1)---");
-        reduce2.parallelStream().forEach(System.out :: println);
+        reduce2.parallelStream().forEach(System.out::println);
         // 并集
         List<String> listAll = list1.parallelStream().collect(toList());
         List<String> listAll2 = list2.parallelStream().collect(toList());
         listAll.addAll(listAll2);
         System.out.println("---得到并集 listAll---");
-        listAll.parallelStream().forEach(System.out :: println);
+        listAll.parallelStream().forEach(System.out::println);
         // 去重并集
-        List<String> listAllDistinct = listAll.stream().distinct().collect(toList());        System.out.println("---得到去重并集 listAllDistinct---");        listAllDistinct.parallelStream().forEach(System.out :: println);         System.out.println("---原来的List1---");        list1.parallelStream().forEach(System.out :: println);        System.out.println("---原来的List2---");        list2.parallelStream().forEach(System.out :: println);         // 一般有filter 操作时，不用并行流parallelStream ,如果用的话可能会导致线程安全问题     }
+        List<String> listAllDistinct = listAll.stream().distinct().collect(toList());
+        System.out.println("---得到去重并集 listAllDistinct---");
+        listAllDistinct.parallelStream().forEach(System.out::println);
+        System.out.println("---原来的List1---");
+        list1.parallelStream().forEach(System.out::println);
+        System.out.println("---原来的List2---");
+        list2.parallelStream().forEach(System.out::println);         // 一般有filter 操作时，不用并行流parallelStream ,如果用的话可能会导致线程安全问题     }
 
-        List list11 =new ArrayList();
+        List list11 = new ArrayList();
         list11.add("1111");
         list11.add("2222");
         list11.add("3333");
 
-        List list12 =new ArrayList();
+        List list12 = new ArrayList();
         list12.add("3333");
         list12.add("4444");
         list12.add("5555");
@@ -72,8 +78,8 @@ public class ListUtil {
         //交集
         boolean result = set1.retainAll(set2);
 
-        System.out.println("交集是 "+set1);
-    
+        System.out.println("交集是 " + set1);
+
 
         //差集
         //list1.removeAll(list2);
@@ -81,25 +87,25 @@ public class ListUtil {
         list2.removeAll(list1);
         list1.addAll(list2);
 
-        Iterator<String> it=list1.iterator();
+        Iterator<String> it = list1.iterator();
         while (it.hasNext()) {
             System.out.println(it.next());
 
         }
 
-        String deptId="11";
-        List<String> grdDeptNo=new ArrayList<>();
+        String deptId = "11";
+        List<String> grdDeptNo = new ArrayList<>();
         List<String> deptLevelNoList = Arrays.asList("0@11", "0@11@2@3@4@5", "0@11@2@3@7@8", "0@11@2@3@7@8@10@13", "0@11@2@3@8@9");
-        List<String> childIds=Arrays.asList("2","3","7");
+        List<String> childIds = Arrays.asList("2", "3", "7");
         for (String deptLevelNo : deptLevelNoList) {
-            String deptLevel=deptLevelNo.substring(deptLevelNo.lastIndexOf(deptId)+deptId.length());
-            System.out.println("下属部门编码:"+deptLevel);
+            String deptLevel = deptLevelNo.substring(deptLevelNo.lastIndexOf(deptId) + deptId.length());
+            System.out.println("下属部门编码:" + deptLevel);
 
-            if(!deptLevel.isEmpty()){
+            if (!deptLevel.isEmpty()) {
                 String[] split = deptLevel.split("@");
-                for(int i=0;i<split.length;i++){
-                    String deptNo=split[i];
-                    if(!deptNo.isEmpty()){
+                for (int i = 0; i < split.length; i++) {
+                    String deptNo = split[i];
+                    if (!deptNo.isEmpty()) {
                         grdDeptNo.add(split[i]);
                     }
                 }
@@ -107,16 +113,16 @@ public class ListUtil {
 
         }
 
-        Set<String> grpIds=new HashSet<>(grdDeptNo);
-        System.out.println("子部门个数："+grpIds.size());
+        Set<String> grpIds = new HashSet<>(grdDeptNo);
+        System.out.println("子部门个数：" + grpIds.size());
         for (String grpId : grpIds) {
-            System.out.println("子部门:"+grpId);
+            System.out.println("子部门:" + grpId);
         }
         grpIds.removeAll(childIds);
         //孙子辈的部门id
-        System.out.println("孙子辈的部门个数："+grpIds.size());
+        System.out.println("孙子辈的部门个数：" + grpIds.size());
         for (String grpId : grpIds) {
-            System.out.println("管辖部门："+grpId);
+            System.out.println("管辖部门：" + grpId);
         }
         //System.out.println("-----------------------------------\n");
         //printStr(list1);
@@ -140,7 +146,7 @@ public class ListUtil {
 
     }
 
-    public static void printStr(List list1){
+    public static void printStr(List list1) {
         for (int i = 0; i < list1.size(); i++) {
             System.out.println(list1.get(i));
         }

@@ -17,7 +17,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -26,19 +25,17 @@ import java.util.stream.Collectors;
 @Component
 public class UserserviceImpl implements UsersService {
 
+    public static final String BILL_TYPES = "billtypes";
     @Autowired
     private UsersDao usersDao;
     @Autowired
     private UserMapper userMapper;
-
     @Autowired
     private JcUserMapper jcUserMapper;
     @Autowired
     private JcUserManager jcUserManager;
     @Autowired
     private RedissonClient redissonClient;
-
-    public static final String BILL_TYPES = "billtypes";
 
     @Override
     public List<Users> findAll() {

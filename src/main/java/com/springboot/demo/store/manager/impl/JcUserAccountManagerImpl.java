@@ -1,9 +1,9 @@
 package com.springboot.demo.store.manager.impl;
 
-import com.springboot.demo.store.entity.JcUserAccount;
-import com.springboot.demo.store.mapper.JcUserAccountMapper;
-import com.springboot.demo.store.manager.JcUserAccountManager;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.springboot.demo.store.entity.JcUserAccount;
+import com.springboot.demo.store.manager.JcUserAccountManager;
+import com.springboot.demo.store.mapper.JcUserAccountMapper;
 import org.springframework.stereotype.Service;
 
 /**

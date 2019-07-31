@@ -1,15 +1,7 @@
 package com.springboot.demo.controller;
 
-import com.springboot.demo.vo.Address;
-import com.springboot.demo.vo.AddressCheckResult;
-import org.kie.api.KieServices;
-import org.kie.api.runtime.KieContainer;
-import org.kie.api.runtime.KieSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-
-import javax.annotation.Resource;
 
 /**
  * @author lixing

@@ -18,11 +18,11 @@
 
     <!--以下是新增的方法-->
     <select id="selectMethod" resultType="com.springboot.demo.entity.Users">
-          select * from jc_user
+        select * from jc_user
     </select>
     <select id="oneUser" flushCache="false" useCache="true" parameterType="java.lang.Integer"
             resultType="com.springboot.demo.entity.Users">
-      select user_id as id,username as name,email as email from jc_user WHERE user_id = #{id}
+        select user_id as id,username as name,email as email from jc_user WHERE user_id = #{id}
     </select>
 </mapper>
 

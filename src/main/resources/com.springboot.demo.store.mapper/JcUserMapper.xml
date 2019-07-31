@@ -3,7 +3,7 @@
 <mapper namespace="com.springboot.demo.store.mapper.JcUserMapper">
 
     <select id="getMax" parameterType="Integer" resultType="java.lang.Integer">
-       SELECT max(age) FROM jc_user where id=#{userId}
+        SELECT max(age) FROM jc_user where id=#{userId}
     </select>
 
 </mapper>

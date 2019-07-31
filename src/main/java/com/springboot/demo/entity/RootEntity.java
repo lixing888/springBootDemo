@@ -2,7 +2,6 @@ package com.springboot.demo.entity;
 
 import lombok.Data;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Data

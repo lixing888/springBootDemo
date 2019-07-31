@@ -23,7 +23,7 @@ public class MyLienkedList<T> {
         Node<T> current = root;
         while (current != null) {
             System.out.println(current.getData());
-            current=current.getNext();
+            current = current.getNext();
         }
     }
 }

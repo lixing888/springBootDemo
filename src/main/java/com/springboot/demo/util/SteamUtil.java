@@ -1,8 +1,6 @@
 package com.springboot.demo.util;
 
-import cn.hutool.core.collection.CollUtil;
 import com.springboot.demo.vo.Transaction;
-import jodd.util.CollectionUtil;
 import org.apache.commons.collections4.CollectionUtils;
 
 import java.util.*;
@@ -61,7 +59,7 @@ public class SteamUtil {
         //[6, 5, 3, 1]
         System.out.println(transactionsIds);
 
-        List<String> Names= new ArrayList<>();
+        List<String> Names = new ArrayList<>();
         CollectionUtils.isNotEmpty(Names);
     }
 }

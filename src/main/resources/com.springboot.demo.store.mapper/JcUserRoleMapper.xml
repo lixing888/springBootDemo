@@ -10,8 +10,10 @@
         VALUES
         <foreach collection="lists" item="li" separator=",">
             (#{li.deparmentId}, #{li.deparmentName}, #{li.departmentIdName},
-            #{li.amount}, #{li.currency}, #{li.costFileId}, #{li.costFileName}, #{li.createTime}, #{li.updateTime}, #{li.deleted},
-            #{li.billType}, #{li.departmentParentId}, #{li.departmentChilldId}, #{li.departmentParentName}, #{li.departmentChilldName},
+            #{li.amount}, #{li.currency}, #{li.costFileId}, #{li.costFileName}, #{li.createTime}, #{li.updateTime},
+            #{li.deleted},
+            #{li.billType}, #{li.departmentParentId}, #{li.departmentChilldId}, #{li.departmentParentName},
+            #{li.departmentChilldName},
             #{li.costTypeId}, #{li.costTypeName}, #{li.leaderId}, #{li.leaderName},
             #{li.departmentLevel}, #{li.deptLevelNo})
         </foreach>

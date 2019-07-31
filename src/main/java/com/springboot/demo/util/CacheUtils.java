@@ -24,7 +24,7 @@ public class CacheUtils {
 
         //value1为null
         String value1 = fifoCache.get("key1");
-        System.out.println("返回结果:"+value1);
+        System.out.println("返回结果:" + value1);
 
         //============
         // LFU(least frequently used) 最少使用率策略。
@@ -49,8 +49,8 @@ public class CacheUtils {
         String value2 = lfuCache.get("key2");
         //null
         String value3 = lfuCache.get("key3");
-        System.out.println("value2返回结果:"+value2);
-        System.out.println("value3返回结果:"+value3);
+        System.out.println("value2返回结果:" + value2);
+        System.out.println("value3返回结果:" + value3);
 
         //================LRU (least recently used)最近最久未使用缓存。
         // 根据使用时间来判定对象是否被持续缓存，当对象被访问时放入缓存，
@@ -71,7 +71,7 @@ public class CacheUtils {
         //由于缓存容量只有3，当加入第四个元素的时候，根据LRU规则，最少使用的将被移除（2被移除）
         //null
         String value4 = lruCache.get("key");
-        System.out.println("value4返回结果:"+value4);
+        System.out.println("value4返回结果:" + value4);
         //==============定时缓存，对被缓存的对象定义一个过期时间，
         // 当对象超过过期时间会被清理。此缓存没有容量限制，
         // 对象只有在过期后才会被移除。===========
@@ -99,16 +99,15 @@ public class CacheUtils {
 
         //5毫秒后，由于设置了默认过期，key3只被保留4毫秒，因此为null
         String value33 = timedCache.get("key3");
-        System.out.println("value11返回结果:"+value11);
-        System.out.println("value22返回结果:"+value22);
-        System.out.println("value33返回结果:"+value33);
+        System.out.println("value11返回结果:" + value11);
+        System.out.println("value22返回结果:" + value22);
+        System.out.println("value33返回结果:" + value33);
 
 
         //取消定时清理
         timedCache.cancelPruneSchedule();
 
         //============================================
-
 
 
     }

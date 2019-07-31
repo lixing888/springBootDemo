@@ -44,7 +44,7 @@ public class OrderNoIntersectionUtil {
         return simpleDateFormat.format(new Date());
     }
 
-    public static void main(String[] args){
-      System.out.println();
+    public static void main(String[] args) {
+        System.out.println();
     }
 }

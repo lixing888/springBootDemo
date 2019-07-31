@@ -9,10 +9,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class FlowableApplication {
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 
-		SpringApplication.run(FlowableApplication.class, args);
+        SpringApplication.run(FlowableApplication.class, args);
 
-	}
+    }
 
 }

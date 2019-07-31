@@ -7,8 +7,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 
 /**
- * @author:lixing
- * 获取目录工具类
+ * @author:lixing 获取目录工具类
  */
 @Slf4j
 public class GetServerRealPathUnit {

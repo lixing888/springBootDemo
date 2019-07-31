@@ -17,10 +17,6 @@ public class Transaction {
         this.type = type;
     }
 
-    public enum Type {
-        A, B, C, D, GEOCERY
-    }
-
     public int getId() {
         return id;
     }
@@ -31,6 +27,10 @@ public class Transaction {
 
     public Type getType() {
         return type;
+    }
+
+    public enum Type {
+        A, B, C, D, GEOCERY
     }
 
 }

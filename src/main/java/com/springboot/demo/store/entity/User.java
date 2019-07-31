@@ -11,7 +11,7 @@ public class User {
 }
 
 @Data
-class UserInfo{
+class UserInfo {
     private String name;
     private String age;
 }

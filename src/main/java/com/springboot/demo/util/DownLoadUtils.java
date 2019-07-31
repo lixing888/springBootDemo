@@ -19,12 +19,13 @@ import java.util.Objects;
 public class DownLoadUtils {
 
     //===================================================================
+
     /**
      * download
      * 弹出框下载
      * 导出原始execl
      */
-    public Boolean download(Integer id){
+    public Boolean download(Integer id) {
         if (Objects.isNull(id)) {
             throw new ValidationException("序号ID不能为空");
         }
@@ -32,7 +33,7 @@ public class DownLoadUtils {
 //        if (Objects.isNull(costFile)) {
 //            throw new ValidationException("该文件异常！");
 //        }
-        Object content=new Object();
+        Object content = new Object();
         //文件名称
         String fileName = "测试execl文件.xlsx";
         //将测试文件test.execl读入此字节数组
@@ -46,9 +47,9 @@ public class DownLoadUtils {
                     String.format("attachment; filename=\"%s\"", java.net.URLEncoder.encode(fileName, "UTF-8")));
             response.setHeader("Pragma", "no-cache");
             response.setHeader("Expires", "0");
-            response.setHeader("Content-Length",String.valueOf(is.available()));
+            response.setHeader("Content-Length", String.valueOf(is.available()));
             //写入数据
-            IoUtil.copy(is,response.getOutputStream());
+            IoUtil.copy(is, response.getOutputStream());
             result = true;
         } catch (IOException e) {
             log.error("{}", e);

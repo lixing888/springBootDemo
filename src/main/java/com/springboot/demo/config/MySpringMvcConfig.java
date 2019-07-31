@@ -22,17 +22,19 @@ public class MySpringMvcConfig implements WebMvcConfigurer {
     public static void main(String[] args) {
         SpringApplication.run(MySpringMvcConfig.class, args);
     }
+
     /**
      * 配置拦截器
-     * @author lixing
+     *
      * @param registry
+     * @author lixing
      */
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        List<String> interceptors= Arrays.asList("/user/getUserById","/jcUserNewController/**","/test/**");
+        List<String> interceptors = Arrays.asList("/user/getUserById", "/jcUserNewController/**", "/test/**");
         registry.addInterceptor(new UserSecurityInterceptor()).addPathPatterns(interceptors);
     }
-   }
+}
 
 //    @Override
 //    public void addInterceptors(InterceptorRegistry registry) {

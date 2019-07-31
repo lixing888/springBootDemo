@@ -14,19 +14,9 @@ public class WidgetJDK8 {
     private final Color color;
     private final int weight;
 
-    enum Color {RED, BLACK, BLUE}
-
     public WidgetJDK8(Color color, int weight) {
         this.color = color;
         this.weight = weight;
-    }
-
-    public Color getColor() {
-        return color;
-    }
-
-    public int getWeight() {
-        return weight;
     }
 
     public static void main(String[] args) {
@@ -74,5 +64,15 @@ public class WidgetJDK8 {
 //            System.out.println(user.toString());
 //        }
     }
+
+    public Color getColor() {
+        return color;
+    }
+
+    public int getWeight() {
+        return weight;
+    }
+
+    enum Color {RED, BLACK, BLUE}
 
 }

@@ -15,7 +15,8 @@ import org.springframework.web.context.WebApplicationContext;
 /**
  * Description:
  * Mock单元测试可继承此类
- * @author  LErry.li
+ *
+ * @author LErry.li
  * Date: 2018年7月6日
  * Time: 下午11:16:29
  */
@@ -25,7 +26,7 @@ public class BaseTestController {
 
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    public MockMvc mockMvc ;
+    public MockMvc mockMvc;
 
     // 注入WebApplicationContext
     @Autowired
@@ -34,13 +35,13 @@ public class BaseTestController {
     // 在测试开始前初始化工作
     @Before
     public void setup() {
-        logger.info("--------------------------"+this.getClass().getName()+"单元测试开始--------------------------");
+        logger.info("--------------------------" + this.getClass().getName() + "单元测试开始--------------------------");
         this.mockMvc = MockMvcBuilders.webAppContextSetup(this.wac).build();
     }
 
     @After
     public void teardown() {
-        logger.info("--------------------------"+this.getClass().getName()+"单元测试结束--------------------------");
+        logger.info("--------------------------" + this.getClass().getName() + "单元测试结束--------------------------");
         //this.mockMvc = MockMvcBuilders.webAppContextSetup(this.wac).build();
     }
 

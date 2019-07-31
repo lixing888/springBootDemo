@@ -1,7 +1,6 @@
 package com.springboot.demo.vo;
 
 import io.swagger.annotations.ApiModelProperty;
-import io.swagger.annotations.ApiOperation;
 import lombok.Data;
 
 @Data

@@ -1,7 +1,7 @@
 package com.springboot.demo.store.manager;
 
-import com.springboot.demo.store.entity.JcUserResume;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.springboot.demo.store.entity.JcUserResume;
 
 /**
  * <p>

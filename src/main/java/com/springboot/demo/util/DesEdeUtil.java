@@ -31,8 +31,8 @@ public class DesEdeUtil {
          * 解密为字符串
          */
         String decryptStr = des.decryptStr(encryptHex);
-        System.out.println("null字符串是否blank:"+StringUtils.isNotBlank("null"));
-        System.out.println("加密为16进制字符串"+encryptHex+"====解密为字符串"+decryptStr);
+        System.out.println("null字符串是否blank:" + StringUtils.isNotBlank("null"));
+        System.out.println("加密为16进制字符串" + encryptHex + "====解密为字符串" + decryptStr);
     }
 
 
