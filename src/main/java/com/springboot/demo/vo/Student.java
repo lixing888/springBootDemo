@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
+import org.apache.commons.lang3.StringUtils;
 
 import javax.validation.constraints.NotBlank;
 import java.util.Date;
@@ -77,11 +78,20 @@ public class Student {
     @TableLogic
     private Integer deleted;
 
+    public String getUserName() {
+        if (userName == null) {
+            return StringUtils.EMPTY;
+        }
+        return userName;
+    }
+
     @Override
     public String toString() {
         return "Student [name=" + name + ", age=" + age + ", address="
                 + address + "]";
     }
+
+
 
 
 }
