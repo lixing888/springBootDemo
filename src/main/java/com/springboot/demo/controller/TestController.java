@@ -13,12 +13,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class TestController {
 
-    public PlainResult result(){
-        PlainResult<Object> result = new PlainResult<>();
-        JSONObject jsonObject = JSON.parseObject("");
-        result.setData(jsonObject);
-        return result;
-    }
+//    public PlainResult result(){
+//        PlainResult<Object> result = new PlainResult<>();
+//        JSONObject jsonObject = JSON.parseObject("");
+//        result.setData(jsonObject);
+//        return result;
+//    }
 
 
 //    @Resource
