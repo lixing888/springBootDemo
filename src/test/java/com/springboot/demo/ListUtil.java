@@ -5,10 +5,14 @@ package com.springboot.demo;
  * java list 交集 并集 差集 去重复并集
  */
 
+import com.springboot.demo.entity.Person;
+import com.springboot.demo.vo.Student;
+
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.*;
+import java.util.stream.Collectors;
 
 import static java.util.stream.Collectors.toList;
 
@@ -142,6 +146,16 @@ public class ListUtil {
         DecimalFormat df = new DecimalFormat(",###,##0.00"); //保留2位小数
         String format = df.format(a);
         System.out.println(format);
+
+
+        List<Student> list = new ArrayList<>();
+
+        list.stream().map(e -> {
+            Person person = new Person();
+            person.setAge(Integer.valueOf(e.getAge()));
+            person.setName(e.getName());
+            return person;
+        }).collect(Collectors.toList());
 
 
     }

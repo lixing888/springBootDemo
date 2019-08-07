@@ -15,7 +15,7 @@ public class TestController {
 
 //    public PlainResult result(){
 //        PlainResult<Object> result = new PlainResult<>();
-//        JSONObject jsonObject = JSON.parseObject("");
+//        JSONObject jsonObject = JSONObject.parseObject("");
 //        result.setData(jsonObject);
 //        return result;
 //    }
