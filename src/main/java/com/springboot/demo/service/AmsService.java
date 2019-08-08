@@ -23,4 +23,5 @@ public interface AmsService {
      */
     String listDepartmentPath(String departmentId);
 
+    boolean isLeader(String name);
 }

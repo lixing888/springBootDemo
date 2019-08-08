@@ -2,6 +2,7 @@ package com.springboot.demo.controller;
 
 import cn.hutool.http.HttpUtil;
 import com.alibaba.fastjson.JSON;
+import com.springboot.demo.annotation.ReSubmitLock;
 import com.springboot.demo.entity.Users;
 import com.springboot.demo.enumbean.DraftAuditStatus;
 import com.springboot.demo.service.UsersService;
@@ -57,6 +58,7 @@ public class UsersController {
 
     }
 
+    @ReSubmitLock
     @PostMapping(value = "saveUserInfo")
     @ApiOperation(value = "保存用户信息", notes = "ID不能为空")
     public Users saveUserInfo(@RequestBody Users users) {
