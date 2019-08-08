@@ -2,6 +2,7 @@ package com.springboot.demo.util;
 
 import com.google.common.base.CaseFormat;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Indexed;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
