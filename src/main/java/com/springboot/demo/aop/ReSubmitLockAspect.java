@@ -49,9 +49,9 @@ public class ReSubmitLockAspect {
         long time = lock.timeOut();
         //锁前缀加当前登录用户加被执行的类名加方法名
         String className = joinPoint.getThis().getClass().getName();
-        //String employeeId = UserInterceptor.getLoginedUser().getEmployeeId();
+        String employeeId = "1108061";
         //todo 如果调用方法查询条件经常改变，建议加上方法参数作为锁的key
-        String lockName = LOCK_KEY_PRE + "_" + className + "_" + method.getName();
+        String lockName = LOCK_KEY_PRE + employeeId + "_" + className + "_" + method.getName();
         //加锁成功
         if (!redisLock.trySet(lockName, time)) {
             //锁已存在
