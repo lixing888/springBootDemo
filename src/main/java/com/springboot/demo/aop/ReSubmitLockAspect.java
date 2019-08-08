@@ -48,6 +48,7 @@ public class ReSubmitLockAspect {
         //获取锁的超时时间
         long time = lock.timeOut();
         //锁前缀加当前登录用户加被执行的类名加方法名
+
         String className = joinPoint.getThis().getClass().getName();
         String employeeId = "1108061";
         //todo 如果调用方法查询条件经常改变，建议加上方法参数作为锁的key
