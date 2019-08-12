@@ -26,12 +26,12 @@ import java.lang.reflect.Method;
 @Slf4j
 public class ReSubmitLockAspect {
 
-    @Resource
-    private RedisLock redisLock;
     /**
      * 锁的key前缀，防止与其他key重复
      */
     private static final String LOCK_KEY_PRE = "wfc_rule_LOCK_KEY_PRE_";
+    @Resource
+    private RedisLock redisLock;
 
     /**
      * 当某一个方法中有Lock注解时，则加锁，执行完毕后解锁
