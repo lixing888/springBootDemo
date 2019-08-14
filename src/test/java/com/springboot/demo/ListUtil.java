@@ -6,7 +6,11 @@ package com.springboot.demo;
  */
 
 import com.springboot.demo.entity.Person;
+import com.springboot.demo.vo.ContractData;
+import com.springboot.demo.vo.CostDeptItemListRequest;
 import com.springboot.demo.vo.Student;
+import net.sf.json.JSONArray;
+import org.apache.poi.ss.formula.functions.T;
 
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
@@ -158,6 +162,58 @@ public class ListUtil {
         }).collect(Collectors.toList());
 
 
+        List<ContractData.CeoCheckData> costItems = new ArrayList<>();
+        ContractData.CeoCheckData ceoCheckData1=new ContractData.CeoCheckData();
+        ceoCheckData1.setCostTypeId("MDS090121");
+        ceoCheckData1.setAmount(new BigDecimal("0"));
+        ceoCheckData1.setCurrency("CNY");
+        ceoCheckData1.setCnyAmount(new BigDecimal("10000"));
+
+        ContractData.CeoCheckData ceoCheckData2=new ContractData.CeoCheckData();
+        ceoCheckData2.setCostTypeId("MDS090123");
+        ceoCheckData2.setAmount(new BigDecimal("0"));
+        ceoCheckData2.setCurrency("CNY");
+        ceoCheckData2.setCnyAmount(new BigDecimal("10000"));
+
+        ContractData.CeoCheckData ceoCheckData3=new ContractData.CeoCheckData();
+        ceoCheckData3.setCostTypeId("MDS090122");
+        ceoCheckData3.setAmount(new BigDecimal("0"));
+        ceoCheckData3.setCurrency("CNY");
+        ceoCheckData3.setCnyAmount(new BigDecimal("10000"));
+
+        ContractData.CeoCheckData ceoCheckData4=new ContractData.CeoCheckData();
+        ceoCheckData4.setCostTypeId("MDS090671");
+        ceoCheckData4.setAmount(new BigDecimal("0"));
+        ceoCheckData4.setCurrency("CNY");
+        ceoCheckData4.setCnyAmount(new BigDecimal("10000"));
+
+        ContractData.CeoCheckData ceoCheckData5=new ContractData.CeoCheckData();
+        ceoCheckData5.setCostTypeId("MDS090321");
+        ceoCheckData5.setAmount(new BigDecimal("0"));
+        ceoCheckData5.setCurrency("CNY");
+        ceoCheckData5.setCnyAmount(new BigDecimal("10000"));
+
+        costItems.add(ceoCheckData1);
+        costItems.add(ceoCheckData2);
+        costItems.add(ceoCheckData3);
+        costItems.add(ceoCheckData4);
+        costItems.add(ceoCheckData5);
+
+
+        CostDeptItemListRequest costDeptItemListRequest = new CostDeptItemListRequest();
+        List<CostDeptItemListRequest.CostDeptItem> costDeptItemList = new ArrayList<>();
+
+        for (ContractData.CeoCheckData costItem : costItems) {
+            CostDeptItemListRequest.CostDeptItem costDeptItem = new CostDeptItemListRequest.CostDeptItem();
+            costDeptItem.setBudgetItemCode(costItem.getCostTypeId());
+            costDeptItem.setAmount(costItem.getCnyAmount());
+            costDeptItem.setCostDeptId("");
+            costDeptItem.setCurrency("CNY");
+            costDeptItemList.add(costDeptItem);
+        }
+
+        System.out.println("jsonListStr = " + JSONArray.fromObject(costDeptItemList));
+
     }
 
     public static void printStr(List list1) {
@@ -165,5 +221,49 @@ public class ListUtil {
             System.out.println(list1.get(i));
         }
 
+    }
+
+
+    /**
+     * for all jdk version
+     * @param mList
+     * @return
+     */
+    public static String listToString(List<T> mList) {
+        String convertedListStr = "";
+        if (null != mList && mList.size() > 0) {
+            String[] mListArray = mList.toArray(new String[mList.size()]);
+            for (int i = 0; i < mListArray.length; i++) {
+                if (i < mListArray.length - 1) {
+                    convertedListStr += mListArray[i] + ",";
+                } else {
+                    convertedListStr += mListArray[i];
+                }
+            }
+            return convertedListStr;
+        } else return "List is null!!!";
+    }
+
+    /**
+     * for jdk <= java 7
+     * @param mList
+     * @return
+     */
+    // 采用Stringbuilder.append()的方式追加
+    public static String listToString2(List<CostDeptItemListRequest.CostDeptItem> mList) {
+        final String SEPARATOR = ",";
+        // mList = Arrays.asList("AAA", "BBB", "CCC");
+        StringBuilder sb = new StringBuilder();
+        String convertedListStr = "";
+        if (null != mList && mList.size() > 0) {
+            for (CostDeptItemListRequest.CostDeptItem item : mList) {
+                sb.append(item);
+                sb.append(SEPARATOR);
+            }
+            convertedListStr = sb.toString();
+            convertedListStr = convertedListStr.substring(0, convertedListStr.length()
+                    - SEPARATOR.length());
+            return convertedListStr;
+        } else return "List is null!!!";
     }
 }
