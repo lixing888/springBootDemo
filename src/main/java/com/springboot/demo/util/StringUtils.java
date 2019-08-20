@@ -4,6 +4,7 @@ import com.google.common.base.CaseFormat;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Indexed;
 
+import java.math.BigDecimal;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -128,6 +129,15 @@ public class StringUtils {
         System.out.printf("上面价格的指数和浮点数结果的长度较短的是：%g %n", 50*0.85);
         System.out.printf("上面的折扣是%d%% %n", 85);
         System.out.printf("字母A的散列码是：%h %n", 'A');
+        // 浮点数的打印
+        System.out.println(new BigDecimal("10000000000").toString());
+        // 普通的数字字符串
+        System.out.println(new BigDecimal("100.000").toString());
+        // 去除末尾多余的0
+        System.out.println(new BigDecimal("100.000").stripTrailingZeros().toString());
+        // 避免输出科学计数法
+        System.out.println(new BigDecimal("100.990").stripTrailingZeros().toPlainString());
+
     }
 }
 
