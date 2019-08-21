@@ -35,7 +35,10 @@ public class DemoApplication {
         SpringApplication.run(DemoApplication.class, args);
     }
 
-    //http://localhost:8080/demo1
+    /**
+     * http://localhost:8080/demo1
+     */
+
     @GetMapping("/demo1")
     @ApiOperation(value = "获取用户列表", notes = "获取所有用户列表", produces = "application/json")
     @ApiImplicitParam(value = "1", name = "参数", paramType = "query", dataType = "String", required = true)

@@ -1,5 +1,7 @@
 package com.springboot.demo.util;
 
+import cn.hutool.core.util.BooleanUtil;
+import cn.hutool.core.util.NumberUtil;
 import com.google.common.base.CaseFormat;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Indexed;
@@ -71,6 +73,28 @@ public class StringUtils {
             sb.append(matcher.end() == line.length() ? "" : "_");
         }
         return sb.toString();
+    }
+
+    /**
+     * 输入类型验证
+     * @param valueType
+     * @param value
+     */
+    private void addConstantCheck(String valueType, String value) {
+        boolean boo;
+        switch (valueType) {
+            case "NUMBER":
+                boo = NumberUtil.isNumber(value);
+                break;
+            case "BOOLEAN":
+                boo= BooleanUtil.toBoolean(value);
+                break;
+            default:
+                return;
+        }
+        if (!boo) {
+            throw new RuleEngineException("值与类型不匹配");
+        }
     }
     public static void main(String[] args) {
         String line = "are_you_dou_bi_yellowcong";

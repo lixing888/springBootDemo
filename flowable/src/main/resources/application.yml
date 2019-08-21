@@ -1,8 +1,11 @@
 spring:
  datasource:
-   url: jdbc:mysql://139.129.45.208:3306/flowable-spring-boot?serverTimezone=UTC
+#   url: jdbc:mysql://139.129.45.208:3306/flowable-spring-boot?serverTimezone=UTC
+#   username: root
+#   password: beiXINzhiKE
+   url: jdbc:mysql://188.131.251.86:3306/flowable-spring-boot?serverTimezone=UTC
    username: root
-   password: beiXINzhiKE
+   password: 123456
    driver-class-name: com.mysql.jdbc.Driver
 flowable:
 #关闭定时任务JOB
