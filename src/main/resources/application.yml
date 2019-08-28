@@ -11,7 +11,13 @@ spring:
     password: 123456
     driver-class-name: com.mysql.jdbc.Driver
 
-
+  data:
+    #elasticsearch全文检索
+    elasticsearch:
+      cluster-nodes: 188.131.251.86:9300
+      cluster-name: my-application
+      repositories:
+        enabled: true
 
 mybatis-plus:
   global-config:
