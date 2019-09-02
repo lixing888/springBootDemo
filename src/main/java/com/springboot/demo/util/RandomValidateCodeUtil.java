@@ -12,12 +12,13 @@ import java.util.Random;
 
 /**
  * 生成随机码图片
+ *
  * @author lixing
  */
 @Slf4j
 public class RandomValidateCodeUtil {
     //放到session中的key
-    public static final String RANDOMCODEKEY= "RANDOMVALIDATECODEKEY";
+    public static final String RANDOMCODEKEY = "RANDOMVALIDATECODEKEY";
     //随机产生只有数字的字符串 private String
     private String randString = "0123456789";
     //private String randString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";//随机产生只有字母的字符串
@@ -45,11 +46,11 @@ public class RandomValidateCodeUtil {
      * 获得颜色
      */
     private Color getRandColor(int fc, int bc) {
-        if (fc > 255){
+        if (fc > 255) {
             fc = 255;
         }
 
-        if (bc > 255){
+        if (bc > 255) {
             bc = 255;
         }
 
@@ -125,4 +126,4 @@ public class RandomValidateCodeUtil {
     public String getRandomString(int num) {
         return String.valueOf(randString.charAt(num));
     }
- }
+}

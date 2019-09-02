@@ -53,6 +53,10 @@ public class SignUtil {
 
     public static void main(String[] args) throws Exception {
 
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Date dateDate = new Date();
+        String dateString = formatter.format(dateDate);
+        System.out.println("北京时间:" + dateString);
         String time = DateUtil.format(new Date(), "yyyyMMddHHmmss");
         String str = "20190416115559";
         String bizParams = "{\"process_instance_id\":\"\",\"task_instance_id\":\"979e20c5-7545-4932-8415-e87af155a341\"}";

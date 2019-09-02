@@ -10,6 +10,10 @@ public class TwoTree {
     private Node root;
     private int size;
 
+    public static void main(String[] args) {
+
+    }
+
     public void add(Integer data) {
         Node newNode = new Node();
         newNode.data = data;
@@ -82,9 +86,5 @@ public class TwoTree {
 
     public int size() {
         return size;
-    }
-
-    public static void main(String[] args) {
-
     }
 }

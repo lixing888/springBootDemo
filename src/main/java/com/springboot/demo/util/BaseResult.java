@@ -3,6 +3,7 @@ package com.springboot.demo.util;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.springboot.demo.enumbean.ResultState;
 import io.swagger.annotations.ApiModel;
+
 import java.util.Date;
 
 @ApiModel
@@ -34,28 +35,28 @@ public class BaseResult {
         return this.state;
     }
 
-    public String getMessage() {
-        return this.message;
-    }
-
-    public String getCode() {
-        return this.code;
-    }
-
-    public Date getTimestamp() {
-        return this.timestamp;
-    }
-
     public void setState(ResultState state) {
         this.state = state;
+    }
+
+    public String getMessage() {
+        return this.message;
     }
 
     public void setMessage(String message) {
         this.message = message;
     }
 
+    public String getCode() {
+        return this.code;
+    }
+
     public void setCode(String code) {
         this.code = code;
+    }
+
+    public Date getTimestamp() {
+        return this.timestamp;
     }
 
     public void setTimestamp(Date timestamp) {
@@ -69,11 +70,12 @@ public class BaseResult {
         } else if (!(o instanceof BaseResult)) {
             return false;
         } else {
-            BaseResult other = (BaseResult)o;
+            BaseResult other = (BaseResult) o;
             if (!other.canEqual(this)) {
                 return false;
             } else {
-                label59: {
+                label59:
+                {
                     Object this$state = this.getState();
                     Object other$state = other.getState();
                     if (this$state == null) {

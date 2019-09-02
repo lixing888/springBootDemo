@@ -4,7 +4,6 @@ import cn.hutool.core.util.BooleanUtil;
 import cn.hutool.core.util.NumberUtil;
 import com.google.common.base.CaseFormat;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Indexed;
 
 import java.math.BigDecimal;
 import java.util.regex.Matcher;
@@ -75,27 +74,6 @@ public class StringUtils {
         return sb.toString();
     }
 
-    /**
-     * 输入类型验证
-     * @param valueType
-     * @param value
-     */
-    private void addConstantCheck(String valueType, String value) {
-        boolean boo;
-        switch (valueType) {
-            case "NUMBER":
-                boo = NumberUtil.isNumber(value);
-                break;
-            case "BOOLEAN":
-                boo= BooleanUtil.toBoolean(value);
-                break;
-            default:
-                return;
-        }
-        if (!boo) {
-            throw new RuleEngineException("值与类型不匹配");
-        }
-    }
     public static void main(String[] args) {
         String line = "are_you_dou_bi_yellowcong";
         //下划线转驼峰（大驼峰）
@@ -130,27 +108,27 @@ public class StringUtils {
         System.out.println(orderColumn);//orderColumn
 
 
-        System.out.println("与jar包同级："+GetServerRealPathUnit.getPath(""));
+        System.out.println("与jar包同级：" + GetServerRealPathUnit.getPath(""));
 
-        String left="左值";
-        String symbolName="符号名称";
-        String right="右值";
-        System.out.println("字符串拼接；"+String.format("%s %s %s", left, symbolName, right));
+        String left = "左值";
+        String symbolName = "符号名称";
+        String right = "右值";
+        System.out.println("字符串拼接；" + String.format("%s %s %s", left, symbolName, right));
 
-        String str=null;
-        str=String.format("Hi,%s", "王力");
+        String str = null;
+        str = String.format("Hi,%s", "王力");
         System.out.println(str);
-        str=String.format("Hi,%s:%s.%s", "王南","王力","王张");
+        str = String.format("Hi,%s:%s.%s", "王南", "王力", "王张");
         System.out.println(str);
         System.out.printf("字母a的大写是：%c %n", 'A');
-        System.out.printf("3>7的结果是：%b %n", 3>7);
-        System.out.printf("100的一半是：%d %n", 100/2);
+        System.out.printf("3>7的结果是：%b %n", 3 > 7);
+        System.out.printf("100的一半是：%d %n", 100 / 2);
         System.out.printf("100的16进制数是：%x %n", 100);
         System.out.printf("100的8进制数是：%o %n", 100);
-        System.out.printf("50元的书打8.5折扣是：%f 元%n", 50*0.85);
-        System.out.printf("上面价格的16进制数是：%a %n", 50*0.85);
-        System.out.printf("上面价格的指数表示：%e %n", 50*0.85);
-        System.out.printf("上面价格的指数和浮点数结果的长度较短的是：%g %n", 50*0.85);
+        System.out.printf("50元的书打8.5折扣是：%f 元%n", 50 * 0.85);
+        System.out.printf("上面价格的16进制数是：%a %n", 50 * 0.85);
+        System.out.printf("上面价格的指数表示：%e %n", 50 * 0.85);
+        System.out.printf("上面价格的指数和浮点数结果的长度较短的是：%g %n", 50 * 0.85);
         System.out.printf("上面的折扣是%d%% %n", 85);
         System.out.printf("字母A的散列码是：%h %n", 'A');
         // 浮点数的打印
@@ -162,6 +140,29 @@ public class StringUtils {
         // 避免输出科学计数法
         System.out.println(new BigDecimal("100.990").stripTrailingZeros().toPlainString());
 
+    }
+
+    /**
+     * 输入类型验证
+     *
+     * @param valueType
+     * @param value
+     */
+    private void addConstantCheck(String valueType, String value) {
+        boolean boo;
+        switch (valueType) {
+            case "NUMBER":
+                boo = NumberUtil.isNumber(value);
+                break;
+            case "BOOLEAN":
+                boo = BooleanUtil.toBoolean(value);
+                break;
+            default:
+                return;
+        }
+        if (!boo) {
+            throw new RuleEngineException("值与类型不匹配");
+        }
     }
 }
 

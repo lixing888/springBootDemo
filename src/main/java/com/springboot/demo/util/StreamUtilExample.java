@@ -34,6 +34,17 @@ public class StreamUtilExample {
         init();
     }
 
+    public static void main(String[] args) {
+        StreamUtilExample example = new StreamUtilExample();
+
+        example.useStreamFilter();
+        example.useStreamMap();
+        example.useStreamMatch();
+        example.useStreamCount();
+        example.useStreamReduce();
+        example.useParallelStreams();
+    }
+
     private void init() {
         initStringList();
     }
@@ -183,16 +194,5 @@ public class StreamUtilExample {
         System.out.format("parallel sort took: %d ms.", parallelT1 - parallelT0).println();
 
         // 从输出可以看出：并行排序快了一倍多
-    }
-
-    public static void main(String[] args) {
-        StreamUtilExample example = new StreamUtilExample();
-
-        example.useStreamFilter();
-        example.useStreamMap();
-        example.useStreamMatch();
-        example.useStreamCount();
-        example.useStreamReduce();
-        example.useParallelStreams();
     }
 }

@@ -9,6 +9,7 @@ import org.springframework.boot.autoconfigure.freemarker.FreeMarkerAutoConfigura
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.retry.annotation.EnableRetry;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.Arrays;
@@ -23,6 +24,7 @@ import java.util.Arrays;
  * @EnableAutoConfiguration:表示程序启动时，自动加载springboot默认的配置。
  * @ComponentScan:表示程序启动是，自动扫描当前包及子包下所有类。
  */
+@EnableRetry
 @SpringBootApplication(exclude = {FreeMarkerAutoConfiguration.class}, scanBasePackages = "com.springboot")
 @ComponentScan("com.springboot")
 @MapperScan(basePackages = "com.springboot")//扫描范围

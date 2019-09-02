@@ -1,6 +1,6 @@
 package com.springboot.demo.util;
 
-public class RuleEngineException extends RuntimeException{
+public class RuleEngineException extends RuntimeException {
 
     public RuleEngineException(Throwable cause) {
         super(cause);

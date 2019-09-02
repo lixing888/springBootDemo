@@ -33,28 +33,28 @@ public class Reflex {
             //2.获取People类的所有方法信息
             System.out.println("------People类的所有方法--------");
             Method[] method = clazz.getDeclaredMethods();
-            for(Method t:method) {
+            for (Method t : method) {
                 System.out.println(t.toString());
             }
 
             //3.获取所有公有构造函数
             System.out.println("------People类的所有公有构造函数--------");
             Constructor[] constrArray = clazz.getConstructors();
-            for(Constructor c:constrArray) {
+            for (Constructor c : constrArray) {
                 System.out.println(c);
             }
 
             //4.获取People类的所有构造函数
             System.out.println("------People类的所有构造函数--------");
             Constructor[] constructors = clazz.getDeclaredConstructors();
-            for(Constructor c:constructors) {
+            for (Constructor c : constructors) {
                 System.out.println(c.toString());
             }
 
             //5.获取People类的所有方法信息
             System.out.println("------People类的所有方法信息--------");
             Field[] fields = clazz.getDeclaredFields();
-            for(Field f:fields) {
+            for (Field f : fields) {
                 System.out.println(f.toString());
             }
 

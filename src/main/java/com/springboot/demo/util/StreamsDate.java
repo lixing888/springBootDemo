@@ -15,44 +15,17 @@ import net.sf.json.JSONObject;
 
 import java.awt.*;
 import java.time.*;
-import java.util.*;
 import java.util.List;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 public class StreamsDate {
 
-    private enum Status {
-        OPEN, CLOSED
-    }
-
-    ;
-
     private static final Pattern NUM_PATTERN = Pattern.compile("[0-9]+");
 
-    private static final class Task {
-        private final Status status;
-        private final Integer points;
-
-        Task(final Status status, final Integer points) {
-            this.status = status;
-            this.points = points;
-        }
-
-        public Integer getPoints() {
-            return points;
-        }
-
-        public Status getStatus() {
-            return status;
-        }
-
-        @Override
-        public String toString() {
-            return String.format("[%s, %d]", status, points);
-        }
-    }
+    ;
 
     /**
      * 利用正则表达式判断字符串是否是数字
@@ -349,6 +322,33 @@ public class StreamsDate {
         //验证图形验证码的有效性，返回boolean值
         lineCaptcha.verify("1234");
 
+    }
+
+    private enum Status {
+        OPEN, CLOSED
+    }
+
+    private static final class Task {
+        private final Status status;
+        private final Integer points;
+
+        Task(final Status status, final Integer points) {
+            this.status = status;
+            this.points = points;
+        }
+
+        public Integer getPoints() {
+            return points;
+        }
+
+        public Status getStatus() {
+            return status;
+        }
+
+        @Override
+        public String toString() {
+            return String.format("[%s, %d]", status, points);
+        }
     }
 
 }

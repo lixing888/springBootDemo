@@ -19,14 +19,13 @@ import java.util.concurrent.TimeUnit;
 @Slf4j
 public class RedisLock {
 
-    @Resource
-    private RedissonClient redissonClient;
-
     /**
      * 失效过期时间
      */
     private static final long EXPIRE_TIME = 20L;
     private static final Object PRESENT = new Object();
+    @Resource
+    private RedissonClient redissonClient;
 
     /**
      * 删除锁

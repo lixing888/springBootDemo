@@ -28,7 +28,6 @@ public class BinaryTree {
     }
 
     /**
-     *
      * 先序遍历
      */
     public void preOrder(Node node) {
