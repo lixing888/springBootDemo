@@ -9,6 +9,8 @@ import java.util.Date;
 @Slf4j
 public class SignUtil {
 
+    private static final String TIME_FORMAT = "yyyyMMddHHmmss";
+
     /**
      * 创建sign=md5(secret+timestamp+biz_params)
      *
@@ -57,7 +59,7 @@ public class SignUtil {
         Date dateDate = new Date();
         String dateString = formatter.format(dateDate);
         System.out.println("北京时间:" + dateString);
-        String time = DateUtil.format(new Date(), "yyyyMMddHHmmss");
+        String time = DateUtil.format(new Date(), TIME_FORMAT);
         String str = "20190416115559";
         String bizParams = "{\"process_instance_id\":\"\",\"task_instance_id\":\"979e20c5-7545-4932-8415-e87af155a341\"}";
         String sign = getSign("12345678", time, bizParams);

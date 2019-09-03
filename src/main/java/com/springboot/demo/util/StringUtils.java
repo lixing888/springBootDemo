@@ -115,6 +115,15 @@ public class StringUtils {
         String right = "右值";
         System.out.println("字符串拼接；" + String.format("%s %s %s", left, symbolName, right));
 
+        //String转Boolean
+        String a = "true";
+        System.out.println("String转Boolean："+Boolean.parseBoolean(a));;
+        Boolean.getBoolean(a);
+        //Boolean转String
+        boolean b = true;
+        String s = String.valueOf(b);
+        System.out.println("Boolean转String："+s);
+
         String str = null;
         str = String.format("Hi,%s", "王力");
         System.out.println(str);
