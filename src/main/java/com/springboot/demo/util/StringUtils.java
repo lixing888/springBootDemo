@@ -116,8 +116,8 @@ public class StringUtils {
         System.out.println("字符串拼接；" + String.format("%s %s %s", left, symbolName, right));
 
         //String转Boolean
-        String a = "true";
-        System.out.println("String转Boolean："+Boolean.parseBoolean(a));;
+        String a = "false";
+        System.out.println("String转Boolean："+Boolean.parseBoolean(a)+"===="+Boolean.valueOf(a));;
         Boolean.getBoolean(a);
         //Boolean转String
         boolean b = true;
