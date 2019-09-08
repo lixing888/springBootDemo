@@ -117,12 +117,13 @@ public class StringUtils {
 
         //String转Boolean
         String a = "false";
-        System.out.println("String转Boolean："+Boolean.parseBoolean(a)+"===="+Boolean.valueOf(a));;
+        System.out.println("String转Boolean：" + Boolean.parseBoolean(a) + "====" + Boolean.valueOf(a));
+        ;
         Boolean.getBoolean(a);
         //Boolean转String
         boolean b = true;
         String s = String.valueOf(b);
-        System.out.println("Boolean转String："+s);
+        System.out.println("Boolean转String：" + s);
 
         String str = null;
         str = String.format("Hi,%s", "王力");

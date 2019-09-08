@@ -8,7 +8,6 @@ import org.apache.rocketmq.client.consumer.listener.ConsumeConcurrentlyStatus;
 import org.apache.rocketmq.client.consumer.listener.MessageListenerConcurrently;
 import org.apache.rocketmq.client.exception.MQClientException;
 import org.apache.rocketmq.common.message.MessageExt;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
@@ -18,12 +17,11 @@ import java.util.List;
 @Slf4j
 @Component
 public class DepartmentChangesListener {
+    private final static String DEPARTMENT_CHANGES_TOPIC = "departmentChanges";
     @Value("${spring.rocketmq.producer.group}")
     private String producerGroup;
     @Value("${spring.rocketmq.nameServer}")
     private String nameServer;
-
-    private final static String DEPARTMENT_CHANGES_TOPIC = "departmentChanges";
 
     @PostConstruct
     public void init() throws MQClientException {

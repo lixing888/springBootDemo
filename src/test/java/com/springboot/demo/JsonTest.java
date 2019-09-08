@@ -69,14 +69,13 @@ public class JsonTest {
 
         strTojson1.get("amount");
 
-        //
-        JSONObject jsonObject = JSON.parseObject("{\n" +
+        String costItems = "{\n" +
                 "  \"203810\": {\n" +
                 "    \"364062609684836353\": {\n" +
                 "      \"amount\": 1999.00,\n" +
                 "      \"budgetItemCode\": \"MDBS00000006\",\n" +
                 "      \"costDeptId\": \"288980000064976051\",\n" +
-                "      \"currency\": \"CNY\"\n" +
+                "      \"currency\": \"USD\"\n" +
                 "    },\n" +
                 "    \"364062609684836354\": {\n" +
                 "      \"amount\": 100.00,\n" +
@@ -93,7 +92,12 @@ public class JsonTest {
                 "      \"currency\": \"CNY\"\n" +
                 "    }\n" +
                 "  }\n" +
-                "}");
+                "}";
+
+        String strMsg = "{\"costDeptItemList\":" + JSON.toJSONString(costItems) + "}";
+        System.out.println("====="+strMsg);
+        //
+        JSONObject jsonObject = JSON.parseObject(costItems);
         if (!jsonObject.isEmpty()) {
             Collection<Object> values = jsonObject.values();
             for (Object value : values) {
@@ -106,10 +110,16 @@ public class JsonTest {
                     String budgetItemCode = v.getString("budgetItemCode");
                     String costDeptId = v.getString("costDeptId");
                     String currency = v.getString("currency");
+                    if ("CNY".equals(currency)) {
+                        continue;
+                    }
+                    //..
+                    v.put("amount", new BigDecimal("100"));
+                    v.put("currency", "CNY");
                     System.out.println(amount+"  "+budgetItemCode+"  "+costDeptId+"  "+currency);
                 }
-
             }
+            System.out.println("币种转换后的："+jsonObject.toString());
         }
 
     }
