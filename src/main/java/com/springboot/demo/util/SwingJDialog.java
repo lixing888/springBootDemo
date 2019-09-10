@@ -3,18 +3,16 @@ package com.springboot.demo.util;
 import cn.hutool.core.date.DateUtil;
 import cn.hutool.crypto.SecureUtil;
 
-import java.awt.*;
+import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Date;
-import java.util.logging.SimpleFormatter;
 
-import javax.swing.*;
 /**
  * @author lixing
  */
 public class SwingJDialog {
-    public SwingJDialog(){
+    public SwingJDialog() {
         // 创建 JFrame 实例
         JFrame frame = new JFrame("Login Example");
         // Setting the width and height of frame
@@ -45,38 +43,38 @@ public class SwingJDialog {
         panel.setLayout(null);
 
         // 创建 JLabel
-        JLabel userLabel = new JLabel("User:");
+        JLabel userLabel = new JLabel("param1:");
         /* 这个方法定义了组件的位置。
          * setBounds(x, y, width, height)
          * x 和 y 指定左上角的新位置，由 width 和 height 指定新的大小。
          */
-        userLabel.setBounds(10,20,80,25);
+        userLabel.setBounds(10, 20, 80, 25);
         panel.add(userLabel);
 
         /*
          * 创建文本域用于用户输入
          */
         JTextField userText = new JTextField(20);
-        userText.setBounds(100,20,165,25);
+        userText.setBounds(100, 20, 165, 25);
         panel.add(userText);
 
         // 输入密码的文本域
-        JLabel passwordLabel = new JLabel("Password:");
-        passwordLabel.setBounds(10,50,80,25);
+        JLabel passwordLabel = new JLabel("param2:");
+        passwordLabel.setBounds(10, 50, 80, 25);
         panel.add(passwordLabel);
 
         /*
          *这个类似用于输入的文本域
          * 但是输入的信息会以点号代替，用于包含密码的安全性
          */
-       // JPasswordField passwordText = new JPasswordField(20);
+        // JPasswordField passwordText = new JPasswordField(20);
         JTextField passwordText = new JTextField(20);
-        passwordText.setBounds(100,50,165,25);
+        passwordText.setBounds(100, 50, 165, 25);
         panel.add(passwordText);
 
         // 输入密码的文本域
-        JLabel timeLabel = new JLabel("Password:");
-        timeLabel.setBounds(10,80,80,25);
+        JLabel timeLabel = new JLabel("param3:");
+        timeLabel.setBounds(10, 80, 80, 25);
         panel.add(timeLabel);
 
         /*
@@ -85,7 +83,7 @@ public class SwingJDialog {
          */
         // JPasswordField passwordText = new JPasswordField(20);
         JTextField timeText = new JTextField(20);
-        timeText.setBounds(100,80,165,25);
+        timeText.setBounds(100, 80, 165, 25);
         String tims = DateUtil.format(new Date(), "yyyyMMddHHmmss");
         timeText.setText(tims);
         panel.add(timeText);
@@ -96,14 +94,14 @@ public class SwingJDialog {
          * setBounds(x, y, width, height)
          * x 和 y 指定左上角的新位置，由 width 和 height 指定新的大小。
          */
-        resultLabel.setBounds(10,110,80,25);
+        resultLabel.setBounds(10, 110, 80, 25);
         panel.add(resultLabel);
 
         /*
          * 创建文本域用于结果输入
          */
         JTextField resultText = new JTextField(20);
-        resultText.setBounds(100,110,165,25);
+        resultText.setBounds(100, 110, 165, 25);
         panel.add(resultText);
 
         // 创建登录按钮
@@ -111,20 +109,20 @@ public class SwingJDialog {
         loginButton.setBounds(10, 140, 80, 25);
         panel.add(loginButton);
         loginButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e)    //重写actionPerformed方法
-            {
-                String a, b,c;
-                a = userText.getText(); //获取TextField1中的数据
-                b = passwordText.getText();
-                c= timeText.getText();
-                resultText.setText(SecureUtil.md5(a + b+c));
+                                          public void actionPerformed(ActionEvent e)    //重写actionPerformed方法
+                                          {
+                                              String a, b, c;
+                                              a = userText.getText(); //获取TextField1中的数据
+                                              b = passwordText.getText();
+                                              c = timeText.getText();
+                                              resultText.setText(SecureUtil.md5(a + b + c));
 
-            }
-        }
+                                          }
+                                      }
         );
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         new SwingJDialog();
     }
 
