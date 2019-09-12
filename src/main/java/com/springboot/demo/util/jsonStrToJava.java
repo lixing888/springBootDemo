@@ -1,17 +1,22 @@
 package com.springboot.demo.util;
 
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.PropertyNamingStrategy;
 import com.springboot.demo.vo.MyBean;
 import com.springboot.demo.vo.Student;
+import lombok.extern.slf4j.Slf4j;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
 /**
  * @author lixing
  */
+@Slf4j
 public class jsonStrToJava {
     public static void main(String[] args) {
 
@@ -33,12 +38,23 @@ public class jsonStrToJava {
 
 
         //定义两种不同格式的字符串============================
-        String objectStr = "{\"name\":\"JSON\",\"age\":\"24\",\"address\":\"北京市西城区\"}";
+        String objectStr = "{\"name\":\"LIXING\",\"age\":\"24\",\"address\":\"北京市西城区\"}";
         String arrayStr = "[{\"name\":\"JSON\",\"age\":\"24\",\"address\":\"北京市西城区\"},{\"name\":\"LIXING\",\"age\":\"28\",\"address\":\"北京市昌平区\"}]";
         //1、使用JSONObject
         JSONObject jsonObject = JSONObject.fromObject(objectStr);
         Student stu = (Student) JSONObject.toBean(jsonObject, Student.class);
 
+        //=================
+        ObjectMapper mapper = new ObjectMapper();
+        //驼峰转换
+        mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
+        try {
+            Student student1 = mapper.readValue(objectStr, Student.class);
+            System.out.println("学生姓名:" + student1.getName());
+        } catch (IOException e) {
+            log.info(e.toString());
+        }
+        //===========
         //2、使用JSONArray
         JSONArray jsonArray = JSONArray.fromObject(arrayStr);
         //获得jsonArray的第一个元素

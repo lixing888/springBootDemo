@@ -64,7 +64,6 @@ public class ListSum {
         //Java 8 新引入的 Stream 操作
         List myList = Arrays.stream(intArray).boxed().collect(Collectors.toList());
         System.out.println(myList.size());
-
         List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
         list.add(createMap("小溪塔", "A", 9.0, 5.0));
         list.add(createMap("小溪塔", "B", 7.0, 4.0));
