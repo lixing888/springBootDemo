@@ -113,7 +113,7 @@ public class JsonTest {
                     if ("CNY".equals(currency)) {
                         continue;
                     }
-                    //..
+                    //替换成要变更的数据
                     v.put("amount", new BigDecimal("100"));
                     v.put("currency", "CNY");
                     System.out.println(amount+"  "+budgetItemCode+"  "+costDeptId+"  "+currency);

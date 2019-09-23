@@ -25,6 +25,17 @@ public class SignUtil {
     }
 
     /**
+     * 生成token
+     *
+     * @param source
+     * @param hashType
+     * @return
+     */
+    public static String getHash(String source, String hashType) {
+        return TokenUtil.getHash(source, hashType);
+    }
+
+    /**
      * timeStamp合法性验证
      * 因为正是服务器时间有误差，时间戳正负5分钟均合法。
      *
@@ -63,6 +74,9 @@ public class SignUtil {
         String str = "20190416115559";
         String bizParams = "{\"process_instance_id\":\"\",\"task_instance_id\":\"979e20c5-7545-4932-8415-e87af155a341\"}";
         String sign = getSign("12345678", time, bizParams);
-        System.out.println(sign);
+        String token = getHash(bizParams, "MD5");
+        System.out.println("生成sign字符串:" + sign);
+        System.out.println("生成token字符串:" + token);
+
     }
 }

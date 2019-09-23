@@ -1,9 +1,11 @@
 package com.springboot.demo.util;
 
+import cn.hutool.core.collection.CollUtil;
 import com.springboot.demo.vo.Demo;
 import com.springboot.demo.vo.Student;
 import lombok.extern.slf4j.Slf4j;
 
+import javax.validation.ValidationException;
 import java.math.BigDecimal;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -225,6 +227,9 @@ public class ListSum {
         ruleData.add(0);
         List<Integer> areas = ruleData.stream().distinct().map(record -> record.intValue()).collect(Collectors.toList());
 
+        if (CollUtil.isEmpty(areas)) {
+            throw new ValidationException(String.format("根据%s没有查询到此区域名称", areas));
+        }
         List<String> list11 = new ArrayList<>();
         list11.add("zzz");
         list11.add("aaa");

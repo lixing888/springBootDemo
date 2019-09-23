@@ -92,6 +92,8 @@ public class jsonStrToJava {
         MyBean my = (MyBean) JSONObject.toBean(jsonObject1, MyBean.class, map);
         System.out.println(my.getFirst());
 
+
+
     }
 }
 
