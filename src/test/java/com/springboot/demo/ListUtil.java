@@ -139,7 +139,7 @@ public class ListUtil {
             System.out.println("Objects判断两个对象是否相等。");
         }
 
-        String str = DecimalFormat.getNumberInstance().format(1245600000);
+        String str = DecimalFormat.getNumberInstance().format(1245600000.87);
         String currecy = NumberFormat.getCurrencyInstance().format(1245600000);
         System.out.println("转换成Currency格式：" + currecy);
         System.out.println("转换成带千分位的格式：" + str);
