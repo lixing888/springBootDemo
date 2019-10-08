@@ -161,6 +161,19 @@ public class ListUtil {
             return person;
         }).collect(Collectors.toList());
 
+//        LambdaQueryWrapper<RuleEngineRuleSetTestCase> wrapper = new LambdaQueryWrapper<>();
+//        wrapper.eq(RuleEngineRuleSetTestCase::getRuleSetId, id.getId());
+//        wrapper.eq(RuleEngineRuleSetTestCase::getDeleted, DeletedEnum.ENABLE.getStatus());
+//        List<RuleEngineRuleSetTestCase> resuleList = ruleEngineRuleSetTestCaseManager.list(wrapper);
+//        return resuleList.stream().map(m -> {
+//            RuleEngineCaseListResponse listResponse = new RuleEngineCaseListResponse();
+//            listResponse.setId(m.getId());
+//            listResponse.setParameters(JSON.parseArray(m.getParamJson(), RuleEngineCaseListResponse.ParameterListBean.class));
+//            listResponse.setExpectedResult(m.getExpectedResult());
+//            listResponse.setActaulResult(m.getLastExecuteResult());
+//            return listResponse;
+//        }).collect(Collectors.toList());
+
 
         List<ContractData.CeoCheckData> costItems = new ArrayList<>();
         ContractData.CeoCheckData ceoCheckData1=new ContractData.CeoCheckData();
