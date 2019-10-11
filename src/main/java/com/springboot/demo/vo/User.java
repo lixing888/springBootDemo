@@ -13,11 +13,16 @@ import java.math.BigDecimal;
 @Data
 public class User {
     private long id;
+    private String username;
+    private String birthday;
+    private int age;
     private BigDecimal money;
 
-    public User(long id, BigDecimal money) {
+    public User(long id,BigDecimal money) {
         this.id = id;
         this.money = money;
     }
+
+
 }
 

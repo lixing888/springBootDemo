@@ -11,6 +11,9 @@ public class UserRequest {
     private String groupId;
     @ApiModelProperty(value = "等级")
     private int rank;
+    private String username;
+    private String birthday;
+    private int age;
 
 
 }
