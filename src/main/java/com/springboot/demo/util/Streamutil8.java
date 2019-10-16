@@ -61,6 +61,8 @@ public class Streamutil8 {
         numbers.parallelStream().sorted()
                 .forEach(System.out::println);
 
+        String[] CONTRACT_TYPES_V3 = {"20", "46", "51", "155"};
+        System.out.println("是否包含："+Arrays.asList(CONTRACT_TYPES_V3).contains("155"));
 
     }
 }

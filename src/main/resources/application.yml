@@ -8,7 +8,7 @@ spring:
 #    url: jdbc:mysql://127.0.0.1:3306/hboa?serverTimezone=UTC
     url: jdbc:mysql://188.131.251.86:9060/mysql?serverTimezone=UTC
     username: root
-    password: 123456
+    password: root123456
     driver-class-name: com.mysql.jdbc.Driver
 
   data:

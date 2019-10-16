@@ -148,7 +148,7 @@ public class VirginiaPassword {
     }
 
     public static void main(String[] args) {
-        String originStr="hello world";
+        String originStr="hello world lixing";
         String secretKey="ok";
         String virginiaEncode=virginiaEncode(originStr,secretKey);
         System.out.println("维吉尼亚加密："+virginiaEncode);
