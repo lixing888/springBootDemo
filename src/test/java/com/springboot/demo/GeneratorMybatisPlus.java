@@ -27,16 +27,16 @@ public class GeneratorMybatisPlus {
         String packageName = "com.springboot.demo.store";
         boolean serviceNameStartWithI = false;//user -> UserService, 设置成true: user -> IUserService
 
-        String dbUrl = "jdbc:mysql://139.129.45.208:3306/hboa?serverTimezone=UTC";
+        String dbUrl = "jdbc:mysql://188.131.251.86:9060/mall?serverTimezone=UTC";
         DataSourceConfig dataSourceConfig = new DataSourceConfig();
         dataSourceConfig
                 .setUrl(dbUrl)
                 .setUsername("root")
                 .setTypeConvert(new MySqlTypeConvert())
-                .setPassword("beiXINzhiKE")
+                .setPassword("root123456")
                 .setDriverName("com.mysql.jdbc.Driver");
 
-        generateByTables("", serviceNameStartWithI, dataSourceConfig, packageName, "jc_use\\w+");
+        generateByTables("", serviceNameStartWithI, dataSourceConfig, packageName, "user_\\w+");
     }
 
     @Ignore

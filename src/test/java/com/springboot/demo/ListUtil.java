@@ -5,6 +5,9 @@ package com.springboot.demo;
  * java list 交集 并集 差集 去重复并集
  */
 
+import cn.hutool.core.collection.CollUtil;
+import com.alibaba.fastjson.JSON;
+import com.baomidou.mybatisplus.core.toolkit.StringPool;
 import com.springboot.demo.entity.Person;
 import com.springboot.demo.vo.ContractData;
 import com.springboot.demo.vo.CostDeptItemListRequest;
@@ -140,7 +143,7 @@ public class ListUtil {
         }
 
         String str = DecimalFormat.getNumberInstance().format(1245600000.87);
-        String currecy = NumberFormat.getCurrencyInstance().format(1245600000);
+        String currecy = NumberFormat.getCurrencyInstance().format(222092.63);
         System.out.println("转换成Currency格式：" + currecy);
         System.out.println("转换成带千分位的格式：" + str);
 
@@ -180,38 +183,38 @@ public class ListUtil {
         ceoCheckData1.setCostTypeId("MDS090121");
         ceoCheckData1.setAmount(new BigDecimal("0"));
         ceoCheckData1.setCurrency("CNY");
-        ceoCheckData1.setCnyAmount(new BigDecimal("10000"));
+        ceoCheckData1.setCnyAmount(new BigDecimal("310000"));
 
         ContractData.CeoCheckData ceoCheckData2=new ContractData.CeoCheckData();
         ceoCheckData2.setCostTypeId("MDS090123");
         ceoCheckData2.setAmount(new BigDecimal("0"));
         ceoCheckData2.setCurrency("CNY");
-        ceoCheckData2.setCnyAmount(new BigDecimal("10000"));
+        ceoCheckData2.setCnyAmount(new BigDecimal("320000"));
 
         ContractData.CeoCheckData ceoCheckData3=new ContractData.CeoCheckData();
         ceoCheckData3.setCostTypeId("MDS090122");
         ceoCheckData3.setAmount(new BigDecimal("0"));
         ceoCheckData3.setCurrency("CNY");
-        ceoCheckData3.setCnyAmount(new BigDecimal("10000"));
+        ceoCheckData3.setCnyAmount(new BigDecimal("410000"));
 
         ContractData.CeoCheckData ceoCheckData4=new ContractData.CeoCheckData();
         ceoCheckData4.setCostTypeId("MDS090671");
         ceoCheckData4.setAmount(new BigDecimal("0"));
         ceoCheckData4.setCurrency("CNY");
-        ceoCheckData4.setCnyAmount(new BigDecimal("10000"));
+        ceoCheckData4.setCnyAmount(new BigDecimal("510000"));
 
         ContractData.CeoCheckData ceoCheckData5=new ContractData.CeoCheckData();
         ceoCheckData5.setCostTypeId("MDS090321");
         ceoCheckData5.setAmount(new BigDecimal("0"));
         ceoCheckData5.setCurrency("CNY");
-        ceoCheckData5.setCnyAmount(new BigDecimal("10000"));
+        ceoCheckData5.setCnyAmount(new BigDecimal("610000"));
 
         costItems.add(ceoCheckData1);
         costItems.add(ceoCheckData2);
         costItems.add(ceoCheckData3);
         costItems.add(ceoCheckData4);
         costItems.add(ceoCheckData5);
-
+        changeCostTypeId(costItems);
 
         CostDeptItemListRequest costDeptItemListRequest = new CostDeptItemListRequest();
         List<CostDeptItemListRequest.CostDeptItem> costDeptItemList = new ArrayList<>();
@@ -264,7 +267,7 @@ public class ListUtil {
      */
     // 采用Stringbuilder.append()的方式追加
     public static String listToString2(List<CostDeptItemListRequest.CostDeptItem> mList) {
-        final String SEPARATOR = ",";
+        final String SEPARATOR = StringPool.COMMA;
         // mList = Arrays.asList("AAA", "BBB", "CCC");
         StringBuilder sb = new StringBuilder();
         String convertedListStr = "";
@@ -279,4 +282,31 @@ public class ListUtil {
             return convertedListStr;
         } else return "List is null!!!";
     }
+
+    /**
+     * 新旧预算科目
+     * @param costItems
+     */
+    private static void changeCostTypeId(List<ContractData.CeoCheckData> costItems){
+        //新旧预算科目转换
+        Set<String> costTypeIds = costItems.stream().map(costItem -> costItem.getCostTypeId()).collect(Collectors.toSet());
+        //costTypeIds 将新预算科目list转换成旧预算科目list
+        //costTypeIds = ruleCostInfoNewService.listOldCodeByNewCode(costTypeIds);
+        //Map<String, RuleCostInfoNew> costItemNameMap = ruleCostInfoNewService.getCostItemName(costTypeIds);
+
+        if (CollUtil.isNotEmpty(costItems)) {
+            costItems.stream().map(costItem-> {
+                String costTypeId=costItem.getCostTypeId();
+                //RuleCostInfoNew ruleCostInfoNew = costItemNameMap.get(costTypeId);
+                //if (!Objects.isNull(ruleCostInfoNew)) {
+                    //新预选科目转换成旧预算科目
+                    costTypeId = "MDBS00000108";
+                //}
+                costItem.setCostTypeId(costTypeId);
+                return true;
+            }).collect(Collectors.toList());
+        }
+        System.out.println(JSON.toJSONString(costItems));
+    }
+
 }

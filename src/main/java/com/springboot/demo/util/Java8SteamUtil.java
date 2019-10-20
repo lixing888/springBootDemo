@@ -1,5 +1,9 @@
 package com.springboot.demo.util;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.PropertyNamingStrategy;
+
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.text.SimpleDateFormat;
@@ -9,7 +13,7 @@ import java.util.stream.LongStream;
 
 public class Java8SteamUtil {
 
-    public static void main(String[] args) throws URISyntaxException {
+    public static void main(String[] args) throws URISyntaxException, JsonProcessingException {
 
 
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
@@ -94,6 +98,14 @@ public class Java8SteamUtil {
         //System.out.println(packuri.toURL().getPath());
         System.out.println(packName.replaceAll("//.", "/"));
         System.out.println(System.getProperty("user.dir") + "/" + (PathUtils.class.getPackage().getName()).replaceAll("//.", "/") + "/");
+
+        ObjectMapper mapper = new ObjectMapper();
+        //驼峰转换
+        mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
+        String str = "isTrue";
+        str = mapper.writeValueAsString(str);
+        System.out.println("下划线转驼峰：" + str);
+
 
     }
 

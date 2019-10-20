@@ -3,9 +3,13 @@ package com.springboot.demo;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.springboot.demo.entity.RootEntity;
 import com.springboot.demo.entity.UserEntity;
+import com.springboot.demo.util.JsonUtils;
+import com.springboot.demo.vo.UserJson;
 
+import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -63,7 +67,7 @@ public class JsonTest {
         System.out.println(JSON.toJSONString((Map) userMap.get("area")));
         // {"area":"linqing","pagetype":"home"}
 
-        String jsonStr1="{\"203810\":{\"364062609684836353\":{\"amount\":1999.00,\"budgetItemCode\":\"MDBS00000006\",\"costDeptId\":\"288980000064976051\",\"currency\":\"CNY\"}},\"203811\":{\"364062924966473729\":{\"amount\":1000.00,\"budgetItemCode\":\"MDBS00000010\",\"costDeptId\":\"288980000064976048\",\"currency\":\"CNY\"}}}";
+        String jsonStr1 = "{\"203810\":{\"364062609684836353\":{\"amount\":1999.00,\"budgetItemCode\":\"MDBS00000006\",\"costDeptId\":\"288980000064976051\",\"currency\":\"CNY\"}},\"203811\":{\"364062924966473729\":{\"amount\":1000.00,\"budgetItemCode\":\"MDBS00000010\",\"costDeptId\":\"288980000064976048\",\"currency\":\"CNY\"}}}";
 
         JSONObject strTojson1 = JSONObject.parseObject(jsonStr1);
 
@@ -95,7 +99,7 @@ public class JsonTest {
                 "}";
 
         String strMsg = "{\"costDeptItemList\":" + JSON.toJSONString(costItems) + "}";
-        System.out.println("====="+strMsg);
+        System.out.println("=====" + strMsg);
         //
         JSONObject jsonObject = JSON.parseObject(costItems);
         if (!jsonObject.isEmpty()) {
@@ -116,11 +120,29 @@ public class JsonTest {
                     //替换成要变更的数据
                     v.put("amount", new BigDecimal("100"));
                     v.put("currency", "CNY");
-                    System.out.println(amount+"  "+budgetItemCode+"  "+costDeptId+"  "+currency);
+                    System.out.println(amount + "  " + budgetItemCode + "  " + costDeptId + "  " + currency);
                 }
             }
-            System.out.println("币种转换后的："+jsonObject.toString());
+            System.out.println("币种转换后的：" + jsonObject.toString());
         }
+
+
+        UserJson user = new UserJson("李兴", "8923914");
+        try {
+            String json1 = JsonUtils.toUnderlineJSONString(user);
+            System.out.println(json1);
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
+
+        String json2 = "{\"user_name\":\"张三\",\"order_no\":\"1111111\"}";
+        try {
+            UserJson user1 = JsonUtils.toSnakeObject(json2, UserJson.class);
+            System.out.println(JSONObject.toJSONString(user1));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
 
     }
 
