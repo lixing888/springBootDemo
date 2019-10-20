@@ -125,12 +125,13 @@ public class JsonTest {
             }
             System.out.println("币种转换后的：" + jsonObject.toString());
         }
-
-
+        /*
+         * JSON的驼峰和下划线互转
+         */
         UserJson user = new UserJson("李兴", "8923914");
         try {
             String json1 = JsonUtils.toUnderlineJSONString(user);
-            System.out.println(json1);
+            System.out.println("对象转下划线：" + json1);
         } catch (JsonProcessingException e) {
             e.printStackTrace();
         }
@@ -138,7 +139,7 @@ public class JsonTest {
         String json2 = "{\"user_name\":\"张三\",\"order_no\":\"1111111\"}";
         try {
             UserJson user1 = JsonUtils.toSnakeObject(json2, UserJson.class);
-            System.out.println(JSONObject.toJSONString(user1));
+            System.out.println("下划线转驼峰：" + JSONObject.toJSONString(user1));
         } catch (IOException e) {
             e.printStackTrace();
         }
