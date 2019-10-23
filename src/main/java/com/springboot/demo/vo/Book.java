@@ -1,5 +1,6 @@
 package com.springboot.demo.vo;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 import org.springframework.data.elasticsearch.annotations.Document;
 
@@ -10,6 +11,7 @@ import org.springframework.data.elasticsearch.annotations.Document;
 @Document(indexName = "oooodin", type = "book")
 public class Book {
     private Integer id;
+    @JsonProperty(value = "book_name")
     private String bookName;
     private String author;
 

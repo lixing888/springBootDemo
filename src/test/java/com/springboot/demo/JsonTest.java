@@ -1,20 +1,22 @@
 package com.springboot.demo;
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.google.common.collect.Lists;
 import com.springboot.demo.entity.RootEntity;
 import com.springboot.demo.entity.UserEntity;
 import com.springboot.demo.util.JsonUtils;
 import com.springboot.demo.vo.UserJson;
+import org.apache.poi.ss.formula.functions.T;
 
 import java.io.IOException;
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class JsonTest {
     //通过实体类转换成json
@@ -125,6 +127,7 @@ public class JsonTest {
             }
             System.out.println("币种转换后的：" + jsonObject.toString());
         }
+
         /*
          * JSON的驼峰和下划线互转
          */
@@ -136,7 +139,7 @@ public class JsonTest {
             e.printStackTrace();
         }
 
-        String json2 = "{\"user_name\":\"张三\",\"order_no\":\"1111111\"}";
+        String json2 = "{\"userName\":\"张三\",\"order_no\":\"1111111\"}";
         try {
             UserJson user1 = JsonUtils.toSnakeObject(json2, UserJson.class);
             System.out.println("下划线转驼峰：" + JSONObject.toJSONString(user1));
@@ -144,6 +147,109 @@ public class JsonTest {
             e.printStackTrace();
         }
 
+
+        List<String> stringList = Lists.newArrayList();
+        for (int i = 0; i < 10; i++) {
+            stringList.add(String.valueOf(i));
+        }
+        stringList.stream().skip(2).collect(Collectors.toList());
+        // 不改变原对象
+        System.out.println(stringList);
+
+        // Stream 使用接口
+        /**
+         * 1. filter
+         * 返回Predicate定义过滤的元素
+         */
+        // 过滤偶数
+        stringList = stringList.stream().filter(e -> Integer.valueOf(e) % 2 == 0).collect(Collectors.toList());
+        System.out.println(stringList); // [0, 2, 4, 6, 8]
+
+        /**
+         * 2.map
+         * 定义函数返回新的类型的流
+         */
+        List<Long> longList = stringList.stream().map(Long::valueOf).collect(Collectors.toList());
+        System.out.println(longList);// [0, 2, 4, 6, 8]
+
+        /**
+         * 3.mapToInt
+         * 转换成Int类型的流, 可以做一些运算操作，其他double与float类似
+         */
+        // 求和
+        Integer count = stringList.stream().mapToInt(e -> Integer.valueOf(e)).sum();
+        System.out.println(count);
+
+        /**
+         * 4.flapMap
+         *  二维数组，每个数组调用Function
+         */
+        List<List<String>> stringListList = Lists.newArrayList();
+        for (int i = 0; i < 10; i++) {
+            List<String> list = Lists.newArrayList();
+            stringListList.add(list);
+            for (int j = 0; j < 10; j++) {
+                list.add(String.valueOf(i * j));
+            }
+        }
+        List<Integer> integerListList = stringListList.stream().flatMap(e -> e.stream().map(Integer::valueOf)).collect(Collectors.toList());
+        System.out.println(integerListList);
+
+        /**
+         * 5.Distinct排除重复
+         */
+        List<Integer> distinctList = integerListList.stream().distinct().collect(Collectors.toList());
+        System.out.println(distinctList); // 去除重复的
+
+        /**
+         * sort按指定方式排序
+         */
+        distinctList.sort((e1, e2) -> e1 < e2 ? 1 : -1);
+        System.out.println(distinctList); // 递减排列
+
+        /**
+         * peek 可以使用它去处理每个元素
+         * 想比较map没返回值
+         */
+        Stream.of("a", "b", "c").peek(e -> System.out.println(e)).collect(Collectors.toList());
+
+        /**
+         * limit 只取前指定个数
+         */
+        List<Integer> limitList = Stream.of(1, 2, 3).limit(1).collect(Collectors.toList());
+        System.out.println(limitList); // 2,3
+
+        /**
+         * skip 指定个数，返回
+         */
+        List<String> skipList = Stream.of("a", "b", "c").skip(1).collect(Collectors.toList());
+        System.out.println(skipList); // b,c
+
+        Set<String> list=new HashSet<>();
+        list.add("");
+        list.add("MDSA090388123");
+        System.out.println(list+"==== 是否包含null对象："+list.contains(null)+"----是否包含空字符串："+list.contains(""));
+
+        //1.fastjson  List转JSONArray
+        List<T> list1 = new ArrayList<T>();
+        JSONArray array= JSONArray.parseArray(JSON.toJSONString(list1));
+
+        //2.fastjson  JSONArray转List
+        JSONArray array1 = new JSONArray();
+        List<UserJson> list2 = JSONObject.parseArray(array1.toJSONString(), UserJson.class);
+        for (UserJson userJson : list2) {
+            System.out.println(userJson.getUserName());
+        }
+        //3.fastjson  字符串转List
+        String str1 = "[{\n" +
+                "    \"user_id\": 9839306,\n" +
+                "    \"user_name\": \"师思\",\n" +
+                "    \"id\": 736\n" +
+                "}]";
+        List<UserJson> list12 = JSONObject.parseArray(str1,UserJson.class);
+        for (UserJson userJson : list12) {
+            System.out.println(userJson.getUserName());
+        }
 
     }
 

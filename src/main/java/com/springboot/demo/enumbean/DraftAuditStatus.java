@@ -44,7 +44,7 @@ public enum DraftAuditStatus {
 
     public static void main(String[] args) {
         DraftAuditStatus versionEnum = getDraftAuditEnum(1);
-        System.out.println(versionEnum.getMessage());
+        System.out.println(versionEnum.getStatus()+"=="+versionEnum.getMessage());
     }
 
 
