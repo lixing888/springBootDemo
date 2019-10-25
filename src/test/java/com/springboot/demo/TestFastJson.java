@@ -39,12 +39,12 @@ public class TestFastJson {
         //没有对象直接解析JSON数组
         JSONArray jarr = JSON.parseArray("[{'name':'李明','age':18},{'name':'小四','age':21}]");
         //和下面使用  转义字符  效果是一致的
-     /*   JSONArray jarr = JSON.parseArray("[{\"name\":\"李明\",\"age\":19},{\"name\":\"张三\",\"age\":12}]");*/
+        /*   JSONArray jarr = JSON.parseArray("[{\"name\":\"李明\",\"age\":19},{\"name\":\"张三\",\"age\":12}]");*/
         System.out.println(jarr);//[{"name":"李明","age":18},{"name":"小四","age":21}]
         for (int i = 0, len = jarr.size(); i < len; i++) {
             JSONObject temp = jarr.getJSONObject(i);
             System.out.println(temp.getString("name") + "," + temp.getBigInteger("age"));
-           /* System.out.printf("name:%s,age:%d\n", temp.getString("name"), temp.getBigInteger("age"));*/
+            /* System.out.printf("name:%s,age:%d\n", temp.getString("name"), temp.getBigInteger("age"));*/
             //name:李明,age:19    name:张三,age:12
         }
 

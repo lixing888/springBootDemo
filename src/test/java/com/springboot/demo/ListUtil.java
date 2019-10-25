@@ -179,31 +179,31 @@ public class ListUtil {
 
 
         List<ContractData.CeoCheckData> costItems = new ArrayList<>();
-        ContractData.CeoCheckData ceoCheckData1=new ContractData.CeoCheckData();
+        ContractData.CeoCheckData ceoCheckData1 = new ContractData.CeoCheckData();
         ceoCheckData1.setCostTypeId("MDS090121");
         ceoCheckData1.setAmount(new BigDecimal("0"));
         ceoCheckData1.setCurrency("CNY");
         ceoCheckData1.setCnyAmount(new BigDecimal("310000"));
 
-        ContractData.CeoCheckData ceoCheckData2=new ContractData.CeoCheckData();
+        ContractData.CeoCheckData ceoCheckData2 = new ContractData.CeoCheckData();
         ceoCheckData2.setCostTypeId("MDS090123");
         ceoCheckData2.setAmount(new BigDecimal("0"));
         ceoCheckData2.setCurrency("CNY");
         ceoCheckData2.setCnyAmount(new BigDecimal("320000"));
 
-        ContractData.CeoCheckData ceoCheckData3=new ContractData.CeoCheckData();
+        ContractData.CeoCheckData ceoCheckData3 = new ContractData.CeoCheckData();
         ceoCheckData3.setCostTypeId("MDS090122");
         ceoCheckData3.setAmount(new BigDecimal("0"));
         ceoCheckData3.setCurrency("CNY");
         ceoCheckData3.setCnyAmount(new BigDecimal("410000"));
 
-        ContractData.CeoCheckData ceoCheckData4=new ContractData.CeoCheckData();
+        ContractData.CeoCheckData ceoCheckData4 = new ContractData.CeoCheckData();
         ceoCheckData4.setCostTypeId("MDS090671");
         ceoCheckData4.setAmount(new BigDecimal("0"));
         ceoCheckData4.setCurrency("CNY");
         ceoCheckData4.setCnyAmount(new BigDecimal("510000"));
 
-        ContractData.CeoCheckData ceoCheckData5=new ContractData.CeoCheckData();
+        ContractData.CeoCheckData ceoCheckData5 = new ContractData.CeoCheckData();
         ceoCheckData5.setCostTypeId("MDS090321");
         ceoCheckData5.setAmount(new BigDecimal("0"));
         ceoCheckData5.setCurrency("CNY");
@@ -242,6 +242,7 @@ public class ListUtil {
 
     /**
      * for all jdk version
+     *
      * @param mList
      * @return
      */
@@ -262,6 +263,7 @@ public class ListUtil {
 
     /**
      * for jdk <= java 7
+     *
      * @param mList
      * @return
      */
@@ -285,9 +287,10 @@ public class ListUtil {
 
     /**
      * 新旧预算科目
+     *
      * @param costItems
      */
-    private static void changeCostTypeId(List<ContractData.CeoCheckData> costItems){
+    private static void changeCostTypeId(List<ContractData.CeoCheckData> costItems) {
         //新旧预算科目转换
         Set<String> costTypeIds = costItems.stream().map(costItem -> costItem.getCostTypeId()).collect(Collectors.toSet());
         //costTypeIds 将新预算科目list转换成旧预算科目list
@@ -295,12 +298,12 @@ public class ListUtil {
         //Map<String, RuleCostInfoNew> costItemNameMap = ruleCostInfoNewService.getCostItemName(costTypeIds);
 
         if (CollUtil.isNotEmpty(costItems)) {
-            costItems.stream().map(costItem-> {
-                String costTypeId=costItem.getCostTypeId();
+            costItems.stream().map(costItem -> {
+                String costTypeId = costItem.getCostTypeId();
                 //RuleCostInfoNew ruleCostInfoNew = costItemNameMap.get(costTypeId);
                 //if (!Objects.isNull(ruleCostInfoNew)) {
-                    //新预选科目转换成旧预算科目
-                    costTypeId = "MDBS00000108";
+                //新预选科目转换成旧预算科目
+                costTypeId = "MDBS00000108";
                 //}
                 costItem.setCostTypeId(costTypeId);
                 return true;

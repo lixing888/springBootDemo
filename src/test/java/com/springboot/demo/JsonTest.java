@@ -225,14 +225,14 @@ public class JsonTest {
         List<String> skipList = Stream.of("a", "b", "c").skip(1).collect(Collectors.toList());
         System.out.println(skipList); // b,c
 
-        Set<String> list=new HashSet<>();
+        Set<String> list = new HashSet<>();
         list.add("");
         list.add("MDSA090388123");
-        System.out.println(list+"==== 是否包含null对象："+list.contains(null)+"----是否包含空字符串："+list.contains(""));
+        System.out.println(list + "==== 是否包含null对象：" + list.contains(null) + "----是否包含空字符串：" + list.contains(""));
 
         //1.fastjson  List转JSONArray
         List<T> list1 = new ArrayList<T>();
-        JSONArray array= JSONArray.parseArray(JSON.toJSONString(list1));
+        JSONArray array = JSONArray.parseArray(JSON.toJSONString(list1));
 
         //2.fastjson  JSONArray转List
         JSONArray array1 = new JSONArray();
@@ -246,7 +246,7 @@ public class JsonTest {
                 "    \"user_name\": \"师思\",\n" +
                 "    \"id\": 736\n" +
                 "}]";
-        List<UserJson> list12 = JSONObject.parseArray(str1,UserJson.class);
+        List<UserJson> list12 = JSONObject.parseArray(str1, UserJson.class);
         for (UserJson userJson : list12) {
             System.out.println(userJson.getUserName());
         }

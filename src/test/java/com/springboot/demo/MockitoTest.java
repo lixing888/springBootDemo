@@ -18,16 +18,16 @@ import static org.mockito.Mockito.*;
  */
 public class MockitoTest {
 
-    @Before
-    public void init() {
-        MockitoAnnotations.initMocks(MockitoTest.class);
-    }
-
     public static void verifyTimeout() {
         User u = mock(User.class);
         //validation passes when method is called within given time
         verify(u, timeout(2000)).getUsername();
         u.getUsername();
+    }
+
+    @Before
+    public void init() {
+        MockitoAnnotations.initMocks(MockitoTest.class);
     }
 
     @Test
