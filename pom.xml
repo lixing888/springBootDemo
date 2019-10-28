@@ -285,7 +285,18 @@
             <artifactId>springfox-swagger-ui</artifactId>
             <version>2.4.0</version>
         </dependency>
-
+        <!-- https://mvnrepository.com/artifact/com.itlgl/cryptoutil -->
+        <dependency>
+            <groupId>com.itlgl</groupId>
+            <artifactId>cryptoutil</artifactId>
+            <version>0.0.2</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-crypto -->
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-crypto</artifactId>
+            <version>5.2.0.RELEASE</version>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>

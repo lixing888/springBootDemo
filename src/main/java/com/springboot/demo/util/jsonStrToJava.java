@@ -92,6 +92,22 @@ public class jsonStrToJava {
         MyBean my = (MyBean) JSONObject.toBean(jsonObject1, MyBean.class, map);
         System.out.println(my.getFirst());
 
+        //反射获取方式1
+        Student t =new Student();
+        Class c1=t.getClass();
+        System.out.println("反射获取方式1:"+c1.getName());
+
+        //反射获取方式1
+        Class c2=Student.class;
+        System.out.println("反射获取方式2:"+c2.getName());
+
+        //这里需要注意，通过类的全路径名获取Class对象会抛出一个异常，如果根据类路径找不到这个类那么就会抛出这个异常。
+        try {
+            Class c3=Class.forName("com.springboot.demo.vo.Student");
+            System.out.println("反射获取方式3:"+c3.getName());
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
 
 
     }
