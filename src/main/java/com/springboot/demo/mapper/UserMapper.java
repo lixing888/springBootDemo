@@ -33,4 +33,5 @@ public interface UserMapper {
     @CacheEvict(key = "#id", allEntries = true)
     @Delete("delete from jc_user where id=#{id}")
     void deleteById(@Param("id") int id);
+
 }
