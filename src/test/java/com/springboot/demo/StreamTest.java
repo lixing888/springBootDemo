@@ -5,6 +5,7 @@ import com.springboot.demo.store.entity.TestStreamModel;
 
 import java.util.List;
 import java.util.Map;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 /**
@@ -42,6 +43,9 @@ public class StreamTest {
         System.out.println("取出一年级一班的总分：" + sumMap.get(1).get(1));         /*stream是链式的，这些功能是可以一起使用的，例如：计算每个年级每个班的及格人数*/
         Map<Integer/*年级*/, Map<Integer/*班级*/, Long/*人数*/>> integerMap = list.stream().filter(t -> t.getScore() >= 60).collect(Collectors.groupingBy(t -> t.getGrade(), Collectors.groupingBy(t -> t.getClasses(), Collectors.counting())));
         System.out.println("取出一年级一班及格人数：" + integerMap.get(1).get(1));
+        //根据id转换成map
+        Map<Integer, TestStreamModel> attrInfoMap = list.stream().collect(Collectors.toMap(TestStreamModel::getId, Function.identity()));
+        System.out.println("根据id转换成map:" + attrInfoMap.get(2).getName());
     }
 
     private List<TestStreamModel> getList() {
@@ -103,11 +107,11 @@ public class StreamTest {
         testStreamModel7.setScore(88.8);
         list.add(testStreamModel7);
         TestStreamModel testStreamModel8 = new TestStreamModel();
-        testStreamModel8.setId(6);
-        testStreamModel8.setName("小白");
-        testStreamModel8.setClasses(1);
-        testStreamModel8.setGrade(2);
-        testStreamModel8.setScore(88.8);
+        testStreamModel8.setId(9);
+        testStreamModel8.setName("李興");
+        testStreamModel8.setClasses(2);
+        testStreamModel8.setGrade(5);
+        testStreamModel8.setScore(98.8);
         list.add(testStreamModel8);
         return list;
     }
