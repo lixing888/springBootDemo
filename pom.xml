@@ -77,11 +77,13 @@
 			<version>5.2.0</version>
 		</dependency>
 
-		<!--<dependency>-->
-			<!--<groupId>org.gjt.jclasslib</groupId>-->
-			<!--<artifactId>jclasslib-browser</artifactId>-->
-			<!--<version>5.3.1</version>-->
-		<!--</dependency>-->
+		<!-- https://mvnrepository.com/artifact/org.gjt.jclasslib/jclasslib-browser
+		<dependency>
+			<groupId>org.gjt.jclasslib</groupId>
+			<artifactId>jclasslib-browser</artifactId>
+			<version>5.2-beta2</version>
+		</dependency>
+        -->
 		<!--redis操作，redssion
 		<dependency>
 			<groupId>org.redisson</groupId>

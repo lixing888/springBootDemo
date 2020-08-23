@@ -5,10 +5,10 @@ spring:
 #    url: jdbc:mysql://139.129.45.208:3306/hboa?serverTimezone=UTC
 #    username: root
 #    password: beiXINzhiKE
-    url: jdbc:mysql://127.0.0.1:3306/hboa?serverTimezone=UTC
+    url: jdbc:mysql://127.0.0.1:3306/drone?serverTimezone=UTC
     username: root
-    password:
-    driver-class-name: com.mysql.jdbc.Driver
+    password: root123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
 
 
 mybatis-plus:

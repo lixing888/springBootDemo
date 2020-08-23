@@ -7,7 +7,7 @@ import org.gjt.jclasslib.structures.CPInfo;
 import org.gjt.jclasslib.structures.ClassFile;
 import org.gjt.jclasslib.structures.constants.ConstantUtf8Info;
 
-/**
+/**ConstantUtf8Info
  * @author lixing
  * 修改class文件
  */
