@@ -1,0 +1,11 @@
+{
+  "groups": [
+    {
+      "name": "spring",
+      "type": "com.springboot.demo.entity.ReadYml",
+      "sourceType": "com.springboot.demo.entity.ReadYml"
+    }
+  ],
+  "properties": [],
+  "hints": []
+}
