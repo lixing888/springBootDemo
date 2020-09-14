@@ -8,6 +8,9 @@ import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.LongStream;
 
+/**
+ * @author lixing
+ */
 public class Java8SteamUtil {
 
     public static void main(String[] args) throws URISyntaxException {
