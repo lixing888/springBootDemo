@@ -11,6 +11,7 @@ public class TestPerson {
     private String name;
 
     public TestPerson(int age, String name) {
-
+        this.age = age;
+        this.name = name;
     }
 }
