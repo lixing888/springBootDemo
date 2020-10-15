@@ -2,6 +2,8 @@ package com.springboot.demo.util;
 
 import com.springboot.demo.vo.Transaction;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -57,5 +59,32 @@ public class SteamUtil {
                         .collect(Collectors.toList());
         //[6, 5, 3, 1]
         System.out.println(transactionsIds);
+
+        //时间比较
+        String beginTime = new String("2020-10-15 10:22:22");
+        String endTime = new String("2020-10-15 10:32:22");
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
+        try {
+            Date sd1 = df.parse(beginTime);
+            Date sd2 = df.parse(endTime);
+            System.out.println("sd1在sd2之前:" + sd1.before(sd2));
+            System.out.println("sd1在sd2之后:" + sd1.after(sd2));
+
+            Calendar calendar=Calendar.getInstance();
+            calendar.add(Calendar.MINUTE,-10);
+            Date validDate=calendar.getTime();
+            System.out.println("十分钟前的时间："+validDate);
+            System.out.println("validDate在sd2之qian:" + validDate.before(sd2));
+
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        //方法2
+        Integer i = beginTime.compareTo(endTime);
+        System.out.println("beginTime.compareTo(endTime):" + i);
+
+
+
     }
 }
