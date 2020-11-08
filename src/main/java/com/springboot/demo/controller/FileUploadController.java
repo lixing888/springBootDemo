@@ -76,8 +76,8 @@ public class FileUploadController {
     /**
      * public @ResponseBody String multifileUpload(@RequestParam("fileName")List<MultipartFile> files)
      **/
-    public @ResponseBody
-    String multifileUpload(HttpServletRequest request) {
+    @ResponseBody
+    public String multifileUpload(HttpServletRequest request) {
 
         List<MultipartFile> files = ((MultipartHttpServletRequest) request).getFiles("fileName");
 

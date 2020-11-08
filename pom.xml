@@ -404,6 +404,12 @@
             <artifactId>aliyun-sdk-oss</artifactId>
             <version>3.10.2</version>
         </dependency>
+
+        <dependency>
+            <groupId>com.tencentcloudapi</groupId>
+            <artifactId>tencentcloud-sdk-java</artifactId>
+            <version>3.1.160</version><!-- 注：这里只是示例版本号，请获取并替换为 最新的版本号 -->
+        </dependency>
     </dependencies>
 
     <build>
