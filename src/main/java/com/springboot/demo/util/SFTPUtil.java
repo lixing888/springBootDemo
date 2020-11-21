@@ -275,11 +275,11 @@ public class SFTPUtil {
         sftp.upload("root/datatang/bizfile/before", "D:\\aliyun_java_sdk_3.10.2.zip");
         sftp.logout();
 
-        String meString = "http://www.baidu.com" ;
+        String meString = "http://www.baidu.com";
         try {
             //模拟了http 请求
-            String mes = IOUtils.toString( new URL( meString ) , "utf-8") ;
-            System.out.println( mes );
+            String mes = IOUtils.toString(new URL(meString), "utf-8");
+            System.out.println(mes);
 
         } catch (IOException e) {
             e.printStackTrace();
