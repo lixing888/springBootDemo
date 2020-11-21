@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 
 import java.io.*;
 import java.net.URL;
+import java.util.List;
 import java.util.Properties;
 import java.util.Vector;
 
@@ -262,8 +263,50 @@ public class SFTPUtil {
         return sftp.ls(directory);
     }
 
+    /**
+     * 下载文件夹下面的所有文件
+     *
+     * @param viDirectory 文件夹
+     * @param viHost      主机名
+     * @param viPort      端口号
+     * @param viUserName  用户名
+     * @param viPassWord  用户密码
+     * @param viSaveDir   保存路径
+     * @return
+     */
+    public List<String> downloadDirFile(String viDirectory, String viHost, int viPort, String viUserName, String viPassWord, String viSaveDir) {
+        ChannelSftp nChannelSftp = null;
+        List<String> nFileNameList = null;
+        try {
+            // 1.实例化nSftpUtil工具类
+            // 2.建立Sftp通道
+            SFTPUtil nSftpUtil = new SFTPUtil(viUserName, viPassWord, viHost, 22);
+            // 3.获取目录下面所有文件
+            Vector nVector = nChannelSftp.ls(viDirectory);
+            // 4.循环遍历文件
+            for (int i = 0; i < nVector.size(); i++) {
+                // 5.进入服务器文件夹
+                nChannelSftp.cd(viDirectory);
+                // 6.实例化文件对象
+                String nFileName = nVector.get(i).toString().substring(56, nVector.get(i).toString().length());
+                if (!nFileName.contains("csv")) {
+                    continue;
+                }
+                File nFile = new File(viSaveDir + File.separator + nFileName);
+                // 7.下载文件
+                nChannelSftp.get(nFileName, new FileOutputStream(nFile));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            nChannelSftp.disconnect();
+        }
+        return nFileNameList;
+    }
+
     public static void main(String[] args) throws SftpException, IOException {
-        com.springboot.demo.util.SFTPUtil sftp = new com.springboot.demo.util.SFTPUtil("lanhuigu", "123456", "192.168.200.12", 22);
+        //建立Sftp通道
+        SFTPUtil sftp = new SFTPUtil("lanhuigu", "123456", "192.168.200.12", 22);
         sftp.login();
         //byte[] buff = sftp.download("/opt", "start.sh");
         //System.out.println(Arrays.toString(buff));
@@ -273,6 +316,8 @@ public class SFTPUtil {
         sftp.upload("/data/work", "test_sftp_upload.csv", is);
         //上传单个文件
         sftp.upload("root/datatang/bizfile/before", "D:\\aliyun_java_sdk_3.10.2.zip");
+        //列出目录下的文件
+        sftp.listFiles("root/datatang/bizfile/before");
         sftp.logout();
 
         String meString = "http://www.baidu.com";
