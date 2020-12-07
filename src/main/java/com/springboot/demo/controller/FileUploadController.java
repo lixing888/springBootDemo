@@ -1,5 +1,6 @@
 package com.springboot.demo.controller;
 
+import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -32,15 +33,19 @@ public class FileUploadController {
      */
     @RequestMapping("fileUpload")
     @ResponseBody
-    public String fileUpload(@RequestParam("fileName") MultipartFile file) {
+    public String fileUpload(@RequestParam("fileName") MultipartFile file) throws IOException {
         if (file.isEmpty()) {
             return "false";
         }
+
         String fileName = file.getOriginalFilename();
         int size = (int) file.getSize();
         System.out.println(fileName + "-->" + size);
 
         String path = "F:/test";
+        //=================FileCopyUtils.copy方法直接上传 就是一行代码即可解决===========
+        //FileCopyUtils.copy(file.getInputStream(), new FileOutputStream(new File(path + fileName)));
+        //=========================================
         File dest = new File(path + "/" + fileName);
         //判断文件父目录是否存在
         if (!dest.getParentFile().exists()) {

@@ -37,26 +37,28 @@ public class JDBCTest {
             if (rs != null) {
                 try {
                     rs.close();
+                    rs = null;
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
-                rs = null;
+
             }
             if (psmt != null) {
                 try {
                     psmt.close();
+                    psmt = null;
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
-                psmt = null;
+
             }
             if (conn != null) {
                 try {
                     conn.close();
+                    conn = null;
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
-                conn = null;
             }
         }
 

@@ -3,6 +3,7 @@ package com.springboot.demo.util;
 import com.google.common.base.CaseFormat;
 import org.springframework.stereotype.Component;
 
+import java.util.Random;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -104,6 +105,52 @@ public class StringUtils {
         orderColumn = CaseFormat.LOWER_UNDERSCORE.to(CaseFormat.LOWER_CAMEL, orderColumn);
         System.out.println(orderColumn);//orderColumn
 
+        String str = "";
+        Random rand = new Random();
+        for (int i = 0; i < 5; i++) {
+            int num = rand.nextInt(3);
+            switch (num) {
+                case 0:
+                    //生成随机小写字母
+                    char c1 = (char) (rand.nextInt(26) + 'a');
+                    str += c1;
+                    break;
+                case 1:
+                    //生成随机大写字母
+                    char c2 = (char) (rand.nextInt(26) + 'A');
+                    str += c2;
+                    break;
+                case 2:
+                    //生成随机数字
+                    str += rand.nextInt(10);
+            }
+        }
+        System.out.println("生成的5个随机验证码是:" + str);
+
+        String charRandom = "";
+        for (int i = 0; i < 5; i++) {
+            int c1 = (int) (Math.random() * 26 + 97);
+            charRandom += (char) c1;
+        }
+
+        String ziMuRandom = "";
+        Random rand1 = new Random();
+        for (int i = 0; i < 5; i++) {
+            char c1 = (char) (rand1.nextInt(26) + 'a');
+            ziMuRandom += c1;
+        }
+        System.out.println("5位随机字母：" + ziMuRandom);
+        String nbrRandom = "";
+        Random randNum = new Random();
+        for (int i = 0; i < 5; i++) {
+            nbrRandom += randNum.nextInt(10);
+        }
+
+        System.out.println("5位随机数字：" + nbrRandom);
+        String userName = charRandom + "_" + ziMuRandom + "_" + nbrRandom;
+        System.out.println("随机生成的用户名：" + userName);
+        String bmlUserName = "epri_lixingaaa";
+        System.out.println("====:" + bmlUserName.substring(0, bmlUserName.length() - 3));
 
     }
 }

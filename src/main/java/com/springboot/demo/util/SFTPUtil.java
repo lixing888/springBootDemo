@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 
 import java.io.*;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 import java.util.Vector;
@@ -304,6 +305,33 @@ public class SFTPUtil {
         return nFileNameList;
     }
 
+    /**
+     * @Author：lixing
+     * @Description：获取某个目录下所有直接下级文件，不包括目录下的子目录的下的文件，所以不用递归获取
+     * @Date：2020-11-22
+     */
+    public static List<String> getFiles(String path) {
+        List<String> files = new ArrayList<String>();
+        File file = new File(path);
+        File[] tempList = file.listFiles();
+
+        for (int i = 0; i < tempList.length; i++) {
+            if (tempList[i].isFile()) {
+                files.add(tempList[i].toString());
+                //文件名，不包含路径
+                String fileName = tempList[i].getName();
+                System.out.println("文件名称：" + fileName);
+            }
+            if (tempList[i].isDirectory()) {
+                //这里就不递归了，
+                String dirName = tempList[i].getName();
+                path = path + "/" + dirName;
+                //getFiles(path);
+            }
+        }
+        return files;
+    }
+
     public static void main(String[] args) throws SftpException, IOException {
         //建立Sftp通道
         SFTPUtil sftp = new SFTPUtil("lanhuigu", "123456", "192.168.200.12", 22);
@@ -329,5 +357,11 @@ public class SFTPUtil {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        //获取某个目录下所有直接下级文件，不包括目录下的子目录的下的文件
+        List<String> files = getFiles("D:\\bizhi");
+        for (String fileInfo : files) {
+            System.out.println("文件：" + fileInfo);
+        }
+
     }
 }
