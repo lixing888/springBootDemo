@@ -54,12 +54,29 @@ public class Elevator {
             @Override
             public void run() {
                 try {
+                    //异步调取方法
                     excutor();
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
         }).start();
+
+    }
+
+    public void threadRun() {
+        this.isUse = true;
+        new Thread() {
+            @Override
+            public void run() {
+                try {
+                    //异步调取方法
+                    excutor();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }.start();
 
     }
 
@@ -77,9 +94,11 @@ public class Elevator {
         boolean isUp = false;
         while (isUse) {
             if (up.isEmpty() && down.isEmpty()) {
-                Thread.sleep(1000);//这里先手动阻塞，阻塞队列的作用没体现出来。不知道两个阻塞队列如何实现一个非空则唤醒。
+                //这里先手动阻塞，阻塞队列的作用没体现出来。不知道两个阻塞队列如何实现一个非空则唤醒。
+                Thread.sleep(1000);
             }
-            if ((current.intValue() == low.intValue()) || !up.isEmpty()) { //默认先上
+            if ((current.intValue() == low.intValue()) || !up.isEmpty()) {
+                //默认先上
                 isUp = true;
             }
             if ((current.intValue() == height.intValue()) || (up.isEmpty() && !down.isEmpty())) {
