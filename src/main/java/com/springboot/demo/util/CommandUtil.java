@@ -1,9 +1,11 @@
 package com.springboot.demo.util;
 
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
+
 /**
  * @program: springBootDemo
  * @description: Java执行Linux命令
@@ -69,6 +71,20 @@ public class CommandUtil {
             }
         }
         return result;
+    }
+
+    public static void main(String args[]) {
+        try {
+            FileOutputStream fos = new FileOutputStream(args[0]);
+            Runtime rt = Runtime.getRuntime();
+            Process proc = rt.exec("java jecho 'Hello World'");
+        } catch (Exception e) {
+            e.getMessage();
+        }
+        if (args.length < 1) {
+            System.out.println("USAGE java GoodWinRedirect <outputfile></outputfile>");
+            System.exit(1);
+        }
     }
 
 }
