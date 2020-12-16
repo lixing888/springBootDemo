@@ -7,10 +7,10 @@ import org.springframework.stereotype.Component;
 @Component
 public class TestPerson {
 
-    private int age;
+    private Integer age;
     private String name;
 
-    public TestPerson(int age, String name) {
+    public TestPerson(Integer age, String name) {
         this.age = age;
         this.name = name;
     }
