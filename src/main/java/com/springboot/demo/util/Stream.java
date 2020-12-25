@@ -58,6 +58,6 @@ public class Stream {
         System.out.println("根据学号统计：" + collect);
 
         Map<Integer, Integer> collect1 = students.stream().collect(Collectors.groupingBy(Student::getId, Collectors.summingInt(Student::getScore)));
-        System.out.println("根据学号求和：" + collect1 + " ==9527的总分：" + collect1.get(9527));
+        System.out.println("根据学号求和：" + collect1 + " == 9527的总分：" + collect1.get(9527));
     }
 }
