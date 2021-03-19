@@ -109,11 +109,12 @@
                 </exclusion>
             </exclusions>
         </dependency>
-
+        <!--热部署工具dev-tools-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
             <optional>true</optional> <!-- 这个需要为 true 热部署才有效 -->
+            <scope>runtime</scope>
         </dependency>
 
         <dependency>
@@ -452,6 +453,12 @@
             <groupId>org.bouncycastle</groupId>
             <artifactId>bcprov-jdk16</artifactId>
             <version>1.46</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.bouncycastle</groupId>
+            <artifactId>bcprov-jdk15on</artifactId>
+            <version>1.66</version>
         </dependency>
     </dependencies>
 

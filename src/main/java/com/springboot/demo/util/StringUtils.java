@@ -4,6 +4,7 @@ import com.google.common.base.CaseFormat;
 import org.springframework.stereotype.Component;
 
 import java.util.Random;
+import java.util.StringJoiner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -151,6 +152,17 @@ public class StringUtils {
         System.out.println("随机生成的用户名：" + userName);
         String bmlUserName = "epri_lixingaaa";
         System.out.println("====:" + bmlUserName.substring(0, bmlUserName.length() - 3));
+
+        StringJoiner sj =new StringJoiner("");
+        sj.add("Hello");
+        sj.add("World");
+        //当我们使用StringJoiner(CharSequence delimiter)初始化一个StringJoiner的时候，这个delimiter其实是分隔符，并不是字符串的初始值。
+        System.out.println("sj:"+sj);
+        StringJoiner sj1 =new StringJoiner(",","[","]");
+        sj1.add("Hello");
+        sj1.add("World");
+        //StringJoiner(CharSequence delimiter,CharSequence prefix,CharSequence suffix)的第二个和第三个参数分别是拼接后的字符串的前缀和后缀。
+        System.out.println("sj1:"+sj1);
 
     }
 }
