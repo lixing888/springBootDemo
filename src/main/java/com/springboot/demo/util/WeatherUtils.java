@@ -96,7 +96,7 @@ public class WeatherUtils {
     }
 
     public static void main(String[] args) {
-        String cityName = "临清";
+        String cityName = "拉萨";
         String info = WeatherUtils.GetWeatherData(cityName);
         System.out.println(cityName + "近期天气：" + info);
         WeatherInfo weatherinfo = WeatherUtils.GetWeather(info);
