@@ -5,6 +5,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.Random;
 import java.util.StringJoiner;
+import java.util.UUID;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -153,16 +154,23 @@ public class StringUtils {
         String bmlUserName = "epri_lixingaaa";
         System.out.println("====:" + bmlUserName.substring(0, bmlUserName.length() - 3));
 
-        StringJoiner sj =new StringJoiner("");
+        StringJoiner sj = new StringJoiner("");
         sj.add("Hello");
         sj.add("World");
         //当我们使用StringJoiner(CharSequence delimiter)初始化一个StringJoiner的时候，这个delimiter其实是分隔符，并不是字符串的初始值。
-        System.out.println("sj:"+sj);
-        StringJoiner sj1 =new StringJoiner(",","[","]");
+        System.out.println("sj:" + sj);
+        StringJoiner sj1 = new StringJoiner(",", "[", "]");
         sj1.add("Hello");
         sj1.add("World");
         //StringJoiner(CharSequence delimiter,CharSequence prefix,CharSequence suffix)的第二个和第三个参数分别是拼接后的字符串的前缀和后缀。
-        System.out.println("sj1:"+sj1);
+        System.out.println("sj1:" + sj1);
+
+        for (int i = 0; i < 101; i++) {
+            String rond = UUID.randomUUID().toString().replace("-", "");
+            String sql = "insert into yshd_out_zb_zl (ID_, DJXH, NSRMC, NSRSBH, SQYH, SQXXLY, TJSQSJ, SFZSQYXQ, SQYXQQSRQ, SQYXQZZRQ, BZ, DELETE_FLAG, SJTBKSSJ, SJTBJSSJ, TXID, SJJSKSSJ, SJJSJSSJ)\n" +
+                    "values (" + "'" + rond + "'" + ", 1.01111010100002E19, '北京如月媛管理咨询有限公司', '91110112MA00B1JQ3P', '00002', '北京市电子税务局', '202011231740', null, null, null, null, '1', to_date('24-11-2020 07:41:37', 'dd-mm-yyyy hh24:mi:ss'), to_date('24-11-2020 07:41:37', 'dd-mm-yyyy hh24:mi:ss'), 'ac6301e90055cebb4cd5110bf6cd183cfc3ee21f17f64cdd9f000b2478d9ad19', null, null);\n";
+            System.out.println(sql);
+        }
 
     }
 }
