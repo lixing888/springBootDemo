@@ -7,17 +7,28 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 /**
+<<<<<<< HEAD
  * @program: springBootDemo
  * @description: ScheduledThreadExecutor定时任务线程池 　
  * ScheduledThreadPoolExecutor 继承自ThreadPoolExecutor实现了ScheduledExecutorService接口。主要完成定时或者周期的执行线程任务。
  * @author: lixing
  * @create: 2020-12-30 15:47
  **/
+=======
+ * @author lixing
+ * @description ScheduledThreadExecutor定时任务线程池
+ * ScheduledThreadPoolExecutor 继承自ThreadPoolExecutor实现了ScheduledExecutorService接口。主要完成定时或者周期的执行线程任务。
+ */
+>>>>>>> 8fad5d226d2db401b1e0938979dfe88594ebb9d3
 public class ScheduledThreadTest {
     public static void main(String[] args) {
         ScheduledExecutorService pool = Executors.newScheduledThreadPool(10);
         System.out.println("main开始时间:" + MyRunnable.now());
+<<<<<<< HEAD
         for (int i = 0; i < 3; i++) {
+=======
+        for (int i = 0; i < 5; i++) {
+>>>>>>> 8fad5d226d2db401b1e0938979dfe88594ebb9d3
             MyRunnable myRunnable = new MyRunnable("thread-" + i);
             System.out.println(myRunnable.getName() + "开始时间:" + MyRunnable.now());
             pool.schedule(myRunnable, 5, TimeUnit.SECONDS);//延时5秒执行
