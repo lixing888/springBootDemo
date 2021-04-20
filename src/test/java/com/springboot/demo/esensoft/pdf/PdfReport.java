@@ -169,9 +169,9 @@ public class PdfReport {
 		String str = "国家税务总局北京市税务局\r\n" + "纳税人银行信息查询函";
 		Paragraph paragraph = getParagraph(1, str, titlefont);
 		// 段落2
-		Paragraph paragraph1 = getParagraph(1, "京税函(20)", headfont);
+		Paragraph paragraph1 = getParagraph(1, "京税函(21)", headfont);
 		// 带下划线的字体
-		Chunk chunk1 = new Chunk("审批单编号");
+		Chunk chunk1 = new Chunk("审批单编号01");
 		chunk1.setUnderline(0.2f, -2f);
 		paragraph1.add(chunk1);
 		paragraph1.add("号\n");
@@ -210,11 +210,11 @@ public class PdfReport {
 		paragraph5.setLeading(20f); // 行间距
 		paragraph5.setSpacingBefore(5f); // 设置段落上空白
 		paragraph5.setSpacingAfter(10f); // 设置段落下空白
-		paragraph5.add("2020");
+		paragraph5.add("2021");
 		paragraph5.add(" 年 ");
-		paragraph5.add("06");
+		paragraph5.add("04");
 		paragraph5.add(" 月 ");
-		paragraph5.add("02");
+		paragraph5.add("20");
 		paragraph5.add(" 日 ");
 
 		document.add(paragraph);
