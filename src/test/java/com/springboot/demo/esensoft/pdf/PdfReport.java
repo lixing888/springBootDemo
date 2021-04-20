@@ -115,7 +115,7 @@ public class PdfReport {
 			Document document = new Document(PageSize.A4);// 建立一个Document对象
 
 			// 2.建立一个书写器(Writer)与document对象关联
-			File file = new File("D:\\app3web\\PDFDemo.pdf");
+			File file = new File("F:\\pdf\\PDFDemo.pdf");
 			file.createNewFile();
 			PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream(file));
 			// writer.setPageEvent(new Watermark("HELLO ITEXTPDF"));// 水印
