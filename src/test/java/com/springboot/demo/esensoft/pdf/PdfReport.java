@@ -108,37 +108,7 @@ public class PdfReport {
 		document.add(paragraph5);
 	}
 
-	// main测试
-	public static void main(String[] args) throws Exception {
-		try {
-			// 1.新建document对象
-			Document document = new Document(PageSize.A4);// 建立一个Document对象
 
-			// 2.建立一个书写器(Writer)与document对象关联
-			File file = new File("F:\\pdf\\PDFDemo.pdf");
-			file.createNewFile();
-			PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream(file));
-			// writer.setPageEvent(new Watermark("HELLO ITEXTPDF"));// 水印
-			// writer.setPageEvent(new MyHeaderFooter());// 页眉/页脚
-
-			// 3.打开文档
-			document.open();
-			/*
-			 * document.addTitle("Title@PDF-Java");// 标题
-			 * document.addAuthor("Author@umiz");// 作者
-			 * document.addSubject("Subject@iText pdf sample");// 主题
-			 * document.addKeywords("Keywords@iTextpdf");// 关键字
-			 * document.addCreator("Creator@umiz`s");// 创建者
-			 */
-			// 4.向文档中添加内容
-			new PdfReport().generatePDF(document);
-
-			// 5.关闭文档
-			document.close();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
 
 	// 定义全局的字体静态变量
 	private static Font titlefont;
@@ -404,4 +374,38 @@ public class PdfReport {
 	}
 	/** --------------------------创建表格的方法end------------------- --------- */
 
+	/** --------------------------main测试------------------- --------- */
+	public static void main(String[] args) throws Exception {
+		try {
+			// 1.新建document对象
+			Document document = new Document(PageSize.A4);// 建立一个Document对象
+
+			// 2.建立一个书写器(Writer)与document对象关联
+			File file = new File("F:\\pdf\\PDFDemo.pdf");
+			file.createNewFile();
+			PdfWriter writer = PdfWriter.getInstance(document, new FileOutputStream(file));
+			// writer.setPageEvent(new Watermark("HELLO ITEXTPDF"));// 水印
+			// writer.setPageEvent(new MyHeaderFooter());// 页眉/页脚
+
+			// 3.打开文档
+			document.open();
+			/*
+			 * document.addTitle("Title@PDF-Java");// 标题
+			 * document.addAuthor("Author@umiz");// 作者
+			 * document.addSubject("Subject@iText pdf sample");// 主题
+			 * document.addKeywords("Keywords@iTextpdf");// 关键字
+			 * document.addCreator("Creator@umiz`s");// 创建者
+			 */
+			// 4.向文档中添加内容
+			//new PdfReport().generatePDF(document);
+			new PdfReport().generatePDF2(document,"02","网商银行","北京市测试1科技有\n" +
+					"限责任公司，社会统一信用代码81000000000MA1；北京市测试2科技有限责任公司\n" +
+					"，社会统一信用代码81000000000MA2；北京市测试3科技有限责任公司，社会统一\n" +
+					"信用代码81000000000MA3 账户信息,银行流水相关信息","税务机关（电子签章）",new Date());
+			// 5.关闭文档
+			document.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 }
