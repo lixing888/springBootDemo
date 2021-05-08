@@ -3,6 +3,7 @@ package com.springboot.demo.config;
 import com.springboot.demo.interceptor.UserSecurityInterceptor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
@@ -10,6 +11,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 /**
  * @author lixing
  */
+@Configuration
 @Profile({"pre", "test"})
 public class MySpringMvcConfig implements WebMvcConfigurer {
 

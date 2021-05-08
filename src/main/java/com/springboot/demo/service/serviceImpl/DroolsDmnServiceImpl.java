@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -20,7 +21,7 @@ import java.util.stream.Collectors;
 @Component
 public class DroolsDmnServiceImpl implements DroolsDmnService {
 
-    @Autowired
+    @Resource
     private DMNRuntime dmnRuntime;
     @Autowired
     private AmsService amsService;
