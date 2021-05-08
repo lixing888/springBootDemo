@@ -1,6 +1,7 @@
 package com.springboot.demo.util;
 
 import com.google.common.base.CaseFormat;
+import org.apache.commons.lang3.ObjectUtils;
 import org.springframework.stereotype.Component;
 
 import java.util.Random;
@@ -72,6 +73,17 @@ public class StringUtils {
             sb.append(matcher.end() == line.length() ? "" : "_");
         }
         return sb.toString();
+    }
+
+    /**
+     * 判断Object对象为空或空字符串
+     *
+     * @param obj
+     * @return
+     */
+    public static Boolean isObjectNotEmpty(Object obj) {
+        String str = ObjectUtils.toString(obj, "");
+        return org.apache.commons.lang3.StringUtils.isNotBlank(str);
     }
 
     public static void main(String[] args) {
@@ -171,6 +183,8 @@ public class StringUtils {
                     "values (" + "'" + rond + "'" + ", 1.01111010100002E19, '北京如月媛管理咨询有限公司', '91110112MA00B1JQ3P', '00002', '北京市电子税务局', '202011231740', null, null, null, null, '1', to_date('24-11-2020 07:41:37', 'dd-mm-yyyy hh24:mi:ss'), to_date('24-11-2020 07:41:37', 'dd-mm-yyyy hh24:mi:ss'), 'ac6301e90055cebb4cd5110bf6cd183cfc3ee21f17f64cdd9f000b2478d9ad19', null, null);\n";
             System.out.println(sql);
         }
+
+        System.out.println("String字符串是否是空:"+isObjectNotEmpty(""));
 
     }
 }
