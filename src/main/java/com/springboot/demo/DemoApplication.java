@@ -25,7 +25,8 @@ import java.util.Arrays;
 @SpringBootApplication
 @ComponentScan("com.springboot")
 @MapperScan(basePackages = "com.springboot")//扫描范围
-@Api(tags = "swagger2") //http://127.0.0.1:8080/swagger-ui.html
+@Api(tags = "swagger2")
+//http://127.0.0.1:8888/swagger-ui.html
 //@EnableCaching
 //@Profile(value = "pre")
 public class DemoApplication {
