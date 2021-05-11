@@ -5,7 +5,7 @@ spring:
 #    url: jdbc:mysql://139.129.45.208:3306/hboa?serverTimezone=UTC
 #    username: root
 #    password: beiXINzhiKE
-    url: jdbc:mysql://121.89.202.246:3306/sys?serverTimezone=UTC
+    url: jdbc:mysql://121.89.202.246:3306/sys?serverTimezone=UTC&&useSSL=false
     username: root
     password: root123456
     driver-class-name: com.mysql.cj.jdbc.Driver

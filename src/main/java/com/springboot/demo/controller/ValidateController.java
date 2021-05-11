@@ -7,12 +7,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.springboot.demo.util.RandomValidateCodeUtil;
+import io.swagger.annotations.Api;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.google.code.kaptcha.impl.DefaultKaptcha;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  * Copyright (C), 2018-2021
@@ -21,6 +23,9 @@ import com.google.code.kaptcha.impl.DefaultKaptcha;
  * Date:     2021/5/8 16:24
  * Description: 图形验证码控制层
  */
+@RestController
+@RequestMapping("/validate")
+@Api(tags = "/图形验证码")
 public class ValidateController {
     @Resource
     private DefaultKaptcha captchaProducer;
@@ -31,7 +36,7 @@ public class ValidateController {
 
     /**
      * 登录验证码图片
-     * http://127.0.0.1:8888/loginValidateCode
+     * http://127.0.0.1:8888/validate/loginValidateCode
      */
     @RequestMapping(value = {"/loginValidateCode"})
     public void loginValidateCode(HttpServletRequest request, HttpServletResponse response) throws Exception {
@@ -40,7 +45,7 @@ public class ValidateController {
 
     /**
      * 检查验证码是否正确
-     * http://127.0.0.1:8888/checkLoginValidateCode?validateCode=2100
+     * http://127.0.0.1:8888/validate/checkLoginValidateCode?validateCode=2100
      */
     @RequestMapping("/checkLoginValidateCode")
     @ResponseBody
