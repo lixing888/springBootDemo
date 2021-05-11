@@ -436,13 +436,13 @@
             <version>1.9</version>
         </dependency>
         <!--版本很关键，不说了，说多了都是泪-->
-<!--        <dependency>-->
-<!--            <groupId>org.bouncycastle</groupId>-->
-<!--            <artifactId>bcprov-ext-jdk16</artifactId>-->
-<!--            <version>1.46</version>-->
-<!--            <type>jar</type>-->
-<!--            <scope>compile</scope>-->
-<!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.bouncycastle</groupId>-->
+        <!--            <artifactId>bcprov-ext-jdk16</artifactId>-->
+        <!--            <version>1.46</version>-->
+        <!--            <type>jar</type>-->
+        <!--            <scope>compile</scope>-->
+        <!--        </dependency>-->
         <dependency>
             <groupId>org.bouncycastle</groupId>
             <artifactId>bcprov-ext-jdk15on</artifactId>
@@ -471,6 +471,12 @@
             <groupId>com.github.penggle</groupId>
             <artifactId>kaptcha</artifactId>
             <version>2.3.2</version>
+        </dependency>
+        <!--Maven没有权限操作jre自带的jar包 添加如下依赖-->
+        <dependency>
+            <groupId>rt</groupId>
+            <artifactId>rt</artifactId>
+            <version>1.0</version>
         </dependency>
     </dependencies>
 
