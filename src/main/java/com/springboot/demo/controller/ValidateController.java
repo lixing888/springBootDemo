@@ -9,12 +9,9 @@ import javax.servlet.http.HttpServletResponse;
 import com.springboot.demo.util.RandomValidateCodeUtil;
 import io.swagger.annotations.Api;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import com.google.code.kaptcha.impl.DefaultKaptcha;
-import org.springframework.web.bind.annotation.RestController;
 
 /**
  * Copyright (C), 2018-2021
@@ -38,7 +35,7 @@ public class ValidateController {
      * 登录验证码图片
      * http://127.0.0.1:8888/validate/loginValidateCode
      */
-    @RequestMapping(value = {"/loginValidateCode"})
+    @PostMapping(value = {"/loginValidateCode"})
     public void loginValidateCode(HttpServletRequest request, HttpServletResponse response) throws Exception {
         RandomValidateCodeUtil.validateCode(request, response, captchaProducer, LOGIN_VALIDATE_CODE);
     }
@@ -47,7 +44,7 @@ public class ValidateController {
      * 检查验证码是否正确
      * http://127.0.0.1:8888/validate/checkLoginValidateCode?validateCode=2100
      */
-    @RequestMapping("/checkLoginValidateCode")
+    @PostMapping("/checkLoginValidateCode")
     @ResponseBody
     public HashMap checkLoginValidateCode(HttpServletRequest request, @RequestParam("validateCode") String validateCode) {
         String loginValidateCode = request.getSession().getAttribute(LOGIN_VALIDATE_CODE).toString();

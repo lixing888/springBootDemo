@@ -38,7 +38,7 @@ public class WordToHtml {
         }
     }
     public static void main(String[] strs){
-        WordToHtml.change("D:\\附件\\办事指南朝阳区.docx", "D:\\附件\\办事指南朝阳区");
+        WordToHtml.change("D:\\file\\安装流程V1.2.docx", "D:\\file");
         System.out.println("转化成功！");
     }
 }
