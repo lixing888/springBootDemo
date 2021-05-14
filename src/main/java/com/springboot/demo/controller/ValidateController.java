@@ -35,7 +35,7 @@ public class ValidateController {
      * 登录验证码图片
      * http://127.0.0.1:8888/validate/loginValidateCode
      */
-    @PostMapping(value = {"/loginValidateCode"})
+    @GetMapping(value = {"/loginValidateCode"})
     public void loginValidateCode(HttpServletRequest request, HttpServletResponse response) throws Exception {
         RandomValidateCodeUtil.validateCode(request, response, captchaProducer, LOGIN_VALIDATE_CODE);
     }
