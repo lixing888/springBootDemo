@@ -26,3 +26,6 @@ data:
 
 #logging:
 #  config: classpath:log4j2.xml
+
+hdfs:
+  defaultFS: hdfs://121.89.202.246:9000
