@@ -479,9 +479,15 @@
             <version>1.0</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/com.jacob/jacob -->
+        <!-- 运行此maven命令 将jacob-1.14.3.jar 部署到本地环境
+        mvn install:install-file -DgroupId=org.xl.jacob
+            -DartifactId=brave-jacob -Dversion=1.14.3
+            -Dfile=D:\jacob-1.14.3.jar
+            -Dpackaging=jar
+        -->
         <dependency>
-            <groupId>com.jacob</groupId>
-            <artifactId>jacob</artifactId>
+            <groupId>org.xl.jacob</groupId>
+            <artifactId>brave-jacob</artifactId>
             <version>1.14.3</version>
         </dependency>
         <!-- Apache Hadoop -->
