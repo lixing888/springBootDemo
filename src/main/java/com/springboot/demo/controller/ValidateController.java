@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.springboot.demo.util.RandomValidateCodeUtil;
+import com.springboot.demo.vo.Result;
 import io.swagger.annotations.Api;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -46,17 +47,25 @@ public class ValidateController {
      */
     @PostMapping("/checkLoginValidateCode")
     @ResponseBody
-    public HashMap checkLoginValidateCode(HttpServletRequest request, @RequestParam("validateCode") String validateCode) {
+    public Result checkLoginValidateCode(HttpServletRequest request, @RequestParam("validateCode") String validateCode) {
         String loginValidateCode = request.getSession().getAttribute(LOGIN_VALIDATE_CODE).toString();
-        HashMap<String, Object> map = new HashMap<String, Object>();
+        //HashMap<String, Object> map = new HashMap<String, Object>();
+        Result result = new Result();
         if (loginValidateCode == null) {
-            map.put("status", null);//验证码过期
+            //map.put("status", null);//验证码过期
+            result.setMsg("验证码过期");
+            result.setData(null);
         } else if (loginValidateCode.equals(validateCode)) {
-            map.put("status", true);//验证码正确
+            //map.put("status", true);//验证码正确
+            result.setMsg("验证码正确");
+            result.setData(true);
         } else if (!loginValidateCode.equals(validateCode)) {
-            map.put("status", false);//验证码不正确
+            //map.put("status", false);//验证码不正确
+            result.setMsg("验证码不正确");
+            result.setData(false);
         }
-        map.put("code", 200);
-        return map;
+        //map.put("code", 200);
+        result.setStatus(200);
+        return result;
     }
 }
