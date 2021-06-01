@@ -1,6 +1,7 @@
 package com.springboot.demo.controller;
 
 import com.springboot.demo.util.DownloadUtils;
+import io.swagger.annotations.Api;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
@@ -23,6 +24,7 @@ import java.util.Date;
  */
 @Controller
 @RequestMapping(value = "/downLoad")
+@Api(tags = "/实现利用浏览器下载文件")
 public class DownLoadFileController {
 
     /**
