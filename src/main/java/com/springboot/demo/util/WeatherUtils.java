@@ -27,7 +27,6 @@ public class WeatherUtils {
 
     public static String GetWeatherData(String cityName) {
         StringBuilder sb = new StringBuilder();
-        ;
         try {
             //cityname = URLEncoder.encode(cityName, "UTF-8");
             String weather_url = "http://wthrcdn.etouch.cn/weather_mini?city=" + cityName;
