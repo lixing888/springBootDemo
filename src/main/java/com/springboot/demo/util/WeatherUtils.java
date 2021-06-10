@@ -8,6 +8,7 @@ import java.io.UnsupportedEncodingException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
+import java.time.LocalDate;
 import java.util.zip.GZIPInputStream;
 
 import com.springboot.demo.vo.WeatherInfo;
@@ -100,6 +101,10 @@ public class WeatherUtils {
         System.out.println(cityName + "近期天气：" + info);
         WeatherInfo weatherinfo = WeatherUtils.GetWeather(info);
         System.out.println(weatherinfo.toString());
+        LocalDate localDate=LocalDate.now();
+        String year=localDate.getYear()+"";
+        System.out.println(year.substring(0,4));
+        System.out.println(Integer.valueOf(year + "0000") + 1);
     }
 }
 
