@@ -2,6 +2,7 @@ package com.springboot.demo.util.sm4;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.IOUtils;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import sun.misc.BASE64Decoder;
 
 import java.io.File;
@@ -146,6 +147,21 @@ public class Main {
         int rondom = 16;
         String randomString = Main.getRandomString(rondom);
         System.out.println("生成" + rondom + "位随机数：" + randomString);
+
+        //密码
+        String password = "123456";
+//		String password = "123";
+        System.out.println("加密前的密码:" + password);
+
+        //加密后的密文
+        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+        String password2 = encoder.encode(password);
+        String password3 = "$2a$10$.hZRd4YGFHVlMRRSrIg2ou7WQr2gt4oA/NPBcrjM/KTgiXiFEN4g.";//123456
+//		String password3= "$2a$10$ttZd.w89KMw5OiKxxDZ/LuMiEWZ8V3wk.p6mVa14xCHte0sLy1pNe";//123
+
+        System.out.println("BCryptPasswordEncoder加密后的密码:" + password2);
+        System.out.println("密码是否匹配：" + encoder.matches(password, password2));
+        System.out.println("密码是否匹配：" + encoder.matches(password, password3));
     }
 
 }
