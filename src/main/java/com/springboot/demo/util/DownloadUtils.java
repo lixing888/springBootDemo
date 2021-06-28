@@ -8,6 +8,7 @@ import java.util.zip.ZipOutputStream;
 
 /**
  * 下载
+ *
  * @author lixing
  */
 public class DownloadUtils {
@@ -45,7 +46,40 @@ public class DownloadUtils {
         }
     }
 
-    /**sss
+    public void downloadLocalNew(String filePath, HttpServletResponse response) throws IOException {
+
+        //文件名
+        String fileName = filePath.substring(filePath.lastIndexOf("/") + 1);
+        String contentType = "application/octet-stream";
+        try {
+
+            response.setContentType("text/html;charset=UTF-8");
+            BufferedInputStream bis = null;
+            BufferedOutputStream bos = null;
+
+            long fileLength = new File(filePath).length();
+
+            response.setContentType(contentType);
+            response.setHeader("Content-disposition",
+                    "attachment; filename=" + new String(fileName.getBytes("utf-8")));
+            response.setHeader("Content-Length", String.valueOf(fileLength));
+
+            bis = new BufferedInputStream(new FileInputStream(filePath));
+            bos = new BufferedOutputStream(response.getOutputStream());
+            byte[] buff = new byte[2048];
+            int bytesRead;
+            while (-1 != (bytesRead = bis.read(buff, 0, buff.length))) {
+                bos.write(buff, 0, bytesRead);
+            }
+            bis.close();
+            bos.close();
+        } catch (Exception e) {
+            System.out.println("导出文件失败:" + e.toString());
+        }
+    }
+
+    /**
+     * sss
      * 下载文件
      *
      * @param response
@@ -121,7 +155,7 @@ public class DownloadUtils {
 //        String zipBasePath = request.getSession().getServletContext().getRealPath("/fileZip");
         //String zipBasePath = SysConfigCache.getString("file_url_z") + "zipFile";
         String zipBasePath = "D:\\data0\\uploads\\" + "zipFile";
-        String zipFilePath = zipBasePath + File.separator + fileName.substring(fileName.lastIndexOf("/")+1);
+        String zipFilePath = zipBasePath + File.separator + fileName.substring(fileName.lastIndexOf("/") + 1);
         File zipFile = new File(zipFilePath);
         try {
             if (!zipFile.exists()) {//不存在创建一个新的
