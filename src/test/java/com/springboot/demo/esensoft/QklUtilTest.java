@@ -27,7 +27,7 @@ public class QklUtilTest {
             connection.connect();
             HashMap<String, String> map1 = new HashMap<String, String>();
             String jsonString = fileToBase64("D:\\test.xlsx");
-            String txid = "356d614ddfe269d235d2c73fbe0293531a5fa7accda427b8a13f3f3f143c0899";
+            String txid = "34a663aa3c567ab9129928e49f7a101453d451c2a2ff4eb131ac3960f2426fdb";
             String body = "excelString=" + jsonString + "&txid=" + txid;
             System.out.println(body);
             BufferedWriter writer = new BufferedWriter(
