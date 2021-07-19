@@ -12,7 +12,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 public class BcryptUtils {
     public static void main(String[] args) {
         //用户密码
-        String password = "123456";
+        String password = "root123456";
         //密码加密
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         //加密
