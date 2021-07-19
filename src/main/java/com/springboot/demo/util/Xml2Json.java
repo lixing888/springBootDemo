@@ -17,7 +17,7 @@ import java.util.List;
  **/
 public class Xml2Json {
     public static void main(String[] args) throws Exception {
-        String xmlStr = readFile("F:/demo.xml");
+        String xmlStr = readFile("D:/demo.xml");
         Document doc = DocumentHelper.parseText(xmlStr);
         JSONObject json = new JSONObject();
         dom4j2Json(doc.getRootElement(), json);
