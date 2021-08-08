@@ -36,8 +36,8 @@ public class DesEdeUtil {
         System.out.println("加密为16进制字符串" + encryptHex + "====解密为字符串" + decryptStr);
 
         //druid连接池-数据库密码的解密
-        String pwd = "ezVoA1vrUGFi2TucJPjbYds8dNThmEV5T0fPJfaKnr4aYvBWfYjUQFnlv2x3PhnxWFjBlKRUjl+9Rkppo7QDjw==";
-        String pub = "MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAImsOUumxBBqGCC5V+kdapLDLU7F9XtgdobRnfFnI9rUYReRnSuEQ80Ap4aogCRmZFuxyCMJ8ixlqb9UAHfdZDkCAwEAAQ==";
+        String pwd = "U2jFADYpRqsajLQ5oU2SyiviPy3IEaaY7tFHAgxWlmJ+c/uPsjMw32xIJWbSFQID+iajxonaiN+UspxT/hCKSg==";
+        String pub = "MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAKEN2ODhWSP3GRuOVWEIJCV5c1ww1T0cLKALl/6PO7eLziQrIgCNruoSxK/70xqMymDPZm+Kzb16hj3r9f64M40CAwEAAQ==";
         try {
             String depwd = ConfigTools.decrypt(pub, pwd);
             System.out.println("druid连接池-数据库密码的解密：" + depwd);

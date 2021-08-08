@@ -1,7 +1,9 @@
 package com.springboot.demo.controller;
 
 import io.swagger.annotations.Api;
+import net.javacrumbs.shedlock.spring.annotation.SchedulerLock;
 import org.springframework.http.ResponseEntity;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
@@ -23,6 +25,8 @@ import javax.validation.constraints.Size;
 public class PersonController {
 
     @GetMapping("/{id}")
+    //@Scheduled(fixedDelay = 1000 * 60 * 10)
+    //@SchedulerLock(name = "queryRechargeBill", lockAtMostFor = "10s", lockAtLeastFor = "10s") //启用SchedulerLock
     public ResponseEntity<Integer> getPersonByID(@Valid @PathVariable("id") @Max(value = 5, message = "超过 id 的范围了") Integer id) {
         return ResponseEntity.ok().body(id);
     }
