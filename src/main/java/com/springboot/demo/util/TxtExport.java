@@ -26,7 +26,7 @@ public class TxtExport {
         String date = dateFormat.format(new Date());
         String fileName = "4fc5dd56594f9a3e683aaf0a9b99ab6ca84623c860b7e87ff6a7b4c58ec9ded5" + date;
         TxtExport.creatTxtFile(fileName);
-        TxtExport.writeTxtFile("税务局接收4fc5dd56594f9a3e683aaf0a9b99ab6ca84623c860b7e87ff6a7b4c58ec9ded5.xlsx文件成功！" + date + ",4bd7bc09447904ae8053e3a9ba4f20f429bb76cd9cd44e82ee26cc791e7eed25");
+        TxtExport.writeTxtFile("税务局接收4fc5dd56594f9a3e683aaf0a9b99ab6ca84623c860b7e87ff6a7b4c58ec9ded5.xlsx文件成功！," + date + ",4bd7bc09447904ae8053e3a9ba4f20f429bb76cd9cd44e82ee26cc791e7eed25");
         System.out.println("生成txt文件完毕！");
     }
 

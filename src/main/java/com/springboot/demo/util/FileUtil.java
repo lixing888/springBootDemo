@@ -8,7 +8,9 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Vector;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
@@ -169,5 +171,56 @@ public class FileUtil {
         }
         return fileName;
     }
+
+    /**
+     * 读取目录下的所有文件
+     *
+     * @param dir       目录
+     * @param fileNames 保存文件名的集合
+     * @return
+     */
+    public static void findFileList(File dir, List<String> fileNames) {
+        if (!dir.exists() || !dir.isDirectory()) {// 判断是否存在目录
+            return;
+        }
+        String[] files = dir.list();// 读取目录下的所有目录文件信息
+        for (int i = 0; i < files.length; i++) {// 循环，添加文件名或回调自身
+            File file = new File(dir, files[i]);
+            if (file.isFile()) {// 如果文件
+                fileNames.add(dir + "\\" + file.getName());// 添加文件全路径名
+            } else {// 如果是目录
+                findFileList(file, fileNames);// 回调自身继续查询
+            }
+        }
+    }
+
+    public static void main(String[] args) throws Exception {
+        List<String> fileNames = new ArrayList<String>();
+        String filePath = "D:\\app3\\txt";
+        FileUtil.findFileList(new File(filePath), fileNames);
+        // 使用 System.getProperty("user.dir") 表示当前工程所在的文件夹
+        // 在jar包中使用此方法表示 输出的是jar包的绝对路径
+        // 忽略系统
+        System.out.println(System.getProperty("user.dir"));
+
+        // 获取系统路径路径分割符
+        String filePathSplit = File.separator;
+        System.out.println("获取系统路径路径分割符:" + filePathSplit);
+
+        // 获取不同系统的换行符
+        String lineSeparator = System.lineSeparator();
+        System.out.println("获取不同系统的换行符：" + lineSeparator);
+        for (String value : fileNames) {
+            System.out.println("文件路径:" + value);
+            File f = new File(value);
+            f.getName();//获得的是abc.txt,如果不需要后缀.txt，只要abc可以这样做：
+
+            String test = f.getName().substring(0, f.getName().lastIndexOf("."));
+            System.out.println(test);
+        }
+
+
+    }
+
 
 }
