@@ -3,9 +3,11 @@ package com.springboot.demo.util;
 import java.io.IOException;
 import java.net.URI;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.commons.collections.map.HashedMap;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
@@ -135,5 +137,13 @@ public class HttpClientUtil {
             }
         }
         return resultString;
+    }
+
+
+    public static void main(String[] args) {
+        Map param = new HashMap();
+        param.put("customerId", "1122982");
+        String result = doGet("http://114.116.194.155:30098/contactdoc/getContacts", param);
+        System.out.println(result);
     }
 }
