@@ -20,6 +20,7 @@ public class DemoController {
 
     @GetMapping("/provider/hello")
     public ResponseEntity<String> hello() {
-        return ResponseEntity.ok("hello from " + applicationName + ", service port=" + port);
+
+        return ResponseEntity.ok(System.currentTimeMillis()+" hello from " + applicationName + ", service port=" + port);
     }
 }
