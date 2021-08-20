@@ -133,8 +133,8 @@ public class PdfUtils {
         data.put("payStatus", "（全额）");
 
 
-        generatePDF("e:ky2.pdf",
-                "e:ky3.pdf", data);
+        generatePDF("D:ky2.pdf",
+                "D:ky3.pdf", data);
     }
 }
 
